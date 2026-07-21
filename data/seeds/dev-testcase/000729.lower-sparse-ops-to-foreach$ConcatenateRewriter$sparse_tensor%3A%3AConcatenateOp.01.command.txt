@@ -1,0 +1,10 @@
+--lower-sparse-ops-to-foreach
+-lower-sparse-ops-to-foreach
+--lower-sparse-ops-to-foreach --lower-sparse-foreach-to-scf --sparse-reinterpret-map --sparse-tensor-codegen --canonicalize -cse
+--lower-sparse-ops-to-foreach --lower-sparse-foreach-to-scf --sparse-tensor-conversion --canonicalize --cse
+--stage-sparse-ops --lower-sparse-ops-to-foreach --canonicalize --cse
+"--lower-sparse-ops-to-foreach=enable-runtime-library=false enable-convert=false" --lower-sparse-foreach-to-scf
+"--lower-sparse-ops-to-foreach=enable-runtime-library=true enable-convert=false" --lower-sparse-foreach-to-scf
+--linalg-generalize-named-ops --linalg-fuse-elementwise-ops --sparse-reinterpret-map --sparsification --lower-sparse-ops-to-foreach --lower-sparse-foreach-to-scf --sparse-tensor-conversion --cse
+"--lower-sparse-ops-to-foreach=enable-runtime-library=true enable-convert=false" --lower-sparse-foreach-to-scf --cse --canonicalize
+"--lower-sparse-ops-to-foreach=enable-runtime-library=false enable-convert=false" --lower-sparse-foreach-to-scf --cse --canonicalize

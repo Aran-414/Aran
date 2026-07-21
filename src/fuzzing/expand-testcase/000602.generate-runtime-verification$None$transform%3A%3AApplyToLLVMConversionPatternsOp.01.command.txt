@@ -1,0 +1,4 @@
+--generate-runtime-verification
+-generate-runtime-verification
+--generate-runtime-verification=verbose-level=0
+-generate-runtime-verification -cse

@@ -1,0 +1,4 @@
+--math-extend-to-supported-types
+-math-extend-to-supported-types
+"-math-extend-to-supported-types=extra-types=f16 target-type=f32"
+-math-extend-to-supported-types=target-type=f32

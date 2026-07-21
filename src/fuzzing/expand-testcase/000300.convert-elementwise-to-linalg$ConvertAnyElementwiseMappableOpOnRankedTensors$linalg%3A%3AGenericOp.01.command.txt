@@ -1,0 +1,3 @@
+--convert-elementwise-to-linalg
+-convert-elementwise-to-linalg
+-pass-pipeline=builtin.module(func.func(convert-elementwise-to-linalg))

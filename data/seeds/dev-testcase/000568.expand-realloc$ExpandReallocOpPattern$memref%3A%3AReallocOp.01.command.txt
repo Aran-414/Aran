@@ -1,0 +1,5 @@
+--expand-realloc
+-expand-realloc
+-expand-realloc=emit-deallocs=false -ownership-based-buffer-deallocation --buffer-deallocation-simplification
+-expand-realloc=emit-deallocs=false -ownership-based-buffer-deallocation=private-function-dynamic-ownership=true -canonicalize -buffer-deallocation-simplification
+--expand-realloc=emit-deallocs=false

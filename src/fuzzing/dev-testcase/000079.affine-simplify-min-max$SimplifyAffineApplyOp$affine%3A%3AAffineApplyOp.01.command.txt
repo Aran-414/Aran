@@ -1,0 +1,1 @@
+-pass-pipeline=builtin.module(func.func(affine-simplify-min-max))

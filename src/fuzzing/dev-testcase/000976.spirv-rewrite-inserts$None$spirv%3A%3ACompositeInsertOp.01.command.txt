@@ -1,0 +1,2 @@
+--spirv-rewrite-inserts
+-spirv-rewrite-inserts

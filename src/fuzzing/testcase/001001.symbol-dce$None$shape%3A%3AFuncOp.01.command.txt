@@ -1,0 +1,2 @@
+-async-parallel-for=async-dispatch=true -canonicalize -inline -symbol-dce
+-async-parallel-for=async-dispatch=false -canonicalize -inline -symbol-dce

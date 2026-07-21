@@ -1,0 +1,5 @@
+Reading tracefile FLEX/lasttime.info
+Summary coverage rate:
+  lines......: 10.9% (103896 of 952317 lines)
+  functions..: 21.2% (86695 of 409795 functions)
+  branches...: 10.6% (77704 of 733803 branches)

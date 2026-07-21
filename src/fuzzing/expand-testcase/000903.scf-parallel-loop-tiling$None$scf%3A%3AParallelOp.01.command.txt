@@ -1,0 +1,4 @@
+--scf-parallel-loop-tiling
+-scf-parallel-loop-tiling
+"-pass-pipeline=builtin.module(func.func(scf-parallel-loop-tiling{parallel-loop-tile-sizes=1,4 no-min-max-bounds=true}))"
+-pass-pipeline=builtin.module(func.func(scf-parallel-loop-tiling{parallel-loop-tile-sizes=1,4}))

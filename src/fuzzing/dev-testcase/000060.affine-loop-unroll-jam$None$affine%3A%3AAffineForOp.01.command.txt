@@ -1,0 +1,2 @@
+-allow-unregistered-dialect -pass-pipeline=builtin.module(func.func(affine-loop-unroll-jam{unroll-jam-factor=2}))
+-allow-unregistered-dialect -pass-pipeline=builtin.module(func.func(affine-loop-unroll-jam{unroll-jam-factor=4}))

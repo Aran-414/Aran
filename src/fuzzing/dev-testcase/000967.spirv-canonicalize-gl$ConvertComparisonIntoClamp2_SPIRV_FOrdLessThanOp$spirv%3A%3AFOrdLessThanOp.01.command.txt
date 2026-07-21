@@ -1,0 +1,2 @@
+--spirv-canonicalize-gl
+-spirv-canonicalize-gl

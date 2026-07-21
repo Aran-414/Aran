@@ -1,0 +1,6 @@
+-symbol-privatize
+-tosa-attach-target
+-transform-infer-effects
+-convert-async-to-llvm
+-convert-pdl-to-pdl-interp
+-set-llvm-module-datalayout

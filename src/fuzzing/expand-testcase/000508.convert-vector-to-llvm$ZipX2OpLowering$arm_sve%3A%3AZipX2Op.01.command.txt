@@ -1,0 +1,2 @@
+-convert-vector-to-llvm=enable-arm-sve -convert-func-to-llvm -convert-arith-to-llvm -cse -reconcile-unrealized-casts
+-pass-pipeline=builtin.module(func.func(canonicalize,convert-scf-to-cf),convert-vector-to-llvm,expand-strided-metadata,lower-affine,convert-arith-to-llvm,finalize-memref-to-llvm,convert-func-to-llvm,convert-cf-to-llvm,reconcile-unrealized-casts)

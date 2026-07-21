@@ -1,0 +1,5 @@
+-tosa-attach-target
+-decorate-spirv-composite-type-layout
+-convert-async-to-llvm
+-convert-pdl-to-pdl-interp
+-set-llvm-module-datalayout

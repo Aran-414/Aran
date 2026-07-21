@@ -1,0 +1,16 @@
+-inline
+-symbol-privatize
+-math-extend-to-supported-types
+-llvm-request-c-wrappers
+-tosa-attach-target
+-affine-data-copy-generate
+-enable-arm-streaming
+-ownership-based-buffer-deallocation
+-convert-async-to-llvm
+-convert-func-to-llvm
+-convert-math-to-rocdl
+-convert-openmp-to-llvm
+-convert-pdl-to-pdl-interp
+-convert-to-emitc
+-lower-host-to-llvm
+-set-llvm-module-datalayout

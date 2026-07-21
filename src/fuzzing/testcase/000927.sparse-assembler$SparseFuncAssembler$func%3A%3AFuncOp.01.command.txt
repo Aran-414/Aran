@@ -1,0 +1,3 @@
+--sparse-assembler --inline
+--sparse-assembler --linalg-generalize-named-ops --linalg-fuse-elementwise-ops --sparsification-and-bufferization
+--sparse-assembler --sparsifier

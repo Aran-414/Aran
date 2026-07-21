@@ -1,0 +1,1 @@
+func.func private @external_function() -> (memref<f32>)

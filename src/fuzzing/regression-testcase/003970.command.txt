@@ -1,0 +1,12 @@
+-sccp
+-symbol-privatize
+-llvm-request-c-wrappers
+-tosa-attach-target
+-tosa-infer-shapes
+-affine-data-copy-generate
+-sparsification-and-bufferization
+-enable-arm-streaming
+-convert-async-to-llvm
+-convert-pdl-to-pdl-interp
+-lower-host-to-llvm
+-set-llvm-module-datalayout

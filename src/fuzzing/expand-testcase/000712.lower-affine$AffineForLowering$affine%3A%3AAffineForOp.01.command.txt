@@ -1,0 +1,6 @@
+--lower-affine
+-lower-affine
+-expand-strided-metadata -finalize-memref-to-llvm -lower-affine -convert-arith-to-llvm -cse
+-expand-strided-metadata -finalize-memref-to-llvm=index-bitwidth=32 -lower-affine -convert-arith-to-llvm=index-bitwidth=32 -cse
+-pass-pipeline=builtin.module(buffer-deallocation-pipeline,convert-bufferization-to-memref,func.func(convert-vector-to-scf,lower-affine,convert-linalg-to-loops))
+-pass-pipeline=builtin.module(func.func(canonicalize,convert-scf-to-cf),convert-vector-to-llvm,expand-strided-metadata,lower-affine,convert-arith-to-llvm,finalize-memref-to-llvm,convert-func-to-llvm,convert-cf-to-llvm,reconcile-unrealized-casts)

@@ -1,0 +1,4 @@
+-test-convert-to-spirv -cse
+"-test-convert-to-spirv=run-signature-conversion=false run-vector-unrolling=false" -cse
+-convert-vector-to-llvm=enable-arm-sve -convert-func-to-llvm -convert-arith-to-llvm -cse -reconcile-unrealized-casts
+-test-lower-to-llvm -cse -canonicalize

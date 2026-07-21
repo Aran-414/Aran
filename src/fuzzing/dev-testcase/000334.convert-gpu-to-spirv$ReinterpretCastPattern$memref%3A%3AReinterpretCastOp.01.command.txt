@@ -1,0 +1,7 @@
+--convert-gpu-to-spirv
+-convert-gpu-to-spirv
+-convert-gpu-to-spirv=use-64bit-index=false
+-convert-gpu-to-spirv=use-64bit-index=true
+-allow-unregistered-dialect -convert-gpu-to-spirv
+-allow-unregistered-dialect -convert-gpu-to-spirv=use-64bit-index=true
+--convert-gpu-to-spirv --cse

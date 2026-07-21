@@ -1,0 +1,90 @@
+None
+mlir::tosa::TargetEnvAttr::get
+mlir::tosa::lookupTargetEnvOrDefault
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/mlir/lib/IR/PatternMatch.cpp:293
+mlir::RewriterBase::inlineBlockBefore
+mlir::scf::forallToForLoop
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/llvm/include/llvm/Support/Casting.h:572
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run
+mlir::splitAndProcessBuffer => 
+
+None
+mlir::dataflow::IntegerRangeAnalysis::visitNonControlFlowArguments
+mlir::dataflow::SparseForwardDataFlowAnalysis
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visitRegionSuccessors
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visitBlock
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visit => 
+
+/llvm/include/llvm/ADT/STLExtras.h:1247
+mlir::xegpu::doSCFStructuralTypeConversionWithTensorType
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run => 
+
+/mlir/lib/IR/AffineMap.cpp:133
+mlir::AffineMap::getMinorIdentityMap
+mlir::vector::getTransferMinorIdentityMap
+mlir::vector::TransferReadOp::build
+mlir::vector::TransferReadOp::create
+mlir::detail::OpOrInterfaceRewritePatternBase => 
+
+/llvm/include/llvm/Support/Casting.h:572
+mlir::WalkResultllvm::function_ref
+mlir::WalkResultmlir::detail::walk
+mlir::WalkResultmlir::detail::walk
+mlir::WalkResultmlir::detail::walk
+mlir::WalkResultmlir::detail::walk => 
+
+/mlir/lib/IR/AffineMap.cpp:133
+mlir::AffineMap::getMinorIdentityMap
+mlir::vector::getTransferMinorIdentityMap
+mlir::vector::TransferWriteOp::build
+mlir::vector::TransferWriteOp::create
+mlir::detail::OpOrInterfaceRewritePatternBase => 
+
+/mlir/lib/Dialect/Bufferization/Transforms/OneShotModuleBufferize.cpp:139
+mlir::bufferization::analyzeModuleOp
+mlir::bufferization::eliminateEmptyTensors
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+None
+mlir::Operation::Operation
+mlir::Operation::create
+mlir::Operation::create
+mlir::Operation::create
+mlir::Operation::create => 
+
+/llvm/include/llvm/ADT/SmallVector.h:313
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite
+mlir::applyPatternsGreedily
+mlir::detail::OpToOpPassAdaptor::run => 
+
+/mlir/lib/Dialect/Bufferization/Transforms/OneShotModuleBufferize.cpp:139
+mlir::bufferization::analyzeModuleOp
+mlir::bufferization::insertTensorCopies
+mlir::sparse_tensor::SparsificationAndBufferizationPass::runOnOperation
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 
+
+/mlir/lib/IR/Operation.cpp:621
+mlir::Operation::fold
+mlir::Operation::fold
+mlir::applyPatternsGreedily
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 

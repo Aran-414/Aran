@@ -1,0 +1,13 @@
+--symbol-privatize
+--llvm-request-c-wrappers
+--tosa-attach-target
+--affine-data-copy-generate
+--sparsification-and-bufferization
+--enable-arm-streaming
+--transform-interpreter
+--one-shot-bufferize
+--convert-async-to-llvm
+--convert-pdl-to-pdl-interp
+--convert-tensor-to-linalg
+--lower-host-to-llvm
+--set-llvm-module-datalayout

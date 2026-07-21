@@ -1,0 +1,49 @@
+/mlir/lib/IR/PatternMatch.cpp:156
+mlir::RewriterBase::eraseOp
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite
+mlir::applyPatternsGreedily => 
+
+None
+mlir::dataflow::IntegerRangeAnalysis::visitNonControlFlowArguments
+mlir::dataflow::SparseForwardDataFlowAnalysis
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visitRegionSuccessors
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visitBlock
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visit => 
+
+/mlir/lib/IR/PatternMatch.cpp:156
+None => 
+
+/mlir/include/mlir/IR/UseDefLists.h:198
+mlir::Block::~Block
+mlir::Region::~Region
+mlir::Operation::~Operation
+mlir::Operation::destroy
+mlir::Operation::erase => 
+
+None
+mlir::Operation*const*std::__find_if
+mlir::affine::MemRefDependenceGraph::init
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/llvm/include/llvm/ADT/ArrayRef.h:388
+mlir::detail::verifyLoopLikeOpInterface
+mlir::Op
+mlir::RegisteredOperationName::Model => 
+
+/mlir/lib/Dialect/Vector/Utils/VectorUtils.cpp:142
+mlir::makePermutationMap
+mlir::WalkResultllvm::function_ref
+mlir::WalkResultmlir::detail::walk
+mlir::WalkResultmlir::detail::walk
+mlir::WalkResultmlir::detail::walk => 
+
+/mlir/lib/Dialect/Vector/Utils/VectorUtils.cpp:243
+mlir::matcher::operatesOnSuperVectorsOf
+mlir::affine::NestedPattern::matchOne
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl => 

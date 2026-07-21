@@ -1,0 +1,1 @@
+func.func private @invalid_symbol_name_attr() attributes { rename = "foo", synerity = "foo"}

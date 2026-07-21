@@ -1,0 +1,3 @@
+--scf-for-loop-range-folding
+-scf-for-loop-range-folding
+-pass-pipeline=builtin.module(func.func(scf-for-loop-range-folding))

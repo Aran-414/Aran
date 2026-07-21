@@ -1,0 +1,15 @@
+-symbol-privatize
+-tosa-attach-target
+-nvvm-attach-target
+-rocdl-attach-target
+-spirv-attach-target
+-xevm-attach-target
+-convert-async-to-llvm
+-convert-gpu-to-llvm-spv
+-convert-gpu-to-nvvm
+-convert-gpu-to-rocdl
+-convert-pdl-to-pdl-interp
+-convert-vector-to-xegpu
+-lower-host-to-llvm
+-map-memref-spirv-storage-class
+-set-llvm-module-datalayout

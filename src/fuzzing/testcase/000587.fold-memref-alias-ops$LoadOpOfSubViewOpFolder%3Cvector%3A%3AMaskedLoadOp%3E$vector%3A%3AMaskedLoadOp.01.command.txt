@@ -1,0 +1,2 @@
+--fold-memref-alias-ops
+-fold-memref-alias-ops

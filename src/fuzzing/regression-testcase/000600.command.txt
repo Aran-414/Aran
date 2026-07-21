@@ -1,0 +1,6 @@
+-llvm-target-to-data-layout
+-llvm-target-to-target-features
+-tosa-attach-target
+-convert-async-to-llvm
+-convert-pdl-to-pdl-interp
+-set-llvm-module-datalayout

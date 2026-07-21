@@ -1,0 +1,5 @@
+--mem2reg
+-mem2reg
+--pass-pipeline=builtin.module(func.func(mem2reg)) --mlir-pass-statistics
+--pass-pipeline=builtin.module(func.func(mem2reg{region-simplify=false}))
+--pass-pipeline=builtin.module(any(mem2reg))

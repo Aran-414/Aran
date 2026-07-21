@@ -1,0 +1,4 @@
+--set-llvm-module-datalayout
+-set-llvm-module-datalayout
+-set-llvm-module-datalayout -convert-func-to-llvm
+-set-llvm-module-datalayout=data-layout=p:32:32:32 -convert-func-to-llvm

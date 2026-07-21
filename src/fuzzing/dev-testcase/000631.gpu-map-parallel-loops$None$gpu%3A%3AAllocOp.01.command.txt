@@ -1,0 +1,3 @@
+--gpu-map-parallel-loops
+-gpu-map-parallel-loops
+-gpu-map-parallel-loops=mapping-policy=innermost-first

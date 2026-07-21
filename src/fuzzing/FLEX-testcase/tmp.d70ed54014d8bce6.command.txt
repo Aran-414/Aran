@@ -1,0 +1,11 @@
+--symbol-privatize
+--llvm-request-c-wrappers
+--tosa-attach-target
+--affine-data-copy-generate
+--enable-arm-streaming
+--test-arm-sme-tile-allocation
+--convert-async-to-llvm
+--convert-pdl-to-pdl-interp
+--convert-vector-to-arm-sme
+--lower-host-to-llvm
+--set-llvm-module-datalayout

@@ -1,0 +1,3 @@
+--arm-neon-2d-to-intr
+-arm-neon-2d-to-intr
+-pass-pipeline=builtin.module(func.func(arm-neon-2d-to-intr))

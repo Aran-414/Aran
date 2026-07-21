@@ -1,0 +1,8 @@
+--pre-sparsification-rewrite
+-pre-sparsification-rewrite
+--linalg-generalize-named-ops --pre-sparsification-rewrite --sparse-reinterpret-map --sparsification=parallelization-strategy=dense-outer-loop --sparse-gpu-codegen
+--pre-sparsification-rewrite --sparse-reinterpret-map
+--pre-sparsification-rewrite --sparse-reinterpret-map --sparsification
+--linalg-generalize-named-ops --pre-sparsification-rewrite --sparse-reinterpret-map --sparsification --sparse-tensor-conversion --canonicalize --cse
+--test-tensor-copy-insertion --pre-sparsification-rewrite --sparse-reinterpret-map --sparsification --cse
+--pre-sparsification-rewrite --sparse-reinterpret-map --sparsification --cse

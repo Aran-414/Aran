@@ -1,0 +1,2 @@
+--amdgpu-fold-memrefs-ops
+-amdgpu-fold-memrefs-ops

@@ -1,0 +1,3 @@
+--amdgpu-resolve-strided-metadata
+-amdgpu-resolve-strided-metadata
+-xegpu-propagate-layout

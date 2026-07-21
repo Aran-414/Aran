@@ -1,0 +1,4 @@
+--loop-invariant-code-motion
+-loop-invariant-code-motion
+-allow-unregistered-dialect -test-decompose-affine-ops -loop-invariant-code-motion -cse
+--sparse-reinterpret-map -sparsification=sparse-emit-strategy=sparse-iterator --cse --sparse-space-collapse --lower-sparse-iteration-to-scf --loop-invariant-code-motion -cse --canonicalize

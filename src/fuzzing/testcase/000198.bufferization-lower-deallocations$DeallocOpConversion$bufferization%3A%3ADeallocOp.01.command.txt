@@ -1,0 +1,3 @@
+--bufferization-lower-deallocations
+-bufferization-lower-deallocations
+--pass-pipeline=builtin.module(func.func(bufferization-lower-deallocations))

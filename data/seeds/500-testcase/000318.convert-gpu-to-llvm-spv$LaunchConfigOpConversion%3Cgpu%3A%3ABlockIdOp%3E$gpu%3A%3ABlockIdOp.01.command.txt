@@ -1,0 +1,5 @@
+--convert-gpu-to-llvm-spv
+-convert-gpu-to-llvm-spv
+-pass-pipeline=builtin.module(gpu.module(convert-gpu-to-llvm-spv{use-64bit-index=true}))
+-pass-pipeline=builtin.module(gpu.module(convert-gpu-to-llvm-spv))
+-pass-pipeline=builtin.module(gpu.module(convert-gpu-to-llvm-spv{use-64bit-index=false}))

@@ -1,0 +1,4 @@
+-convert-amdgpu-to-rocdl=chipset=gfx950
+--convert-amdgpu-to-rocdl=chipset=gfx950
+-convert-amdgpu-to-rocdl=chipset=gfx950 -cse
+--convert-amdgpu-to-rocdl=chipset=gfx950 --canonicalize

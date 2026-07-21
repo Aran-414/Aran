@@ -1,0 +1,10 @@
+--sparse-tensor-codegen
+-sparse-tensor-codegen
+--lower-sparse-ops-to-foreach --lower-sparse-foreach-to-scf --sparse-reinterpret-map --sparse-tensor-codegen --canonicalize -cse
+--sparse-tensor-codegen=enable-buffer-initialization=true --canonicalize --cse
+--sparse-tensor-codegen --canonicalize --cse
+--sparse-tensor-codegen --sparse-storage-specifier-to-llvm
+-sparse-tensor-codegen -cse
+--sparse-tensor-codegen --cse
+--linalg-generalize-named-ops --sparse-reinterpret-map --sparsification --sparse-tensor-codegen --canonicalize --cse
+--canonicalize --sparse-tensor-codegen -cse --canonicalize

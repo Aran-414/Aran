@@ -1,0 +1,5 @@
+Reading tracefile MLIRTracer/lasttime.info
+Summary coverage rate:
+  lines......: 14.2% (135427 of 952317 lines)
+  functions..: 24.8% (101515 of 409795 functions)
+  branches...: 14.0% (102651 of 733803 branches)

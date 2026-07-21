@@ -1,0 +1,7 @@
+--lower-sparse-ops-to-foreach --lower-sparse-foreach-to-scf --sparse-reinterpret-map --sparse-tensor-codegen --canonicalize -cse
+--linalg-generalize-named-ops --linalg-fuse-elementwise-ops --sparse-reinterpret-map --sparsification --lower-sparse-ops-to-foreach --lower-sparse-foreach-to-scf --sparse-tensor-conversion --cse
+--linalg-generalize-named-ops --pre-sparsification-rewrite --sparse-reinterpret-map --sparsification --sparse-tensor-conversion --canonicalize --cse
+--sparse-reinterpret-map -sparsification --sparse-tensor-conversion --cse
+--sparse-reinterpret-map -sparsification --sparse-tensor-conversion --cse "--one-shot-bufferize=copy-before-write bufferize-function-boundaries function-boundary-type-conversion=identity-layout-map"
+--linalg-generalize-named-ops --sparse-reinterpret-map --sparsification --sparse-tensor-codegen --canonicalize --cse
+--sparse-reinterpret-map -sparsification --sparse-tensor-conversion --canonicalize

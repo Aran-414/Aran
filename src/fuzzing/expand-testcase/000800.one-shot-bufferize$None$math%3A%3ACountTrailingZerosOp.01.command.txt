@@ -1,0 +1,38 @@
+"-one-shot-bufferize=test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=23 bufferize-function-boundaries"
+"-one-shot-bufferize=test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=59 bufferize-function-boundaries"
+"-one-shot-bufferize=test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=91 bufferize-function-boundaries"
+-one-shot-bufferize=allow-unknown-ops -canonicalize
+"-one-shot-bufferize=test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=23"
+"-one-shot-bufferize=test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=59"
+"-one-shot-bufferize=test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=91"
+"-one-shot-bufferize=test-analysis-only analysis-heuristic=bottom-up-from-terminators"
+-eliminate-empty-tensors -empty-tensor-to-alloc-tensor "-one-shot-bufferize=bufferize-function-boundaries test-analysis-only"
+-one-shot-bufferize=test-analysis-only -allow-unregistered-dialect
+"-one-shot-bufferize=test-analysis-only dump-alias-sets" -allow-unregistered-dialect
+-allow-unregistered-dialect "-one-shot-bufferize=test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=23"
+-allow-unregistered-dialect "-one-shot-bufferize=test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=59"
+-allow-unregistered-dialect "-one-shot-bufferize=test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=91"
+-allow-unregistered-dialect "-one-shot-bufferize=dialect-filter=tensor,bufferization allow-unknown-ops" -canonicalize
+-allow-unregistered-dialect "-one-shot-bufferize=dialect-filter=scf,bufferization allow-unknown-ops" -canonicalize
+"-one-shot-bufferize=bufferize-function-boundaries=1 test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=23"
+"-one-shot-bufferize=bufferize-function-boundaries=1 test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=59"
+"-one-shot-bufferize=bufferize-function-boundaries=1 test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=91"
+"-one-shot-bufferize=bufferize-function-boundaries test-analysis-only"
+"-one-shot-bufferize=bufferize-function-boundaries test-analysis-only dump-alias-sets"
+"-one-shot-bufferize=bufferize-function-boundaries test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=23"
+"-one-shot-bufferize=bufferize-function-boundaries test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=59"
+"-one-shot-bufferize=bufferize-function-boundaries test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=91"
+"-one-shot-bufferize=bufferize-function-boundaries test-analysis-only analysis-heuristic=bottom-up-from-terminators"
+"-one-shot-bufferize=bufferize-function-boundaries test-analysis-only analysis-heuristic=top-down"
+"-one-shot-bufferize=test-analysis-only dump-alias-sets bufferize-function-boundaries"
+"--one-shot-bufferize=dialect-filter=linalg,bufferization copy-before-write unknown-type-conversion=identity-layout-map" -canonicalize -cse
+"-one-shot-bufferize=test-analysis-only bufferize-function-boundaries"
+"-one-shot-bufferize=allow-return-allocs-from-loops bufferize-function-boundaries test-analysis-only"
+"-one-shot-bufferize=allow-return-allocs-from-loops bufferize-function-boundaries test-analysis-only check-parallel-regions=false"
+"-one-shot-bufferize=allow-return-allocs-from-loops bufferize-function-boundaries test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=23"
+"-one-shot-bufferize=allow-return-allocs-from-loops bufferize-function-boundaries test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=59"
+"-one-shot-bufferize=allow-return-allocs-from-loops bufferize-function-boundaries test-analysis-only analysis-heuristic=fuzzer analysis-fuzzer-seed=91"
+-allow-unregistered-dialect "-one-shot-bufferize=allow-return-allocs-from-loops analysis-heuristic=fuzzer test-analysis-only analysis-fuzzer-seed=23 bufferize-function-boundaries"
+-allow-unregistered-dialect "-one-shot-bufferize=allow-return-allocs-from-loops analysis-heuristic=fuzzer test-analysis-only analysis-fuzzer-seed=59 bufferize-function-boundaries"
+-allow-unregistered-dialect "-one-shot-bufferize=allow-return-allocs-from-loops analysis-heuristic=fuzzer test-analysis-only analysis-fuzzer-seed=91 bufferize-function-boundaries"
+"--one-shot-bufferize=dialect-filter=tensor,bufferization copy-before-write unknown-type-conversion=identity-layout-map" -cse

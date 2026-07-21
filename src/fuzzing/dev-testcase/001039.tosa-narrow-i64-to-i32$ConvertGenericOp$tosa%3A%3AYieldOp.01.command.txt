@@ -1,0 +1,2 @@
+-tosa-narrow-i64-to-i32=aggressive-rewrite=1
+"-tosa-narrow-i64-to-i32=aggressive-rewrite=1 convert-function-boundaries=1"

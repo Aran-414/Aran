@@ -1,0 +1,3 @@
+--sparse-buffer-rewrite
+-sparse-buffer-rewrite
+--sparse-buffer-rewrite --canonicalize --cse

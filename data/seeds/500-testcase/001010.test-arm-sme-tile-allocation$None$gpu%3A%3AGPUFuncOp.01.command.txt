@@ -1,0 +1,2 @@
+-convert-scf-to-cf -test-arm-sme-tile-allocation
+-convert-scf-to-cf -test-arm-sme-tile-allocation=dump-tile-live-ranges -mlir-disable-threading

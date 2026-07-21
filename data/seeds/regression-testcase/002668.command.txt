@@ -1,0 +1,16 @@
+-symbol-privatize
+-llvm-request-c-wrappers
+-tosa-attach-target
+-affine-data-copy-generate
+-enable-arm-streaming
+-convert-arith-to-llvm
+-convert-async-to-llvm
+-convert-func-to-llvm
+-convert-openmp-to-llvm
+-convert-pdl-to-pdl-interp
+-convert-to-llvm
+-convert-vector-to-llvm
+-convert-vector-to-xegpu
+-gpu-to-llvm
+-lower-host-to-llvm
+-set-llvm-module-datalayout

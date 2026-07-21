@@ -1,0 +1,4 @@
+--convert-shard-to-mpi
+-convert-shard-to-mpi
+-convert-shard-to-mpi -canonicalize
+--convert-shard-to-mpi -canonicalize

@@ -1,0 +1,1 @@
+--arith-emulate-wide-int=widest-int-supported=32 --canonicalize

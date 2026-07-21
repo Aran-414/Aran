@@ -1,0 +1,10 @@
+--convert-vector-to-scf
+-convert-vector-to-scf
+"-pass-pipeline=builtin.module(func.func(convert-vector-to-scf{lower-tensors=true lower-scalable=true}))" -allow-unregistered-dialect
+"-pass-pipeline=builtin.module(func.func(convert-vector-to-scf{full-unroll=true lower-tensors=true}))" -allow-unregistered-dialect
+-pass-pipeline=builtin.module(func.func(convert-vector-to-scf{full-unroll=true})) -allow-unregistered-dialect
+-pass-pipeline=builtin.module(func.func(convert-vector-to-scf))
+-pass-pipeline=builtin.module(func.func(convert-vector-to-scf)) -allow-unregistered-dialect
+"-pass-pipeline=builtin.module(func.func(convert-vector-to-scf{full-unroll=true lower-scalable=true}))" -allow-unregistered-dialect
+"-convert-vector-to-scf=full-unroll target-rank=0" -allow-unregistered-dialect
+-pass-pipeline=builtin.module(buffer-deallocation-pipeline,convert-bufferization-to-memref,func.func(convert-vector-to-scf,lower-affine,convert-linalg-to-loops))

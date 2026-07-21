@@ -1,0 +1,12 @@
+--convert-gpu-to-rocdl
+-convert-gpu-to-rocdl
+-allow-unregistered-dialect --convert-gpu-to-rocdl
+-convert-gpu-to-rocdl=use-bare-ptr-memref-call-conv=0
+-convert-gpu-to-rocdl=use-bare-ptr-memref-call-conv=1
+-convert-gpu-to-rocdl=runtime=HIP
+-convert-gpu-to-rocdl=allowed-dialects=test
+-convert-gpu-to-rocdl=runtime=OpenCL
+-convert-gpu-to-rocdl=chipset=gfx950
+"-convert-gpu-to-rocdl=chipset=gfx950 allowed-dialects=func,arith,math"
+"-convert-gpu-to-rocdl=chipset=gfx950 index-bitwidth=32"
+-convert-gpu-to-rocdl=use-bare-ptr-memref-call-conv=true

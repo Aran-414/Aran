@@ -1,0 +1,95 @@
+--cse
+-cse
+-convert-amdgpu-to-rocdl=chipset=gfx950 -cse
+-convert-amdgpu-to-rocdl=chipset=gfx942 -cse
+--pass-pipeline=builtin.module(func.func(convert-arm-sme-to-llvm,cse,canonicalize))
+-convert-arm-sme-to-scf -cse
+-test-convert-to-spirv -cse
+"-test-convert-to-spirv=run-signature-conversion=false run-vector-unrolling=false" -cse
+--convert-gpu-to-spirv --cse
+-expand-strided-metadata -finalize-memref-to-llvm -lower-affine -convert-arith-to-llvm -cse
+-expand-strided-metadata -finalize-memref-to-llvm=index-bitwidth=32 -lower-affine -convert-arith-to-llvm=index-bitwidth=32 -cse
+-convert-memref-to-spirv=bool-num-bits=8 -cse
+"-convert-memref-to-spirv=bool-num-bits=8 use-64bit-index" -cse
+-convert-tensor-to-linalg -cse
+--verify-each -pass-pipeline=builtin.module(func.func(tosa-to-linalg-named,cse))
+-pass-pipeline=builtin.module(func.func(test-fold-arith-extf-into-vector-contract-patterns,convert-vector-to-gpu{use-nvgpu=true},cse))
+-cse -convert-vector-to-llvm=enable-amx
+-allow-unregistered-dialect -test-decompose-affine-ops -loop-invariant-code-motion -cse
+-allow-unregistered-dialect -affine-loop-coalescing --cse --mlir-print-local-scope
+-arm-sme-outer-product-fusion -cse
+-arm-sme-vector-legalization -cse -canonicalize
+-convert-vector-to-llvm=enable-arm-sve -convert-func-to-llvm -convert-arith-to-llvm -cse -reconcile-unrealized-casts
+-eliminate-empty-tensors -empty-tensor-to-alloc-tensor -one-shot-bufferize=bufferize-function-boundaries -cse -canonicalize
+-convert-gpu-to-nvvm -cse -canonicalize
+-test-lower-to-llvm -cse -canonicalize
+"--one-shot-bufferize=dialect-filter=linalg,bufferization copy-before-write unknown-type-conversion=identity-layout-map" -canonicalize -cse
+-test-linalg-decompose-ops -cse
+-test-linalg-decompose-ops=remove-dead-args-and-results -cse
+-linalg-fold-unit-extent-dims=use-rank-reducing-slices -cse
+--test-emulate-narrow-int=memref-load-bitwidth=8 --cse
+--test-emulate-narrow-int=memref-load-bitwidth=32 --cse
+-allow-unregistered-dialect -test-multi-buffering=multiplier=5 -cse
+-generate-runtime-verification -cse
+-canonicalize -cse
+--spirv-webgpu-prepare --cse
+--test-grid-all-slice-op-lowering --test-grid-simplifications --cse
+--sparse-buffer-rewrite --canonicalize --cse
+--lower-sparse-ops-to-foreach --lower-sparse-foreach-to-scf --sparse-reinterpret-map --sparse-tensor-codegen --canonicalize -cse
+--sparse-tensor-codegen=enable-buffer-initialization=true --canonicalize --cse
+--sparse-tensor-codegen --canonicalize --cse
+--lower-sparse-ops-to-foreach --lower-sparse-foreach-to-scf --sparse-tensor-conversion --canonicalize --cse
+--stage-sparse-ops --lower-sparse-ops-to-foreach --canonicalize --cse
+--canonicalize --cse
+--sparse-reinterpret-map -sparsification -cse
+-sparse-tensor-codegen -cse
+--sparse-reinterpret-map --sparsification --canonicalize --cse
+--sparse-reinterpret-map --sparsification=sparse-emit-strategy=debug-interface --canonicalize --cse --allow-unregistered-dialect
+--linalg-generalize-named-ops --linalg-fuse-elementwise-ops --sparse-reinterpret-map --sparsification --lower-sparse-ops-to-foreach --lower-sparse-foreach-to-scf --sparse-tensor-conversion --cse
+--sparse-tensor-codegen --cse
+--linalg-generalize-named-ops --pre-sparsification-rewrite --sparse-reinterpret-map --sparsification --sparse-tensor-conversion --canonicalize --cse
+--sparse-reinterpret-map -sparsification=sparse-emit-strategy=sparse-iterator --cse
+--sparse-reinterpret-map -sparsification=sparse-emit-strategy=sparse-iterator --cse --sparse-space-collapse --lower-sparse-iteration-to-scf --loop-invariant-code-motion -cse --canonicalize
+--sparse-reinterpret-map -sparsification --sparse-tensor-conversion --cse
+--sparse-reinterpret-map -sparsification --sparse-tensor-conversion --cse "--one-shot-bufferize=copy-before-write bufferize-function-boundaries function-boundary-type-conversion=identity-layout-map"
+--linalg-generalize-named-ops --sparse-reinterpret-map --sparsification --sparse-tensor-codegen --canonicalize --cse
+--canonicalize --sparse-tensor-codegen -cse --canonicalize
+"--lower-sparse-ops-to-foreach=enable-runtime-library=true enable-convert=false" --lower-sparse-foreach-to-scf --cse --canonicalize
+"--lower-sparse-ops-to-foreach=enable-runtime-library=false enable-convert=false" --lower-sparse-foreach-to-scf --cse --canonicalize
+--test-tensor-copy-insertion --pre-sparsification-rewrite --sparse-reinterpret-map --sparsification --cse
+--pre-sparsification-rewrite --sparse-reinterpret-map --sparsification --cse
+--sparse-reinterpret-map --sparse-reinterpret-map -sparsification -cse -sparse-vectorization=vl=16 -cse
+--sparse-reinterpret-map -sparsification -cse "-sparse-vectorization=vl=16 enable-simd-index32=true" -cse
+--sparse-reinterpret-map -sparsification -cse "-sparse-vectorization=vl=4 enable-vla-vectorization=true" -cse
+--sparse-reinterpret-map -sparsification -cse -sparse-vectorization=vl=8 -cse
+--sparse-reinterpret-map --sparsification -cse -sparse-vectorization=vl=16 -scf-for-loop-peeling -canonicalize -cse
+-sparse-storage-specifier-to-llvm --cse --canonicalize
+"--one-shot-bufferize=dialect-filter=tensor,bufferization copy-before-write unknown-type-conversion=identity-layout-map" -cse
+--test-vector-break-down-reduction-patterns --cse
+"--test-emulate-narrow-int=arith-compute-bitwidth=1 memref-load-bitwidth=8 disable-atomic-rmw=true" --cse
+"--test-emulate-narrow-int=arith-compute-bitwidth=1 memref-load-bitwidth=8" --cse
+"--test-emulate-narrow-int=arith-compute-bitwidth=1 memref-load-bitwidth=32" --cse
+"--xevm-attach-target=module=xevm_* chip=pvc" --xegpu-optimize-block-loads --canonicalize --cse
+"--xevm-attach-target=module=xevm_* chip=pvc" -test-xegpu-sg-distribute -allow-unregistered-dialect -canonicalize -cse
+"--xevm-attach-target=module=xevm_* chip=pvc" -xegpu-subgroup-distribute -allow-unregistered-dialect -canonicalize -cse
+--test-xegpu-layout-interface --cse
+-pass-pipeline=builtin.module(func.func(canonicalize,cse),one-shot-bufferize{bufferize-function-boundaries})
+"-pass-pipeline=builtin.module(any(cse, test-interface-pass))" -allow-unregistered-dialect
+-mlir-print-ir-tree-dir=%t -pass-pipeline=builtin.module(canonicalize,canonicalize,func.func(cse),builtin.module(canonicalize,func.func(cse,canonicalize),cse),cse) -mlir-print-ir-after-all
+-mlir-disable-threading=true -pass-pipeline=builtin.module(func.func(cse,canonicalize)) -mlir-print-ir-before=cse
+-mlir-disable-threading=true -pass-pipeline=builtin.module(func.func(cse,canonicalize)) -mlir-print-ir-before-all
+-mlir-disable-threading=true -pass-pipeline=builtin.module(func.func(cse,canonicalize)) -mlir-print-ir-after=cse
+-mlir-disable-threading=true -pass-pipeline=builtin.module(func.func(cse,canonicalize)) -mlir-print-ir-after-all
+-mlir-disable-threading=true -pass-pipeline=builtin.module(func.func(cse,canonicalize)) -mlir-print-ir-before=cse -mlir-print-ir-module-scope
+-mlir-disable-threading=true -pass-pipeline=builtin.module(func.func(cse,cse)) -mlir-print-ir-after-all -mlir-print-ir-after-change
+-mlir-disable-threading=true -verify-each=true -pass-pipeline=builtin.module(func.func(cse,canonicalize,cse)) -mlir-timing -mlir-timing-display=list
+-mlir-disable-threading=true -verify-each=true -pass-pipeline=builtin.module(func.func(cse,canonicalize,cse)) -mlir-timing -mlir-timing-display=list -mlir-output-format=json
+-mlir-disable-threading=true -verify-each=true -pass-pipeline=builtin.module(func.func(cse,canonicalize,cse)) -mlir-timing -mlir-timing-display=tree
+-mlir-disable-threading=true -verify-each=true -pass-pipeline=builtin.module(func.func(cse,canonicalize,cse)) -mlir-timing -mlir-timing-display=tree -mlir-output-format=json
+-mlir-disable-threading=false -verify-each=true -pass-pipeline=builtin.module(func.func(cse,canonicalize,cse)) -mlir-timing -mlir-timing-display=list
+-mlir-disable-threading=false -verify-each=true -pass-pipeline=builtin.module(func.func(cse,canonicalize,cse)) -mlir-timing -mlir-timing-display=tree
+-mlir-disable-threading -pass-pipeline=builtin.module(builtin.module(test-module-pass,func.func(test-function-pass)),func.func(test-function-pass),func.func(cse,canonicalize)) -verify-each=false -mlir-timing -mlir-timing-display=tree
+-mlir-disable-threading -pass-pipeline=builtin.module(builtin.module(test-module-pass),any(test-interface-pass),any(test-interface-pass),func.func(test-function-pass),any(canonicalize),func.func(cse)) -verify-each=false -mlir-timing -mlir-timing-display=tree
+-pass-pipeline=any(cse) -dump-pass-pipeline
+-allow-unregistered-dialect -pass-pipeline=builtin.module(func.func(cse))
+-convert-linalg-to-std

@@ -1,0 +1,3 @@
+--nvgpu-optimize-shared-memory
+-nvgpu-optimize-shared-memory
+--pass-pipeline=builtin.module(func.func(nvgpu-optimize-shared-memory))

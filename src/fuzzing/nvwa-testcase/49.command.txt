@@ -1,0 +1,10 @@
+-symbol-privatize
+-llvm-request-c-wrappers
+-tosa-attach-target
+-affine-data-copy-generate
+-enable-arm-streaming
+-async-runtime-ref-counting
+-convert-async-to-llvm
+-convert-pdl-to-pdl-interp
+-lower-host-to-llvm
+-set-llvm-module-datalayout

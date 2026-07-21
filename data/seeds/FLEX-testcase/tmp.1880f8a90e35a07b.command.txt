@@ -1,0 +1,13 @@
+--symbol-privatize
+--llvm-request-c-wrappers
+--tosa-attach-target
+--affine-data-copy-generate
+--sparsification-and-bufferization
+--enable-arm-streaming
+--remove-shape-constraints
+--convert-async-to-llvm
+--convert-pdl-to-pdl-interp
+--convert-shape-constraints
+--convert-shape-to-std
+--lower-host-to-llvm
+--set-llvm-module-datalayout

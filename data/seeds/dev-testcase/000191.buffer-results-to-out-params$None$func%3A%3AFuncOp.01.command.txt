@@ -1,0 +1,4 @@
+--buffer-results-to-out-params
+-buffer-results-to-out-params
+"-one-shot-bufferize=bufferize-function-boundaries function-boundary-type-conversion=fully-dynamic-layout-map" -drop-equivalent-buffer-results -buffer-results-to-out-params
+"-one-shot-bufferize=bufferize-function-boundaries function-boundary-type-conversion=identity-layout-map" -drop-equivalent-buffer-results -buffer-results-to-out-params

@@ -1,0 +1,5 @@
+Reading tracefile MLIRod_FIXUB/lasttime.info
+Summary coverage rate:
+  lines......: 7.6% (73756 of 970294 lines)
+  functions..: 10.9% (45241 of 416286 functions)
+  branches...: 8.2% (62704 of 765207 branches)

@@ -1,0 +1,2 @@
+--spirv-promote-to-replicated-constants
+-spirv-promote-to-replicated-constants

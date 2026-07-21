@@ -1,0 +1,2 @@
+--convert-func-to-emitc
+-convert-func-to-emitc

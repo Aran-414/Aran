@@ -1,0 +1,11 @@
+--affine-loop-fusion
+-affine-loop-fusion
+-allow-unregistered-dialect -pass-pipeline=builtin.module(func.func(affine-loop-fusion))
+-allow-unregistered-dialect -pass-pipeline=builtin.module(func.func(affine-loop-fusion{maximal}))
+-allow-unregistered-dialect -pass-pipeline=builtin.module(func.func(affine-loop-fusion{mode=producer}))
+-allow-unregistered-dialect -pass-pipeline=builtin.module(func.func(affine-loop-fusion{compute-tolerance=0.0}))
+-allow-unregistered-dialect "-pass-pipeline=builtin.module(func.func(affine-loop-fusion{mode=producer maximal}))"
+"-pass-pipeline=builtin.module(func.func(affine-loop-fusion{mode=producer maximal}))"
+-pass-pipeline=builtin.module(func.func(affine-loop-fusion))
+--pass-pipeline=builtin.module(affine-loop-fusion)
+--pass-pipeline=builtin.module(affine-loop-fusion{compute-tolerance=0})

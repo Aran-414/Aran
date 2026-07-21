@@ -1,0 +1,154 @@
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::IntegerAttrmlir::detail::StorageUserBase
+mlir::IntegerAttr::get
+mlir::Builder::getIntegerAttr
+mlir::OpConversionPattern
+mlir::ConversionPattern::matchAndRewrite => 
+
+/llvm/include/llvm/Support/Casting.h:572
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run
+mlir::splitAndProcessBuffer => 
+
+/mlir/lib/IR/Operation.cpp:621
+mlir::Operation::fold
+mlir::Operation::fold
+mlir::applyPatternsGreedily
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 
+
+None
+mlir::dataflow::IntegerRangeAnalysis::visitNonControlFlowArguments
+mlir::dataflow::SparseForwardDataFlowAnalysis
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visitRegionSuccessors
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visitBlock
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visit => 
+
+/mlir/lib/Dialect/Bufferization/Transforms/OneShotModuleBufferize.cpp:139
+mlir::bufferization::analyzeModuleOp
+mlir::bufferization::insertTensorCopies
+mlir::sparse_tensor::SparsificationAndBufferizationPass::runOnOperation
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::MemRefType::get
+mlir::bufferization::getMemRefTypeWithStaticIdentityLayout
+mlir::bufferization::func_ext::FuncOpInterface::bufferize
+mlir::bufferization::detail::BufferizableOpInterfaceInterfaceTraits::FallbackModel
+mlir::bufferization::BufferizableOpInterface::bufferize => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::MemRefType::get
+mlir::bufferization::getMemRefTypeWithStaticIdentityLayout
+mlir::bufferization::func_ext::getBufferizedFunctionArgType
+mlir::bufferization::func_ext::FuncOpInterface::bufferize
+mlir::bufferization::detail::BufferizableOpInterfaceInterfaceTraits::FallbackModel => 
+
+/llvm/include/llvm/Support/Casting.h:644
+mlir::Value::getParentRegion
+mlir::OpTrait::impl::verifyIsIsolatedFromAbove
+mlir::Op
+mlir::RegisteredOperationName::Model
+mlir::verify => 
+
+/llvm/include/llvm/ADT/STLExtras.h:1247
+mlir::xegpu::doSCFStructuralTypeConversionWithTensorType
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run => 
+
+None
+mlir::sparse_tensor::UnaryOp::verify
+mlir::Op
+mlir::RegisteredOperationName::Model => 
+
+None
+mlir::detail::OperandStorage::OperandStorage
+mlir::Operation::create
+mlir::Operation::create
+mlir::Operation::create
+mlir::Operation::create => 
+
+None
+mlir::spirv::FuncOp::verifyBody
+mlir::WalkResultllvm::function_ref
+mlir::WalkResultmlir::detail::walk
+mlir::WalkResultmlir::detail::walk
+mlir::spirv::FuncOp::verifyBody => 
+
+/llvm/include/llvm/ADT/ArrayRef.h:388
+mlir::detail::verifyLoopLikeOpInterface
+mlir::Op
+mlir::RegisteredOperationName::Model => 
+
+None
+None => 
+
+None
+mlir::Operation::Operation
+mlir::Operation::create
+mlir::Operation::create
+mlir::Operation::create
+mlir::Operation::create => 
+
+/mlir/lib/IR/SymbolTable.cpp:135
+mlir::SymbolTable::SymbolTable
+mlir::SymbolTableCollection::getSymbolTable
+mlir::SymbolTableCollection::lookupSymbolIn
+mlir::Operation*llvm::function_ref
+mlir::SymbolTableCollection::lookupSymbolIn => 
+
+/mlir/lib/Dialect/LLVMIR/Transforms/InlinerInterfaceImpl.cpp:770
+mlir::InlinerInterface::handleTerminator
+mlir::inlineCall
+mlir::Inliner::Impl::inlineCallsInSCC
+mlir::Inliner::doInlining
+mlir::detail::OpToOpPassAdaptor::run => 
+
+/mlir/lib/IR/Block.cpp:245
+mlir::Block::getTerminator
+mlir::sparse_tensor::UnaryOp::verify
+mlir::Op
+mlir::RegisteredOperationName::Model
+mlir::verify => 
+
+/llvm/include/llvm/ADT/SmallVector.h:295
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite
+mlir::applyPatternsGreedily
+mlir::detail::OpToOpPassAdaptor::run => 
+
+None
+mlir::InlinerInterface::handleTerminator
+mlir::inlineCall
+mlir::Inliner::Impl::inlineCallsInSCC
+mlir::Inliner::doInlining
+mlir::detail::OpToOpPassAdaptor::run => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::VectorType::get
+mlir::TypeConverter::convertTypeImpl
+mlir::TypeConverter::convertType
+mlir::TypeConverter::isLegal
+mlir::ConversionTarget::isLegal => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+None => 
+
+/mlir/include/mlir/IR/UseDefLists.h:198
+mlir::Region::~Region
+mlir::transformCFGToSCF
+mlir::WalkResultmlir::detail::walk
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 
+
+/llvm/include/llvm/ADT/ArrayRef.h:388
+None => 
+
+/llvm/include/llvm/Support/Casting.h:572
+None => 

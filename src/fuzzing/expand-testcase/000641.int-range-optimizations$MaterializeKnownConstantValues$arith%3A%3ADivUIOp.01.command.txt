@@ -1,0 +1,4 @@
+--int-range-optimizations
+-int-range-optimizations
+-allow-unregistered-dialect -int-range-optimizations -canonicalize
+-int-range-optimizations -canonicalize

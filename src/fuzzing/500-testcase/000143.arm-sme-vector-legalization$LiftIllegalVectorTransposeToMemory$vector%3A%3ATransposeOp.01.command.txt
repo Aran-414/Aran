@@ -1,0 +1,3 @@
+--arm-sme-vector-legalization
+-arm-sme-vector-legalization
+-arm-sme-vector-legalization -cse -canonicalize

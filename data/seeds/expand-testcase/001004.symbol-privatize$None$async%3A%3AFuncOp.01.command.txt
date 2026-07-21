@@ -1,0 +1,3 @@
+--symbol-privatize
+-symbol-privatize
+-symbol-privatize=exclude=aap

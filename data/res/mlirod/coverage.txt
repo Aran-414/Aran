@@ -1,0 +1,5 @@
+Reading tracefile mlirod/lasttime.info
+Summary coverage rate:
+  lines......: 11.1% (105409 of 952317 lines)
+  functions..: 19.3% (78924 of 409795 functions)
+  branches...: 11.1% (81808 of 733803 branches)

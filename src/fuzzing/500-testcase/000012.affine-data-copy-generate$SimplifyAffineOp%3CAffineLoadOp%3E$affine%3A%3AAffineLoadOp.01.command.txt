@@ -1,0 +1,6 @@
+--affine-data-copy-generate
+-affine-data-copy-generate
+"-affine-data-copy-generate=fast-mem-space=0 skip-non-unit-stride-loops"
+"-affine-data-copy-generate=fast-mem-space=0 fast-mem-capacity=1"
+-allow-unregistered-dialect "-affine-data-copy-generate=generate-dma=1 fast-mem-space=2 skip-non-unit-stride-loops"
+-allow-unregistered-dialect "-affine-data-copy-generate=generate-dma=1 fast-mem-capacity=16 fast-mem-space=2"

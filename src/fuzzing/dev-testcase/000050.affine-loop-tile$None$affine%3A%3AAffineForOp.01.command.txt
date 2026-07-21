@@ -1,0 +1,6 @@
+--affine-loop-tile
+-affine-loop-tile
+-affine-loop-tile=tile-size=32
+-affine-loop-tile=cache-size=512
+-affine-loop-tile=cache-size=0
+"-affine-loop-tile=tile-size=32 separate"

@@ -1,0 +1,1 @@
+"-arith-expand=include-bf16=true include-f8e8m0=true include-f4e2m1=true"

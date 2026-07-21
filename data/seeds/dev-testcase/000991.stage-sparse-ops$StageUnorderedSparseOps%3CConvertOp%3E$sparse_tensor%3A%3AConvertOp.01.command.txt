@@ -1,0 +1,4 @@
+--stage-sparse-ops
+-stage-sparse-ops
+--stage-sparse-ops --lower-sparse-ops-to-foreach --canonicalize --cse
+-convert-linalg-to-std

@@ -1,0 +1,13 @@
+--drop-equivalent-buffer-results
+-drop-equivalent-buffer-results
+"-one-shot-bufferize=bufferize-function-boundaries=1 " -drop-equivalent-buffer-results
+"-one-shot-bufferize=bufferize-function-boundaries=1 no-analysis-func-filter=contains_to_buffer_op" -drop-equivalent-buffer-results
+"-one-shot-bufferize=bufferize-function-boundaries=1 copy-before-write=1" -drop-equivalent-buffer-results
+"-one-shot-bufferize=bufferize-function-boundaries function-boundary-type-conversion=fully-dynamic-layout-map" -drop-equivalent-buffer-results -buffer-results-to-out-params
+"-one-shot-bufferize=bufferize-function-boundaries function-boundary-type-conversion=identity-layout-map" -drop-equivalent-buffer-results -buffer-results-to-out-params
+"-one-shot-bufferize=bufferize-function-boundaries function-boundary-type-conversion=infer-layout-map" -drop-equivalent-buffer-results
+-one-shot-bufferize=bufferize-function-boundaries=1 -canonicalize -drop-equivalent-buffer-results
+-one-shot-bufferize=bufferize-function-boundaries -canonicalize -buffer-loop-hoisting -drop-equivalent-buffer-results
+"-one-shot-bufferize=unknown-type-conversion=identity-layout-map function-boundary-type-conversion=identity-layout-map bufferize-function-boundaries" -drop-equivalent-buffer-results
+-allow-unregistered-dialect "-one-shot-bufferize=allow-return-allocs-from-loops bufferize-function-boundaries" -cse -canonicalize -drop-equivalent-buffer-results
+-one-shot-bufferize=bufferize-function-boundaries -drop-equivalent-buffer-results

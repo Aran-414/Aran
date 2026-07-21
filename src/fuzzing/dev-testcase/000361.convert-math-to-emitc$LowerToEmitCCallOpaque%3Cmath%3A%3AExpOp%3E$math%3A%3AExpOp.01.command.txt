@@ -1,0 +1,4 @@
+--convert-math-to-emitc
+-convert-math-to-emitc
+-convert-math-to-emitc=language-target=c99
+-convert-math-to-emitc=language-target=cpp11

@@ -1,0 +1,16 @@
+-symbol-privatize
+-llvm-request-c-wrappers
+-tosa-attach-target
+-affine-data-copy-generate
+-affine-expand-index-ops
+-affine-expand-index-ops-as-affine
+-enable-arm-streaming
+-convert-async-to-llvm
+-convert-func-to-llvm
+-convert-openmp-to-llvm
+-convert-pdl-to-pdl-interp
+-convert-to-llvm
+-gpu-to-llvm
+-lower-affine
+-lower-host-to-llvm
+-set-llvm-module-datalayout

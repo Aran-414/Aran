@@ -1,0 +1,7 @@
+--convert-math-to-llvm
+-convert-math-to-llvm
+-pass-pipeline=builtin.module(func.func(convert-complex-to-standard),convert-complex-to-llvm,func.func(convert-math-to-llvm,convert-arith-to-llvm),convert-func-to-llvm,reconcile-unrealized-casts)
+-pass-pipeline=builtin.module(func.func(convert-math-to-llvm,convert-arith-to-llvm),convert-func-to-llvm,convert-cf-to-llvm,reconcile-unrealized-casts)
+-pass-pipeline=builtin.module(func.func(convert-math-to-llvm,convert-arith-to-llvm{index-bitwidth=32}),convert-func-to-llvm{index-bitwidth=32},convert-cf-to-llvm{index-bitwidth=32},reconcile-unrealized-casts)
+-pass-pipeline=builtin.module(func.func(convert-math-to-llvm,convert-arith-to-llvm),convert-func-to-llvm,reconcile-unrealized-casts)
+-pass-pipeline=builtin.module(func.func(convert-math-to-llvm))

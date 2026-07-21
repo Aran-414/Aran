@@ -1,0 +1,15 @@
+-generate-runtime-verification
+-symbol-privatize
+-llvm-request-c-wrappers
+-tosa-attach-target
+-affine-data-copy-generate
+-sparse-assembler
+-enable-arm-streaming
+-linalg-generalize-named-ops
+-empty-tensor-to-alloc-tensor
+-one-shot-bufferize
+-convert-async-to-llvm
+-convert-func-to-emitc
+-convert-func-to-spirv
+-convert-pdl-to-pdl-interp
+-set-llvm-module-datalayout

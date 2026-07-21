@@ -1,0 +1,16 @@
+--convert-vector-to-llvm
+-convert-vector-to-llvm
+--convert-vector-to-llvm --dump-pass-pipeline
+"--convert-vector-to-llvm=vector-contract-lowering=llvmintr vector-transpose-lowering=llvmintr" --dump-pass-pipeline
+--convert-vector-to-llvm=use-vector-alignment=0
+--convert-vector-to-llvm=use-vector-alignment=1
+--convert-vector-to-llvm=force-32bit-vector-indices=1
+--convert-vector-to-llvm=force-32bit-vector-indices=0
+-convert-vector-to-llvm=reassociate-fp-reductions
+-convert-vector-to-llvm=enable-amx
+-cse -convert-vector-to-llvm=enable-amx
+-convert-vector-to-llvm=enable-arm-sve -convert-func-to-llvm -convert-arith-to-llvm -cse -reconcile-unrealized-casts
+--convert-vector-to-llvm=vector-contract-lowering=llvmintr
+--convert-vector-to-llvm=vector-transpose-lowering=llvmintr
+-convert-vector-to-llvm=enable-x86vector
+-pass-pipeline=builtin.module(func.func(canonicalize,convert-scf-to-cf),convert-vector-to-llvm,expand-strided-metadata,lower-affine,convert-arith-to-llvm,finalize-memref-to-llvm,convert-func-to-llvm,convert-cf-to-llvm,reconcile-unrealized-casts)

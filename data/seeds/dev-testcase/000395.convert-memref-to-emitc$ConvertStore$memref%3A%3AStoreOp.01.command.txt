@@ -1,0 +1,4 @@
+--convert-memref-to-emitc
+-convert-memref-to-emitc
+-convert-memref-to-emitc=lower-to-cpp=true
+-convert-memref-to-emitc=lower-to-cpp=false

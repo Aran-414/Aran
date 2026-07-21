@@ -1,0 +1,7 @@
+--linalg-fuse-elementwise-ops
+-linalg-fuse-elementwise-ops
+--linalg-fuse-elementwise-ops --sparsification-and-bufferization
+--linalg-generalize-named-ops --linalg-fuse-elementwise-ops --sparse-reinterpret-map --sparsification
+--linalg-generalize-named-ops --linalg-fuse-elementwise-ops --sparse-reinterpret-map --sparsification --lower-sparse-ops-to-foreach --lower-sparse-foreach-to-scf --sparse-tensor-conversion --cse
+--linalg-fuse-elementwise-ops --sparse-reinterpret-map --sparsification
+--sparse-assembler --linalg-generalize-named-ops --linalg-fuse-elementwise-ops --sparsification-and-bufferization

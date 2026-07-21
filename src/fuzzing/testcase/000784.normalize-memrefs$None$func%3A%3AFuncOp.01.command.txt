@@ -1,0 +1,3 @@
+--normalize-memrefs
+-normalize-memrefs
+-normalize-memrefs -allow-unregistered-dialect

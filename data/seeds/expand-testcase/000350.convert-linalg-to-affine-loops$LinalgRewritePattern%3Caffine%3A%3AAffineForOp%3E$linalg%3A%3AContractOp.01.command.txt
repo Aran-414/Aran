@@ -1,0 +1,3 @@
+--convert-linalg-to-affine-loops
+-convert-linalg-to-affine-loops
+-convert-linalg-to-affine-loops -test-lower-to-llvm

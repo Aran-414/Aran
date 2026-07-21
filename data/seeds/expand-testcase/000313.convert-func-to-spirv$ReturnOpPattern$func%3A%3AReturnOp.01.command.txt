@@ -1,0 +1,4 @@
+--convert-func-to-spirv
+-convert-func-to-spirv
+-convert-func-to-spirv=emulate-lt-32-bit-scalar-types=false
+-convert-func-to-spirv=emulate-unsupported-float-types=false

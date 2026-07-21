@@ -1,0 +1,6 @@
+--map-memref-spirv-storage-class
+-map-memref-spirv-storage-class
+--allow-unregistered-dialect --map-memref-spirv-storage-class=client-api=vulkan
+-allow-unregistered-dialect -map-memref-spirv-storage-class=client-api=vulkan
+-allow-unregistered-dialect -map-memref-spirv-storage-class=client-api=opencl
+-allow-unregistered-dialect -map-memref-spirv-storage-class

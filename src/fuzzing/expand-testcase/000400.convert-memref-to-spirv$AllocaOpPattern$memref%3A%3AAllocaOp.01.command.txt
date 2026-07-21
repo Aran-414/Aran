@@ -1,0 +1,7 @@
+--convert-memref-to-spirv
+-convert-memref-to-spirv
+-convert-memref-to-spirv -canonicalize
+-convert-memref-to-spirv=bool-num-bits=8 -cse
+"-convert-memref-to-spirv=bool-num-bits=8 use-64bit-index" -cse
+"-pass-pipeline=builtin.module(convert-memref-to-spirv{bool-num-bits=8}, cse)"
+"-pass-pipeline=builtin.module(convert-memref-to-spirv{bool-num-bits=8 use-64bit-index=true}, cse)"

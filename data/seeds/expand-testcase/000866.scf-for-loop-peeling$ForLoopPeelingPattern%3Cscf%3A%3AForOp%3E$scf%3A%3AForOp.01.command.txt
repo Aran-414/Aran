@@ -1,0 +1,6 @@
+--scf-for-loop-peeling
+-scf-for-loop-peeling
+-scf-for-loop-peeling=peel-front=true
+-scf-for-loop-peeling -canonicalize
+-scf-for-loop-peeling=skip-partial=false -canonicalize
+--sparse-reinterpret-map --sparsification -cse -sparse-vectorization=vl=16 -scf-for-loop-peeling -canonicalize -cse

@@ -1,0 +1,5 @@
+-tosa-attach-target
+-spirv-update-vce
+-convert-async-to-llvm
+-convert-pdl-to-pdl-interp
+-set-llvm-module-datalayout

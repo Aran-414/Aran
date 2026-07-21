@@ -1,0 +1,4 @@
+--tosa-to-arith
+-tosa-to-arith
+"--tosa-to-arith=include-apply-rescale=true use-32-bit=true"
+--tosa-to-arith=include-apply-rescale=false

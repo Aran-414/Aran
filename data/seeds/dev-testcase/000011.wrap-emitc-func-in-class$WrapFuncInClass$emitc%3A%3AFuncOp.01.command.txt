@@ -1,0 +1,2 @@
+--wrap-emitc-func-in-class
+-wrap-emitc-func-in-class

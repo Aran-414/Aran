@@ -1,0 +1,14 @@
+-symbol-privatize
+-llvm-request-c-wrappers
+-tosa-attach-target
+-tosa-layerwise-constant-fold
+-affine-data-copy-generate
+-sparsification-and-bufferization
+-enable-arm-streaming
+-convert-async-to-llvm
+-convert-func-to-emitc
+-convert-pdl-to-pdl-interp
+-convert-to-emitc
+-lower-host-to-llvm
+-set-llvm-module-datalayout
+-tosa-to-arith

@@ -1,0 +1,3 @@
+--affine-loop-normalize
+-affine-loop-normalize
+-affine-loop-normalize=promote-single-iter=1

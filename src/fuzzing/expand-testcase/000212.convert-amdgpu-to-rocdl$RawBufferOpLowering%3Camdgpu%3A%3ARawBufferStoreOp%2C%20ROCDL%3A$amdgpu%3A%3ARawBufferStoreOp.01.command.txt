@@ -1,0 +1,18 @@
+-convert-amdgpu-to-rocdl=chipset=gfx950
+-convert-amdgpu-to-rocdl=chipset=gfx1200
+-convert-amdgpu-to-rocdl=chipset=gfx942
+-convert-amdgpu-to-rocdl=chipset=gfx908
+-convert-amdgpu-to-rocdl=chipset=gfx90a
+-convert-amdgpu-to-rocdl=chipset=gfx1030
+-convert-amdgpu-to-rocdl=chipset=gfx1100
+-convert-amdgpu-to-rocdl=chipset=gfx1201
+--convert-amdgpu-to-rocdl=chipset=gfx1250
+--convert-amdgpu-to-rocdl=chipset=gfx942
+--convert-amdgpu-to-rocdl=chipset=gfx950
+--convert-amdgpu-to-rocdl=chipset=gfx1030
+--convert-amdgpu-to-rocdl=chipset=gfx1100
+--convert-amdgpu-to-rocdl=chipset=gfx1201
+-convert-amdgpu-to-rocdl=chipset=gfx950 -cse
+-convert-amdgpu-to-rocdl=chipset=gfx942 -cse
+--convert-amdgpu-to-rocdl=chipset=gfx950 --canonicalize
+--convert-amdgpu-to-rocdl=chipset=gfx1200

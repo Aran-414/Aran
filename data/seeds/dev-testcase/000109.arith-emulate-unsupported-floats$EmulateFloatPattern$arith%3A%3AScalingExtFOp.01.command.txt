@@ -1,0 +1,1 @@
+"--arith-emulate-unsupported-floats=source-types=bf16,f8E4M3FNUZ target-type=f32"

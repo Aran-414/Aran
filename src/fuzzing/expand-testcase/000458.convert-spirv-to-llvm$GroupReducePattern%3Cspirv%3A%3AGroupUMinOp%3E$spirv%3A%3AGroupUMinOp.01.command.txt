@@ -1,0 +1,6 @@
+--convert-spirv-to-llvm
+-convert-spirv-to-llvm
+-convert-spirv-to-llvm=client-api=Metal
+-convert-spirv-to-llvm=client-api=Vulkan
+-convert-spirv-to-llvm=client-api=WebGPU
+-convert-spirv-to-llvm=client-api=OpenCL

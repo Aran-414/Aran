@@ -1,0 +1,3 @@
+--affine-loop-coalescing
+-affine-loop-coalescing
+-allow-unregistered-dialect -affine-loop-coalescing --cse --mlir-print-local-scope

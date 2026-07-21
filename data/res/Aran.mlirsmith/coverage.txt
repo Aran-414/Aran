@@ -1,0 +1,5 @@
+Reading tracefile fuzzing.mlirsmith/lasttime.info
+Summary coverage rate:
+  lines......: 9.9% (94303 of 952317 lines)
+  functions..: 17.1% (70123 of 409795 functions)
+  branches...: 10.4% (75958 of 733803 branches)

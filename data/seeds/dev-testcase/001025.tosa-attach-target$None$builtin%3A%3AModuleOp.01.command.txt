@@ -1,0 +1,11 @@
+"-tosa-attach-target=profiles=pro_int,pro_fp extensions=dynamic" "-tosa-validate=strict-op-spec-alignment allow-invalid-op-datatype-combinations"
+"-tosa-attach-target=level=none profiles=pro_int,pro_fp extensions=int16,int4,bf16,fp8e4m3,fp8e5m2,fft,variable,controlflow,dynamic" -tosa-validate=strict-op-spec-alignment
+"-tosa-attach-target=specification_version=1.1.draft profiles=pro_int,pro_fp extensions=int16,int4,int64,bf16,fp8e4m3,fp8e5m2,fft,variable,controlflow,doubleround,inexactround" -tosa-validate=strict-op-spec-alignment
+"-tosa-attach-target=specification_version=1.1.draft profiles=pro_int extensions=int16,int4,bf16,fp8e4m3,fp8e5m2,fft,variable,controlflow,dynamic,doubleround,inexactround,mxfp" -tosa-validate=strict-op-spec-alignment
+"-tosa-attach-target=profiles=pro_fp extensions=int16,int4,bf16,fp8e4m3,fp8e5m2,fft,variable,controlflow,dynamic,doubleround,inexactround" -tosa-validate=strict-op-spec-alignment
+"-tosa-attach-target=profiles=pro_int,pro_fp extensions=int16,int4,bf16,fp8e4m3,fp8e5m2,fft,variable,controlflow,doubleround,inexactround,dynamic level=none"
+"--tosa-attach-target=profiles=pro_int,pro_fp extensions=int16,int4,bf16,fp8e4m3,fp8e5m2,fft,variable,controlflow,doubleround,inexactround" --tosa-validate=strict-op-spec-alignment
+"-tosa-attach-target=profiles=pro_int,pro_fp extensions=int16,int4,bf16,fp8e4m3,fp8e5m2,fft,variable,controlflow,doubleround,inexactround" -tosa-validate
+"-tosa-attach-target=specification_version=1.0 profiles=pro_int,pro_fp extensions=int16,int4,bf16,fp8e4m3,fp8e5m2,fft,variable,controlflow,dynamic,doubleround,inexactround" -tosa-validate=strict-op-spec-alignment
+"-tosa-attach-target=specification_version=1.1.draft profiles=pro_int,pro_fp extensions=int16,int4,bf16,fp8e4m3,fp8e5m2,fft,variable,controlflow,doubleround,inexactround,mxfp,int64" -tosa-validate=strict-op-spec-alignment
+-convert-linalg-to-std

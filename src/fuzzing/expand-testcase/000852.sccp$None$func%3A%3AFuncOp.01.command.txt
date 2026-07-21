@@ -1,0 +1,4 @@
+--sccp
+-sccp
+-allow-unregistered-dialect -sccp
+-allow-unregistered-dialect -pass-pipeline=builtin.module(func.func(sccp))

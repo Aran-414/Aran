@@ -1,0 +1,2 @@
+"--xevm-attach-target=module=xevm_* chip=pvc" --xegpu-optimize-block-loads --canonicalize --cse
+-xegpu-propagate-layout

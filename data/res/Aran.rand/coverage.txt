@@ -1,0 +1,5 @@
+Reading tracefile fuzzing.rand/lasttime.info
+Summary coverage rate:
+  lines......: 18.9% (180432 of 952317 lines)
+  functions..: 29.5% (120980 of 409795 functions)
+  branches...: 17.4% (127962 of 733803 branches)

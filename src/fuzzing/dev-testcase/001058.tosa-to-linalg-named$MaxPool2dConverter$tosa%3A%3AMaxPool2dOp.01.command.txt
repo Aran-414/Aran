@@ -1,0 +1,3 @@
+--verify-each -pass-pipeline=builtin.module(func.func(tosa-to-linalg-named))
+--verify-each -pass-pipeline=builtin.module(func.func(tosa-to-linalg-named{prefer-conv2d-kernel-layout-hwcf=true}))
+--verify-each -pass-pipeline=builtin.module(func.func(tosa-to-linalg-named,cse))

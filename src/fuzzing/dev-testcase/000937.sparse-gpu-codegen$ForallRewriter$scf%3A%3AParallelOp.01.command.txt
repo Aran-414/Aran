@@ -1,0 +1,3 @@
+--sparse-gpu-codegen
+-sparse-gpu-codegen
+--linalg-generalize-named-ops --pre-sparsification-rewrite --sparse-reinterpret-map --sparsification=parallelization-strategy=dense-outer-loop --sparse-gpu-codegen

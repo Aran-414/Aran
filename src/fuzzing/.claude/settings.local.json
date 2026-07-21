@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(lcov --version)",
+      "Bash(python3 *)"
+    ]
+  }
+}

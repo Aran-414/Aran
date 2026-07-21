@@ -1,0 +1,11 @@
+-symbol-privatize
+-tosa-attach-target
+-nvvm-attach-target
+-rocdl-attach-target
+-spirv-attach-target
+-xevm-attach-target
+-convert-async-to-llvm
+-convert-gpu-to-rocdl
+-convert-pdl-to-pdl-interp
+-lower-host-to-llvm
+-set-llvm-module-datalayout

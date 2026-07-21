@@ -1,0 +1,9 @@
+-canonicalize
+-inline
+-mem2reg
+-symbol-privatize
+-tosa-attach-target
+-convert-async-to-llvm
+-convert-pdl-to-pdl-interp
+-convert-scf-to-cf
+-set-llvm-module-datalayout

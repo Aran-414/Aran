@@ -1,0 +1,3 @@
+--acc-implicit-routine
+-acc-implicit-routine
+-acc-implicit-data

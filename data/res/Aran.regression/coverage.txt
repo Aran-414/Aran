@@ -1,0 +1,5 @@
+Reading tracefile fuzzing.regression/lasttime.info
+Summary coverage rate:
+  lines......: 17.0% (161579 of 952317 lines)
+  functions..: 26.8% (109809 of 409795 functions)
+  branches...: 16.0% (117603 of 733803 branches)

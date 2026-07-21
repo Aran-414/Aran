@@ -1,0 +1,2 @@
+--linalg-inline-scalar-operands
+-linalg-inline-scalar-operands

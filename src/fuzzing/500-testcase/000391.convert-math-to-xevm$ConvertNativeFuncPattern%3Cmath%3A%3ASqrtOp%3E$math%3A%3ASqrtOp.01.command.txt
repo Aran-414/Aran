@@ -1,0 +1,4 @@
+--convert-math-to-xevm
+-convert-math-to-xevm
+-convert-math-to-xevm=convert-arith=false
+--pass-pipeline=builtin.module(convert-math-to-xevm)

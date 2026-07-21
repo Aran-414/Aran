@@ -1,0 +1,17 @@
+-symbol-privatize
+-llvm-request-c-wrappers
+-tosa-attach-target
+-affine-data-copy-generate
+-enable-arm-streaming
+-test-arm-sme-tile-allocation
+-convert-arith-to-llvm
+-convert-async-to-llvm
+-convert-func-to-llvm
+-convert-func-to-spirv
+-convert-openmp-to-llvm
+-convert-pdl-to-pdl-interp
+-convert-to-llvm
+-convert-vector-to-arm-sme
+-gpu-to-llvm
+-lower-host-to-llvm
+-set-llvm-module-datalayout

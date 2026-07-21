@@ -1,0 +1,11 @@
+module {
+  func.func @test_add_fold(%lb: index, %ub: index, %step: index) {
+    %c0 = arith.constant 0 : index
+    %result = scf.for %iv = %lb to %ub step %step iter_args(%acc = %c0) -> (index) {
+      %offset = arith.addi %iv, %c0 : index
+      %new_acc = arith.addi %acc, %offset : index
+      scf.yield %new_acc : index
+    }
+    return
+  }
+}

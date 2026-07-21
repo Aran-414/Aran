@@ -1,0 +1,4 @@
+--convert-index-to-llvm
+-convert-index-to-llvm
+-convert-index-to-llvm=index-bitwidth=32
+-convert-index-to-llvm=index-bitwidth=64

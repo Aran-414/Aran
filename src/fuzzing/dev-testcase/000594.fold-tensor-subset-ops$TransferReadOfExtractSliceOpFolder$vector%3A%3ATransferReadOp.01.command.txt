@@ -1,0 +1,3 @@
+--fold-tensor-subset-ops
+-fold-tensor-subset-ops
+-fold-tensor-subset-ops --allow-unregistered-dialect

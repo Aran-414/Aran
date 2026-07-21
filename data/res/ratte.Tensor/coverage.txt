@@ -1,0 +1,5 @@
+Reading tracefile ratte.Tensor/lasttime.info
+Summary coverage rate:
+  lines......: 3.5% (33450 of 957460 lines)
+  functions..: 6.4% (26405 of 414028 functions)
+  branches...: 3.9% (29655 of 753146 branches)

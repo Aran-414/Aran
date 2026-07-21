@@ -1,0 +1,9 @@
+--symbol-dce
+--llvm-request-c-wrappers
+--tosa-attach-target
+--enable-arm-streaming
+--xegpu-propagate-layout
+--convert-async-to-llvm
+--convert-pdl-to-pdl-interp
+--lower-host-to-llvm
+--set-llvm-module-datalayout

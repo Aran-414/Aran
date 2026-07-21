@@ -1,0 +1,6 @@
+--convert-math-to-funcs
+-convert-math-to-funcs
+-pass-pipeline=builtin.module(convert-math-to-funcs{convert-ctlz})
+-pass-pipeline=builtin.module(convert-math-to-funcs{convert-ctlz=false})
+-pass-pipeline=builtin.module(convert-math-to-funcs{min-width-of-fpowi-exponent=33})
+-pass-pipeline=builtin.module(convert-math-to-funcs)

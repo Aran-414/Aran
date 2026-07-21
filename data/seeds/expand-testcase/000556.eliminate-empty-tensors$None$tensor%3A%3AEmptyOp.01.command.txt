@@ -1,0 +1,4 @@
+--eliminate-empty-tensors
+-eliminate-empty-tensors
+-eliminate-empty-tensors -empty-tensor-to-alloc-tensor "-one-shot-bufferize=bufferize-function-boundaries test-analysis-only"
+-eliminate-empty-tensors -empty-tensor-to-alloc-tensor -one-shot-bufferize=bufferize-function-boundaries -cse -canonicalize

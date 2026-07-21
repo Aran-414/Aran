@@ -1,0 +1,3 @@
+--acc-implicit-declare
+-acc-implicit-declare
+--pass-pipeline=builtin.module(acc-implicit-declare)

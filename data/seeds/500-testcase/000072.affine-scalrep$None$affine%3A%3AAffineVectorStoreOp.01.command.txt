@@ -1,0 +1,3 @@
+--affine-scalrep
+-affine-scalrep
+-allow-unregistered-dialect -affine-scalrep

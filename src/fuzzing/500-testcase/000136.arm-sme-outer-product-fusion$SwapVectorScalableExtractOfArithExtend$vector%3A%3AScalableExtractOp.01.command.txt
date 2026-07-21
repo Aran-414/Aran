@@ -1,0 +1,3 @@
+--arm-sme-outer-product-fusion
+-arm-sme-outer-product-fusion
+-arm-sme-outer-product-fusion -cse

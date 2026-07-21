@@ -1,0 +1,18 @@
+--convert-gpu-to-nvvm
+-convert-gpu-to-nvvm
+-allow-unregistered-dialect --convert-gpu-to-nvvm
+-convert-gpu-to-nvvm=use-bare-ptr-memref-call-conv=0
+-convert-gpu-to-nvvm=use-bare-ptr-memref-call-conv=1
+-convert-gpu-to-nvvm=index-bitwidth=32
+-convert-gpu-to-nvvm=has-redux=1 -mlir-print-debuginfo
+-convert-gpu-to-nvvm=allowed-dialects=test
+-convert-gpu-to-nvvm=has-redux=1
+"-convert-gpu-to-nvvm=has-redux=1 allow-pattern-rollback=0"
+"-convert-gpu-to-nvvm=has-redux=1 allowed-dialects=func,arith,cf"
+"-convert-gpu-to-nvvm=has-redux=1 use-bare-ptr-memref-call-conv=1"
+-convert-gpu-to-nvvm=allow-pattern-rollback=0
+--convert-gpu-to-nvvm=allow-pattern-rollback=0
+--convert-gpu-to-nvvm=index-bitwidth=32
+-convert-gpu-to-nvvm -cse -canonicalize
+--gpu-kernel-outlining --convert-gpu-to-nvvm
+-pass-pipeline=builtin.module(gpu.module(strip-debuginfo,convert-gpu-to-nvvm,convert-index-to-llvm{index-bitwidth=32},canonicalize,cse))

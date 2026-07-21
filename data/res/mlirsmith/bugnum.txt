@@ -1,0 +1,109 @@
+/llvm/include/llvm/ADT/APInt.h:120
+mlir::math::IPowIOp::fold
+mlir::Attributemlir::constFoldBinaryOpConditional
+mlir::math::IPowIOp::fold
+mlir::RegisteredOperationName::Model
+mlir::Operation::fold => 
+
+None
+mlir::tosa::TargetEnvAttr::get
+mlir::tosa::lookupTargetEnvOrDefault
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/llvm/include/llvm/ADT/SmallVector.h:295
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite
+mlir::applyPatternsGreedily
+mlir::detail::OpToOpPassAdaptor::run => 
+
+None
+mlir::detail::OperandStorage::OperandStorage
+mlir::Operation::create
+mlir::Operation::create
+mlir::Operation::create
+mlir::Operation::create => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::emitc::LValueTypemlir::detail::StorageUserBase
+mlir::emitc::LValueType::get
+mlir::OpConversionPattern
+mlir::ConversionPattern::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::VectorType::get
+mlir::TypeConverter::convertTypeImpl
+mlir::TypeConverter::convertType
+mlir::TypeConverter::isLegal
+mlir::ConversionTarget::isLegal => 
+
+/mlir/lib/IR/PatternMatch.cpp:180
+mlir::RewriterBase::eraseOp
+mlir::RewriterBase::eraseOp
+mlir::RewriterBase::eraseOp
+mlir::applyPatternsGreedily
+mlir::detail::OpToOpPassAdaptor::run => 
+
+None
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run
+mlir::splitAndProcessBuffer => 
+
+None
+mlir::detail::OperandStorage::eraseOperands
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::VectorType::get
+mlir::TypeConverter::convertTypeImpl
+mlir::TypeConverter::convertType
+mlir::TypeConverter::isLegal
+mlir::TypeConverter::isLegal => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+None => 
+
+None
+None => 
+
+/llvm/include/llvm/ADT/APInt.h:120
+None => 
+
+/llvm/include/llvm/ADT/SmallVector.h:295
+None => 
+
+/mlir/lib/IR/Operation.cpp:621
+mlir::Operation::fold
+mlir::Operation::fold
+mlir::applyPatternsGreedily
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 
+
+None
+mlir::Operation::erase
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run => 
+
+/mlir/lib/Transforms/RemoveDeadValues.cpp:201
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run
+mlir::splitAndProcessBuffer => 
+
+/mlir/lib/IR/OperationSupport.cpp:309
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run
+mlir::splitAndProcessBuffer => 

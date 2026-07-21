@@ -1,0 +1,6 @@
+-sccp
+-tosa-attach-target
+-convert-async-to-llvm
+-convert-pdl-to-pdl-interp
+-lower-host-to-llvm
+-set-llvm-module-datalayout

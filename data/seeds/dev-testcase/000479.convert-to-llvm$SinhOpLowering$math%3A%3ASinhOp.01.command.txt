@@ -1,0 +1,10 @@
+--convert-to-llvm
+-convert-to-llvm
+"--convert-to-llvm=filter-dialects=func dynamic=true"
+--convert-to-llvm=filter-dialects=arith,cf,func,math
+"--convert-to-llvm=filter-dialects=arith,cf,func,math allow-pattern-rollback=0"
+--convert-to-llvm=filter-dialects=math
+"--convert-to-llvm=filter-dialects=math allow-pattern-rollback=0"
+--convert-to-llvm=allow-pattern-rollback=0
+-convert-to-llvm=allow-pattern-rollback=0
+--pass-pipeline=builtin.module(convert-to-llvm)

@@ -1,0 +1,3 @@
+--convert-to-emitc
+-convert-to-emitc
+-convert-to-emitc=filter-dialects=func

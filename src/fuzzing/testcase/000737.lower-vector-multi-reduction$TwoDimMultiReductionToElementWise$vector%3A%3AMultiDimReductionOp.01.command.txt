@@ -1,0 +1,4 @@
+--lower-vector-multi-reduction
+-lower-vector-multi-reduction
+-lower-vector-multi-reduction=lowering-strategy=inner-reduction
+-lower-vector-multi-reduction=lowering-strategy=inner-parallel

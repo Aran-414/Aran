@@ -1,0 +1,3 @@
+--xegpu-wg-to-sg-distribute
+-xegpu-wg-to-sg-distribute
+-convert-linalg-to-std

@@ -1,0 +1,6 @@
+-allow-unregistered-dialect -pass-pipeline=builtin.module(func.func(affine-loop-unroll{unroll-factor=-1}))
+-allow-unregistered-dialect -pass-pipeline=builtin.module(func.func(affine-loop-unroll{unroll-factor=4}))
+-allow-unregistered-dialect "-pass-pipeline=builtin.module(func.func(affine-loop-unroll{unroll-factor=5 cleanup-unroll=true}))"
+"-pass-pipeline=builtin.module(func.func(affine-loop-unroll{unroll-factor=6 unroll-up-to-factor=true}))"
+"-pass-pipeline=builtin.module(func.func(affine-loop-unroll{unroll-factor=5 cleanup-unroll=true}))"
+-pass-pipeline=builtin.module(func.func(affine-loop-unroll))

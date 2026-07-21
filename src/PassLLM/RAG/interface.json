@@ -1,0 +1,1448 @@
+{
+  "AMXIntrinsicOpInterface": {
+    "class_name": "AMXIntrinsicOp",
+    "methods": [
+      "getIntrinsicName",
+      "getIntrinsicOperands"
+    ]
+  },
+  "AccessGroupOpInterface": {
+    "class_name": "AccessGroupOpInterface",
+    "methods": [
+      "getAccessGroupsOrNull",
+      "setAccessGroups"
+    ]
+  },
+  "AddressOfGlobalOpInterface": {
+    "class_name": "AddressOfGlobalOpInterface",
+    "methods": [
+      "getSymbol"
+    ]
+  },
+  "AffineMapAccessInterface": {
+    "class_name": "AffineMapAccessInterface",
+    "methods": [
+      "getAffineMapAttrForMemRef"
+    ]
+  },
+  "AffineReadOpInterface": {
+    "class_name": "AffineReadOpInterface",
+    "methods": [
+      "getMemRef",
+      "getMemRefType",
+      "getMapOperands",
+      "getAffineMap",
+      "getValue"
+    ]
+  },
+  "AffineWriteOpInterface": {
+    "class_name": "AffineWriteOpInterface",
+    "methods": [
+      "getMemRef",
+      "getMemRefType",
+      "getMapOperands",
+      "getAffineMap",
+      "getValueToStore"
+    ]
+  },
+  "AggregatedOpInterface": {
+    "class_name": "AggregatedOpInterface",
+    "methods": [
+      "decomposeOperation"
+    ]
+  },
+  "AliasAnalysisOpInterface": {
+    "class_name": "AliasAnalysisOpInterface",
+    "methods": [
+      "getAliasScopesOrNull",
+      "setAliasScopes",
+      "getNoAliasScopesOrNull",
+      "setNoAliasScopes",
+      "getTBAATagsOrNull",
+      "setTBAATags",
+      "getAccessedOperands"
+    ]
+  },
+  "AlignmentAttrOpInterface": {
+    "class_name": "AlignmentAttrOpInterface",
+    "methods": [
+      "getMaybeAlign"
+    ]
+  },
+  "AllocationOpInterface": {
+    "class_name": "AllocationOpInterface",
+    "methods": [
+      "buildDealloc",
+      "buildClone",
+      "getHoistingKind",
+      "buildPromotedAlloc"
+    ]
+  },
+  "ArgAndResultAttrsOpInterface": {
+    "class_name": "ArgAndResultAttrsOpInterface",
+    "methods": [
+      "getArgAttrsAttr",
+      "getResAttrsAttr",
+      "setArgAttrsAttr",
+      "setResAttrsAttr",
+      "removeArgAttrsAttr",
+      "removeResAttrsAttr"
+    ]
+  },
+  "ArithFastMathInterface": {
+    "class_name": "ArithFastMathInterface",
+    "methods": [
+      "getFastMathFlagsAttr",
+      "getFastMathAttrName"
+    ]
+  },
+  "ArithIntegerOverflowFlagsInterface": {
+    "class_name": "ArithIntegerOverflowFlagsInterface",
+    "methods": [
+      "getOverflowAttr",
+      "hasNoUnsignedWrap",
+      "hasNoSignedWrap",
+      "getIntegerOverflowAttrName"
+    ]
+  },
+  "ArithRoundingModeInterface": {
+    "class_name": "ArithRoundingModeInterface",
+    "methods": [
+      "getRoundingModeAttr",
+      "getRoundingModeAttrName"
+    ]
+  },
+  "ArmSMETileOpInterface": {
+    "class_name": "ArmSMETileOpInterface",
+    "methods": [
+      "setTileId",
+      "getTileId",
+      "getTileType"
+    ]
+  },
+  "AtomicCaptureOpInterface": {
+    "class_name": "AtomicCaptureOpInterface",
+    "methods": [
+      "getFirstOp",
+      "getSecondOp",
+      "verifyRegionsCommon"
+    ]
+  },
+  "AtomicReadOpInterface": {
+    "class_name": "AtomicReadOpInterface",
+    "methods": [
+      "verifyCommon",
+      "getX",
+      "getV"
+    ]
+  },
+  "AtomicUpdateOpInterface": {
+    "class_name": "AtomicUpdateOpInterface",
+    "methods": [
+      "getX",
+      "getFirstOp",
+      "isNoOp",
+      "getWriteOpVal",
+      "verifyCommon",
+      "verifyRegionsCommon"
+    ]
+  },
+  "AtomicWriteOpInterface": {
+    "class_name": "AtomicWriteOpInterface",
+    "methods": [
+      "verifyCommon",
+      "getX",
+      "getExpr"
+    ]
+  },
+  "BasicPtxBuilderOpInterface": {
+    "class_name": "BasicPtxBuilderInterface",
+    "methods": [
+      "getPredicate",
+      "getPtx",
+      "hasIntrinsic",
+      "hasSideEffect",
+      "makeConstantI32",
+      "getAsmValues"
+    ]
+  },
+  "BlobAttrInterface": {
+    "class_name": "BlobAttr",
+    "methods": [
+      "getData"
+    ]
+  },
+  "BlockArgOpenMPOpInterface": {
+    "class_name": "BlockArgOpenMPOpInterface",
+    "methods": [
+      "numClauseBlockArgs",
+      "getBlockArgsPairs"
+    ]
+  },
+  "BranchOpInterface": {
+    "class_name": "BranchOpInterface",
+    "methods": [
+      "getSuccessorOperands",
+      "getSuccessorBlockArgument",
+      "getSuccessorForOperands",
+      "areTypesCompatible"
+    ]
+  },
+  "BufferDeallocationOpInterface": {
+    "class_name": "BufferDeallocationOpInterface",
+    "methods": [
+      "process",
+      "materializeUniqueOwnershipForMemref"
+    ]
+  },
+  "BufferViewFlowOpInterface": {
+    "class_name": "BufferViewFlowOpInterface",
+    "methods": [
+      "populateDependencies",
+      "mayBeTerminalBuffer"
+    ]
+  },
+  "BufferizableOpInterface": {
+    "class_name": "BufferizableOpInterface",
+    "methods": [
+      "bufferizesToAllocation",
+      "bufferizesToMemoryRead",
+      "bufferizesToMemoryWrite",
+      "bufferizesToElementwiseAccess",
+      "resultBufferizesToMemoryWrite",
+      "mustBufferizeInPlace",
+      "getAliasingValues",
+      "getAliasingOpOperands",
+      "resolveConflicts",
+      "bufferize",
+      "isWritable",
+      "isNotConflicting",
+      "verifyAnalysis",
+      "getBufferType",
+      "isRepetitiveRegion",
+      "isParallelRegion",
+      "hasTensorSemantics",
+      "supportsUnstructuredControlFlow"
+    ]
+  },
+  "Bufferization_BufferLikeTypeInterface": {
+    "class_name": "BufferLikeType",
+    "methods": []
+  },
+  "Bufferization_TensorLikeTypeInterface": {
+    "class_name": "TensorLikeType",
+    "methods": [
+      "getBufferType",
+      "verifyCompatibleBufferType"
+    ]
+  },
+  "BytecodeOpInterface": {
+    "class_name": "BytecodeOpInterface",
+    "methods": [
+      "readProperties",
+      "writeProperties"
+    ]
+  },
+  "CExpressionInterface": {
+    "class_name": "CExpressionInterface",
+    "methods": [
+      "hasSideEffects"
+    ]
+  },
+  "CallOpInterface": {
+    "class_name": "CallOpInterface",
+    "methods": [
+      "getCallableForCallee",
+      "setCalleeFromCallable",
+      "getArgOperands",
+      "getArgOperandsMutable",
+      "resolveCallableInTable",
+      "resolveCallable",
+      "getArgAttrsAttr",
+      "getResAttrsAttr",
+      "setArgAttrsAttr",
+      "setResAttrsAttr",
+      "removeArgAttrsAttr",
+      "removeResAttrsAttr"
+    ]
+  },
+  "CallableOpInterface": {
+    "class_name": "CallableOpInterface",
+    "methods": [
+      "getCallableRegion",
+      "getArgumentTypes",
+      "getResultTypes",
+      "getArgAttrsAttr",
+      "getResAttrsAttr",
+      "setArgAttrsAttr",
+      "setResAttrsAttr",
+      "removeArgAttrsAttr",
+      "removeResAttrsAttr"
+    ]
+  },
+  "CastOpInterface": {
+    "class_name": "CastOpInterface",
+    "methods": [
+      "areCastCompatible"
+    ]
+  },
+  "ComposableOpInterface": {
+    "class_name": "ComposableOpInterface",
+    "methods": [
+      "isComposite",
+      "setComposite"
+    ]
+  },
+  "ComputeRegionOpInterface": {
+    "class_name": "ComputeRegionOpInterface",
+    "methods": [
+      "getAllocaBlock"
+    ]
+  },
+  "ConversionPatternDescriptorOpInterface": {
+    "class_name": "ConversionPatternDescriptorOpInterface",
+    "methods": [
+      "populatePatterns",
+      "populateConversionTargetRules",
+      "getTypeConverter",
+      "verifyTypeConverter"
+    ]
+  },
+  "ConvertToLLVMAttrInterface": {
+    "class_name": "ConvertToLLVMAttrInterface",
+    "methods": [
+      "populateConvertToLLVMConversionPatterns"
+    ]
+  },
+  "ConvertToLLVMOpInterface": {
+    "class_name": "ConvertToLLVMOpInterface",
+    "methods": [
+      "getConvertToLLVMConversionAttrs"
+    ]
+  },
+  "DLTIQueryInterface": {
+    "class_name": "DLTIQueryInterface",
+    "methods": [
+      "query"
+    ]
+  },
+  "DataLayoutEntryInterface": {
+    "class_name": "DataLayoutEntryInterface",
+    "methods": [
+      "getKey",
+      "getValue",
+      "verifyEntry"
+    ]
+  },
+  "DataLayoutOpInterface": {
+    "class_name": "DataLayoutOpInterface",
+    "methods": [
+      "getDataLayoutSpec",
+      "getTargetSystemSpec",
+      "getTypeSize",
+      "getTypeSizeInBits",
+      "getTypeABIAlignment",
+      "getTypePreferredAlignment",
+      "getIndexBitwidth",
+      "getEndianness",
+      "getDefaultMemorySpace",
+      "getAllocaMemorySpace",
+      "getManglingMode",
+      "getProgramMemorySpace",
+      "getGlobalMemorySpace",
+      "getStackAlignment",
+      "getFunctionPointerAlignment",
+      "getLegalIntWidths",
+      "getDevicePropertyValue"
+    ]
+  },
+  "DataLayoutSpecInterface": {
+    "class_name": "DataLayoutSpecInterface",
+    "methods": [
+      "combineWith",
+      "getEntries",
+      "getEndiannessIdentifier",
+      "getDefaultMemorySpaceIdentifier",
+      "getAllocaMemorySpaceIdentifier",
+      "getProgramMemorySpaceIdentifier",
+      "getGlobalMemorySpaceIdentifier",
+      "getManglingModeIdentifier",
+      "getStackAlignmentIdentifier",
+      "getFunctionPointerAlignmentIdentifier",
+      "getLegalIntWidthsIdentifier",
+      "getSpecForType",
+      "getSpecForIdentifier",
+      "verifySpec",
+      "query"
+    ]
+  },
+  "DataLayoutTypeInterface": {
+    "class_name": "DataLayoutTypeInterface",
+    "methods": [
+      "getTypeSize",
+      "getTypeSizeInBits",
+      "getABIAlignment",
+      "getPreferredAlignment",
+      "getIndexBitwidth",
+      "areCompatible",
+      "verifyEntries"
+    ]
+  },
+  "DeclareTargetInterface": {
+    "class_name": "DeclareTargetInterface",
+    "methods": [
+      "setDeclareTarget",
+      "isDeclareTarget",
+      "getDeclareTargetDeviceType",
+      "getDeclareTargetCaptureClause",
+      "getDeclareTargetAutomap"
+    ]
+  },
+  "DereferenceableOpInterface": {
+    "class_name": "DereferenceableOpInterface",
+    "methods": [
+      "getDereferenceableOrNull",
+      "setDereferenceable"
+    ]
+  },
+  "DerivedAttributeOpInterface": {
+    "class_name": "DerivedAttributeOpInterface",
+    "methods": [
+      "isDerivedAttribute",
+      "materializeDerivedAttributes"
+    ]
+  },
+  "DestinationStyleOpInterface": {
+    "class_name": "DestinationStyleOpInterface",
+    "methods": [
+      "getDpsInitsMutable"
+    ]
+  },
+  "DestructurableAccessorOpInterface": {
+    "class_name": "DestructurableAccessorOpInterface",
+    "methods": [
+      "canRewire",
+      "rewire"
+    ]
+  },
+  "DestructurableAllocationOpInterface": {
+    "class_name": "DestructurableAllocationOpInterface",
+    "methods": [
+      "getDestructurableSlots",
+      "destructure",
+      "handleDestructuringComplete"
+    ]
+  },
+  "DestructurableTypeInterface": {
+    "class_name": "DestructurableTypeInterface",
+    "methods": [
+      "getSubelementIndexMap",
+      "getTypeAtIndex"
+    ]
+  },
+  "DeviceMappingAttrInterface": {
+    "class_name": "DeviceMappingAttrInterface",
+    "methods": [
+      "getMappingId",
+      "isLinearMapping",
+      "getRelativeIndex"
+    ]
+  },
+  "DeviceMaskingAttrInterface": {
+    "class_name": "DeviceMaskingAttrInterface",
+    "methods": [
+      "createLogicalLinearMappingId",
+      "createIsActiveIdPredicate",
+      "getMaxNumPhysicalIds"
+    ]
+  },
+  "DialectInlinerInterface": {
+    "class_name": "DialectInlinerInterface",
+    "methods": [
+      "isLegalToInline",
+      "shouldAnalyzeRecursively",
+      "handleTerminator",
+      "materializeCallConversion",
+      "handleArgument",
+      "handleResult",
+      "processInlinedCallBlocks",
+      "allowSingleBlockOptimization"
+    ]
+  },
+  "DisjointFlagInterface": {
+    "class_name": "DisjointFlagInterface",
+    "methods": [
+      "getIsDisjoint",
+      "setIsDisjoint",
+      "getIsDisjointName"
+    ]
+  },
+  "ElementsAttrInterface": {
+    "class_name": "ElementsAttr",
+    "methods": [
+      "getValuesImpl",
+      "isSplat",
+      "getShapedType",
+      "getType"
+    ]
+  },
+  "ExactFlagInterface": {
+    "class_name": "ExactFlagInterface",
+    "methods": [
+      "getIsExact",
+      "setIsExact",
+      "getIsExactName"
+    ]
+  },
+  "FPExceptionBehaviorOpInterface": {
+    "class_name": "FPExceptionBehaviorOpInterface",
+    "methods": [
+      "getFPExceptionBehaviorAttr",
+      "getFPExceptionBehaviorAttrName"
+    ]
+  },
+  "FastmathFlagsInterface": {
+    "class_name": "FastmathFlagsInterface",
+    "methods": [
+      "getFastmathAttr",
+      "getFastmathAttrName"
+    ]
+  },
+  "FindPayloadReplacementOpInterface": {
+    "class_name": "FindPayloadReplacementOpInterface",
+    "methods": [
+      "getNextOperands"
+    ]
+  },
+  "FloatTypeInterface": {
+    "class_name": "FloatType",
+    "methods": [
+      "getFloatSemantics",
+      "scaleElementBitwidth"
+    ]
+  },
+  "FunctionOpInterface": {
+    "class_name": "FunctionOpInterface",
+    "methods": [
+      "getFunctionType",
+      "setFunctionTypeAttr",
+      "cloneTypeWith",
+      "verifyBody",
+      "verifyType",
+      "getCallableRegion",
+      "getArgumentTypes",
+      "getResultTypes",
+      "getArgAttrsAttr",
+      "getResAttrsAttr",
+      "setArgAttrsAttr",
+      "setResAttrsAttr",
+      "removeArgAttrsAttr",
+      "removeResAttrsAttr"
+    ]
+  },
+  "GPUTargetAttrInterface": {
+    "class_name": "TargetAttrInterface",
+    "methods": [
+      "serializeToObject",
+      "createObject"
+    ]
+  },
+  "GPUTargetAttrVerifyInterface": {
+    "class_name": "TargetAttrVerifyInterface",
+    "methods": [
+      "verifyTarget"
+    ]
+  },
+  "GPU_AsyncOpInterface": {
+    "class_name": "AsyncOpInterface",
+    "methods": [
+      "getAsyncDependencies",
+      "addAsyncDependency",
+      "getAsyncToken"
+    ]
+  },
+  "GlobalVariableOpInterface": {
+    "class_name": "GlobalVariableOpInterface",
+    "methods": [
+      "isConstant",
+      "getInitRegion"
+    ]
+  },
+  "ImportOpInterface": {
+    "class_name": "ImportOpInterface",
+    "methods": [
+      "getModuleName",
+      "getImportName",
+      "getSymbolName",
+      "getQualifiedImportName"
+    ]
+  },
+  "InParallelOpInterface": {
+    "class_name": "InParallelOpInterface",
+    "methods": [
+      "getParentResult",
+      "getYieldingOps"
+    ]
+  },
+  "IndexingMapOpInterface": {
+    "class_name": "IndexingMapOpInterface",
+    "methods": [
+      "getIndexingMaps",
+      "getIndexingMapsArray",
+      "getMatchingIndexingMap",
+      "getLoopsToShapesMap",
+      "getShapesToLoopsMap",
+      "getStaticOperandShape",
+      "getStaticLoopRanges"
+    ]
+  },
+  "IndirectGlobalAccessOpInterface": {
+    "class_name": "IndirectGlobalAccessOpInterface",
+    "methods": [
+      "getReferencedSymbols"
+    ]
+  },
+  "InferIntRangeInterface": {
+    "class_name": "InferIntRangeInterface",
+    "methods": [
+      "inferResultRanges",
+      "inferResultRangesFromOptional"
+    ]
+  },
+  "InferShapedTypeOpInterface": {
+    "class_name": "InferShapedTypeOpInterface",
+    "methods": [
+      "inferReturnTypeComponents",
+      "reifyReturnTypeShapes"
+    ]
+  },
+  "InferStridedMetadataOpInterface": {
+    "class_name": "InferStridedMetadataOpInterface",
+    "methods": [
+      "inferStridedMetadataRanges"
+    ]
+  },
+  "InferTypeOpInterface": {
+    "class_name": "InferTypeOpInterface",
+    "methods": [
+      "inferReturnTypes",
+      "refineReturnTypes",
+      "isCompatibleReturnTypes"
+    ]
+  },
+  "IntegerOverflowFlagsInterface": {
+    "class_name": "IntegerOverflowFlagsInterface",
+    "methods": [
+      "getOverflowFlags",
+      "setOverflowFlags",
+      "hasNoUnsignedWrap",
+      "hasNoSignedWrap",
+      "getOverflowFlagsAttrName"
+    ]
+  },
+  "LLVM_DIRecursiveTypeAttrInterface": {
+    "class_name": "DIRecursiveTypeAttrInterface",
+    "methods": [
+      "getIsRecSelf",
+      "getRecId",
+      "withRecId",
+      "getRecSelf"
+    ]
+  },
+  "LLVM_LLVMAddrSpaceAttrInterface": {
+    "class_name": "LLVMAddrSpaceAttrInterface",
+    "methods": [
+      "getAddressSpace"
+    ]
+  },
+  "LLVM_PointerElementTypeInterface": {
+    "class_name": "PointerElementTypeInterface",
+    "methods": [
+      "getSizeInBytes"
+    ]
+  },
+  "LLVM_TargetAttrInterface": {
+    "class_name": "TargetAttrInterface",
+    "methods": [
+      "getTriple",
+      "getChip",
+      "getFeatures",
+      "query"
+    ]
+  },
+  "LabelBranchingOpInterface": {
+    "class_name": "LabelBranchingOpInterface",
+    "methods": [
+      "getExitLevel",
+      "getTargetOp",
+      "getTarget"
+    ]
+  },
+  "LabelLevelOpInterface": {
+    "class_name": "LabelLevelOpInterface",
+    "methods": [
+      "getLabelTarget"
+    ]
+  },
+  "LinalgContractionOpInterface": {
+    "class_name": "ContractionOpInterface",
+    "methods": [
+      "lhs",
+      "rhs",
+      "isRowMajorMatmul",
+      "isColumnMajorMatmul",
+      "isRowMajorBatchMatmul",
+      "isVecmat",
+      "isBatchVecmat",
+      "isMatvec",
+      "isBatchMatvec"
+    ]
+  },
+  "LinalgConvolutionOpInterface": {
+    "class_name": "ConvolutionOpInterface",
+    "methods": [
+      "image",
+      "filter"
+    ]
+  },
+  "LinalgFillOpInterface": {
+    "class_name": "FillOpInterface",
+    "methods": [
+      "value",
+      "output",
+      "result"
+    ]
+  },
+  "LinalgRelayoutOpInterface": {
+    "class_name": "RelayoutOpInterface",
+    "methods": []
+  },
+  "LinalgStructuredInterface": {
+    "class_name": "LinalgOp",
+    "methods": [
+      "getNumParallelLoops",
+      "isAllParallelLoops",
+      "getParallelDims",
+      "getNumReductionLoops",
+      "getReductionDims",
+      "getNumLoops",
+      "hasSingleReductionLoop",
+      "payloadUsesValueFromOperand",
+      "isSingleInputOutput",
+      "isInitTensor",
+      "getRank",
+      "getRegionInputArgs",
+      "getRegionOutputArgs",
+      "getMatchingBlockArgument",
+      "getMatchingOpOperand",
+      "getIndexingMapMatchingResult",
+      "getMatchingYieldValue",
+      "getBlock",
+      "getIteratorTypesArray",
+      "hasDynamicIndexingMaps",
+      "verifyIndexingMapRequiredAttributes",
+      "hasDynamicShape",
+      "getLibraryCallName",
+      "hasIndexSemantics",
+      "getOpOperandsMatchingBBargs",
+      "mapIterationSpaceDimToOperandDim",
+      "mapIterationSpaceDimToAllOperandDims",
+      "hasUserDefinedMaps",
+      "canOpOperandsBeDropped",
+      "getShape",
+      "getRegionBuilder",
+      "hasOnlyProjectedPermutations",
+      "getDpsInitsMutable",
+      "getIndexingMaps",
+      "getIndexingMapsArray",
+      "getMatchingIndexingMap",
+      "getLoopsToShapesMap",
+      "getShapesToLoopsMap",
+      "getStaticOperandShape",
+      "getStaticLoopRanges"
+    ]
+  },
+  "LoopLikeOpInterface": {
+    "class_name": "LoopLikeOpInterface",
+    "methods": [
+      "isDefinedOutsideOfLoop",
+      "getLoopRegions",
+      "moveOutOfLoop",
+      "promoteIfSingleIteration",
+      "getLoopInductionVars",
+      "getLoopLowerBounds",
+      "getLoopSteps",
+      "getLoopUpperBounds",
+      "getInitsMutable",
+      "getRegionIterArgs",
+      "getYieldedValuesMutable",
+      "getLoopResults",
+      "replaceWithAdditionalYields",
+      "getStaticTripCount"
+    ]
+  },
+  "LoopTransformationInterface": {
+    "class_name": "LoopTransformationInterface",
+    "methods": [
+      "getApplyeesODSOperandIndexAndLength",
+      "getGenerateesODSOperandIndexAndLength",
+      "getNumApplyees",
+      "getNumGeneratees",
+      "isApplyee",
+      "isGeneratee"
+    ]
+  },
+  "LoopWrapperInterface": {
+    "class_name": "LoopWrapperInterface",
+    "methods": [
+      "getNestedWrapper",
+      "getWrappedLoop"
+    ]
+  },
+  "MapClauseOwningOpInterface": {
+    "class_name": "MapClauseOwningOpInterface",
+    "methods": [
+      "getMapVars",
+      "getMapVarsMutable",
+      "getOperandIndexForMap"
+    ]
+  },
+  "MaskableOpInterface": {
+    "class_name": "MaskableOpInterface",
+    "methods": [
+      "isMasked",
+      "getMaskingOp",
+      "supportsPassthru",
+      "getExpectedMaskType"
+    ]
+  },
+  "MaskingOpInterface": {
+    "class_name": "MaskingOpInterface",
+    "methods": [
+      "getMask",
+      "getMaskableOp",
+      "hasPassthru",
+      "getPassthru"
+    ]
+  },
+  "MatchOpInterface": {
+    "class_name": "MatchOpInterface",
+    "methods": [
+      "apply",
+      "allowsRepeatedHandleOperands"
+    ]
+  },
+  "MemRefElementTypeInterface": {
+    "class_name": "MemRefElementTypeInterface",
+    "methods": []
+  },
+  "MemRefLayoutAttrInterface": {
+    "class_name": "MemRefLayoutAttrInterface",
+    "methods": [
+      "getAffineMap",
+      "isIdentity",
+      "verifyLayout",
+      "getStridesAndOffset"
+    ]
+  },
+  "MemoryEffectsOpInterface": {
+    "class_name": "MemoryEffectOpInterface",
+    "methods": [
+      "getEffects"
+    ]
+  },
+  "MemorySpaceAttrInterface": {
+    "class_name": "MemorySpaceAttrInterface",
+    "methods": [
+      "isValidLoad",
+      "isValidStore",
+      "isValidAtomicOp",
+      "isValidAtomicXchg",
+      "isValidAddrSpaceCast",
+      "isValidPtrIntCast"
+    ]
+  },
+  "MemorySpaceCastConsumerOpInterface": {
+    "class_name": "MemorySpaceCastConsumerOpInterface",
+    "methods": [
+      "bubbleDownCasts"
+    ]
+  },
+  "MemorySpaceCastOpInterface": {
+    "class_name": "MemorySpaceCastOpInterface",
+    "methods": [
+      "getSourcePtr",
+      "getTargetPtr",
+      "isValidMemorySpaceCast",
+      "cloneMemorySpaceCastOp",
+      "isSourcePromotable"
+    ]
+  },
+  "NonNegFlagInterface": {
+    "class_name": "NonNegFlagInterface",
+    "methods": [
+      "getNonNeg",
+      "setNonNeg",
+      "getNonNegName"
+    ]
+  },
+  "OffloadModuleInterface": {
+    "class_name": "OffloadModuleInterface",
+    "methods": [
+      "setIsTargetDevice",
+      "getIsTargetDevice",
+      "setIsGPU",
+      "getIsGPU",
+      "getFlags",
+      "setFlags",
+      "setHostIRFilePath",
+      "getHostIRFilePath",
+      "getRequires",
+      "setRequires",
+      "getTargetTriples",
+      "setTargetTriples"
+    ]
+  },
+  "OffloadingLLVMTranslationAttrInterface": {
+    "class_name": "OffloadingLLVMTranslationAttrInterface",
+    "methods": [
+      "embedBinary",
+      "launchKernel"
+    ]
+  },
+  "OffsetSizeAndStrideOpInterface": {
+    "class_name": "OffsetSizeAndStrideOpInterface",
+    "methods": [
+      "getOffsetSizeAndStrideStartOperandIndex",
+      "getArrayAttrMaxRanks",
+      "getOffsets",
+      "getSizes",
+      "getStrides",
+      "getStaticOffsets",
+      "getStaticSizes",
+      "getStaticStrides",
+      "getMixedOffsets",
+      "getMixedSizes",
+      "getMixedStrides",
+      "isDynamicOffset",
+      "isDynamicSize",
+      "isDynamicStride",
+      "getStaticOffset",
+      "getStaticSize",
+      "getStaticStride",
+      "getIndexOfDynamicOffset",
+      "getIndexOfDynamicSize",
+      "getIndexOfDynamicStride",
+      "getDynamicOffset",
+      "getDynamicSize",
+      "getDynamicStride",
+      "isSameAs",
+      "hasUnitStride",
+      "hasZeroOffset"
+    ]
+  },
+  "OneToOneIntrinsicOpInterface": {
+    "class_name": "OneToOneIntrinsicOpInterface",
+    "methods": [
+      "getIntrinsicName",
+      "getIntrinsicOperands"
+    ]
+  },
+  "OpAsmAttrInterface": {
+    "class_name": "OpAsmAttrInterface",
+    "methods": [
+      "getAlias"
+    ]
+  },
+  "OpAsmOpInterface": {
+    "class_name": "OpAsmOpInterface",
+    "methods": [
+      "getAsmResultNames",
+      "getAsmBlockArgumentNames",
+      "getAsmBlockNames",
+      "getDefaultDialect"
+    ]
+  },
+  "OpAsmTypeInterface": {
+    "class_name": "OpAsmTypeInterface",
+    "methods": [
+      "getAsmName",
+      "getAlias"
+    ]
+  },
+  "OpenACC_MappableTypeInterface": {
+    "class_name": "MappableType",
+    "methods": [
+      "getVarPtr",
+      "getSizeInBytes",
+      "getOffsetInBytes",
+      "hasUnknownDimensions",
+      "generateAccBounds",
+      "getTypeCategory",
+      "generatePrivateInit",
+      "generatePrivateDestroy"
+    ]
+  },
+  "OpenACC_PointerLikeTypeInterface": {
+    "class_name": "PointerLikeType",
+    "methods": [
+      "getElementType",
+      "getPointeeTypeCategory",
+      "genAllocate",
+      "genFree",
+      "genCopy",
+      "genLoad",
+      "genStore"
+    ]
+  },
+  "OpenMP_PointerLikeTypeInterface": {
+    "class_name": "PointerLikeType",
+    "methods": [
+      "getElementType"
+    ]
+  },
+  "OutlineableOpenMPOpInterface": {
+    "class_name": "OutlineableOpenMPOpInterface",
+    "methods": [
+      "getAllocaBlock"
+    ]
+  },
+  "ParallelCombiningOpInterface": {
+    "class_name": "ParallelCombiningOpInterface",
+    "methods": [
+      "getUpdatedDestinations",
+      "getIteratingParent"
+    ]
+  },
+  "PartialEntityAccessOpInterface": {
+    "class_name": "PartialEntityAccessOpInterface",
+    "methods": [
+      "getBaseEntity",
+      "isCompleteView"
+    ]
+  },
+  "PartialReductionOpInterface": {
+    "class_name": "PartialReductionOpInterface",
+    "methods": [
+      "generateInitialTensorForPartialReduction",
+      "tileToPartialReduction",
+      "mergeReductions",
+      "getPartialResultTilePosition",
+      "getLoopIteratorTypes",
+      "getIterationDomain",
+      "getTiledImplementation",
+      "getResultTilePosition",
+      "generateResultTileValue",
+      "getTiledImplementationFromOperandTiles",
+      "getIterationDomainTileFromOperandTiles",
+      "getIterationDomainTileFromResultTile",
+      "generateScalarImplementation",
+      "isOpFusableWithConsumerSlice",
+      "isOpFusableWithProducerSlices"
+    ]
+  },
+  "PatternDescriptorOpInterface": {
+    "class_name": "PatternDescriptorOpInterface",
+    "methods": [
+      "populatePatterns",
+      "populatePatternsWithState"
+    ]
+  },
+  "PoisonAttrInterface": {
+    "class_name": "PoisonAttrInterface",
+    "methods": []
+  },
+  "PromotableAllocationOpInterface": {
+    "class_name": "PromotableAllocationOpInterface",
+    "methods": [
+      "getPromotableSlots",
+      "getDefaultValue",
+      "handleBlockArgument",
+      "handlePromotionComplete"
+    ]
+  },
+  "PromotableMemOpInterface": {
+    "class_name": "PromotableMemOpInterface",
+    "methods": [
+      "loadsFrom",
+      "storesTo",
+      "getStored",
+      "canUsesBeRemoved",
+      "removeBlockingUses"
+    ]
+  },
+  "PromotableOpInterface": {
+    "class_name": "PromotableOpInterface",
+    "methods": [
+      "canUsesBeRemoved",
+      "removeBlockingUses",
+      "requiresReplacedValues",
+      "visitReplacedValues"
+    ]
+  },
+  "PtrLikeTypeInterface": {
+    "class_name": "PtrLikeTypeInterface",
+    "methods": [
+      "getMemorySpace",
+      "getElementType",
+      "hasPtrMetadata",
+      "clonePtrWith"
+    ]
+  },
+  "QueryCapabilityInterface": {
+    "class_name": "QueryCapabilityInterface",
+    "methods": [
+      "getCapabilities"
+    ]
+  },
+  "QueryExtensionInterface": {
+    "class_name": "QueryExtensionInterface",
+    "methods": [
+      "getExtensions"
+    ]
+  },
+  "QueryMaxVersionInterface": {
+    "class_name": "QueryMaxVersionInterface",
+    "methods": [
+      "getMaxVersion"
+    ]
+  },
+  "QueryMinVersionInterface": {
+    "class_name": "QueryMinVersionInterface",
+    "methods": [
+      "getMinVersion"
+    ]
+  },
+  "QueryProfileInterface": {
+    "class_name": "QueryProfileInterface",
+    "methods": [
+      "getProfiles"
+    ]
+  },
+  "RecipeInterface": {
+    "class_name": "RecipeInterface",
+    "methods": [
+      "getAllocaBlock"
+    ]
+  },
+  "RegionBranchOpInterface": {
+    "class_name": "RegionBranchOpInterface",
+    "methods": [
+      "getEntrySuccessorOperands",
+      "getEntrySuccessorRegions",
+      "getSuccessorRegions",
+      "getPredecessors",
+      "getPredecessorValues",
+      "getRegionInvocationBounds",
+      "areTypesCompatible"
+    ]
+  },
+  "RegionBranchTerminatorOpInterface": {
+    "class_name": "RegionBranchTerminatorOpInterface",
+    "methods": [
+      "getMutableSuccessorOperands",
+      "getSuccessorRegions"
+    ]
+  },
+  "RegionKindInterface": {
+    "class_name": "RegionKindInterface",
+    "methods": [
+      "getRegionKind",
+      "hasSSADominance"
+    ]
+  },
+  "ReifyRankedShapedTypeOpInterface": {
+    "class_name": "ReifyRankedShapedTypeOpInterface",
+    "methods": [
+      "reifyResultShapes",
+      "reifyShapeOfResult",
+      "reifyDimOfResult"
+    ]
+  },
+  "RequiresSMInterface": {
+    "class_name": "RequiresSMInterface",
+    "methods": [
+      "getRequiredMinSMVersion"
+    ]
+  },
+  "RoundingModeOpInterface": {
+    "class_name": "RoundingModeOpInterface",
+    "methods": [
+      "getRoundingModeAttr",
+      "getRoundingModeAttrName"
+    ]
+  },
+  "RuntimeVerifiableOpInterface": {
+    "class_name": "RuntimeVerifiableOpInterface",
+    "methods": [
+      "generateRuntimeVerification"
+    ]
+  },
+  "SPIRV_ExplicitLodOpInterface": {
+    "class_name": "ExplicitLodOpInterface",
+    "methods": [
+      "getSampledImage",
+      "getCoordinate"
+    ]
+  },
+  "SPIRV_FetchOpInterface": {
+    "class_name": "FetchOpInterface",
+    "methods": [
+      "getImage"
+    ]
+  },
+  "SPIRV_ImplicitLodOpInterface": {
+    "class_name": "ImplicitLodOpInterface",
+    "methods": [
+      "getSampledImage",
+      "getCoordinate"
+    ]
+  },
+  "SPIRV_SampleOpInterface": {
+    "class_name": "SamplingOpInterface",
+    "methods": [
+      "getSampledImage",
+      "getCoordinate"
+    ]
+  },
+  "SafeMemorySlotAccessOpInterface": {
+    "class_name": "SafeMemorySlotAccessOpInterface",
+    "methods": [
+      "ensureOnlySafeAccesses"
+    ]
+  },
+  "SelectLikeOpInterface": {
+    "class_name": "SelectLikeOpInterface",
+    "methods": [
+      "getFalseValue",
+      "getTrueValue",
+      "getCondition"
+    ]
+  },
+  "ShapedDimOpInterface": {
+    "class_name": "ShapedDimOpInterface",
+    "methods": [
+      "getShapedValue",
+      "getDimension"
+    ]
+  },
+  "ShapedTypeInterface": {
+    "class_name": "ShapedType",
+    "methods": [
+      "cloneWith",
+      "getElementType",
+      "hasRank",
+      "getShape"
+    ]
+  },
+  "ShardingInterface": {
+    "class_name": "ShardingInterface",
+    "methods": [
+      "getLoopIteratorTypes",
+      "getReductionLoopIteratorKinds",
+      "getIndexingMaps",
+      "getShardingOption",
+      "getShardingAnnotations",
+      "addShardingAnnotations",
+      "partition"
+    ]
+  },
+  "StageWithSortSparseOpInterface": {
+    "class_name": "StageWithSortSparseOp",
+    "methods": [
+      "needsExtraSort",
+      "stageWithSort"
+    ]
+  },
+  "SubsetExtractionOpInterface": {
+    "class_name": "SubsetExtractionOpInterface",
+    "methods": [
+      "getSourceOperand",
+      "operatesOnEquivalentSubset",
+      "operatesOnDisjointSubset",
+      "getAccessedHyperrectangularSlice"
+    ]
+  },
+  "SubsetInsertionOpInterface": {
+    "class_name": "SubsetInsertionOpInterface",
+    "methods": [
+      "getSourceOperand",
+      "getDestinationOperand",
+      "getUpdatedDestination",
+      "isEquivalentSubset",
+      "buildSubsetExtraction",
+      "getValuesNeededToBuildSubsetExtraction",
+      "operatesOnEquivalentSubset",
+      "operatesOnDisjointSubset",
+      "getAccessedHyperrectangularSlice"
+    ]
+  },
+  "SubsetOpInterface": {
+    "class_name": "SubsetOpInterface",
+    "methods": [
+      "operatesOnEquivalentSubset",
+      "operatesOnDisjointSubset",
+      "getAccessedHyperrectangularSlice"
+    ]
+  },
+  "SymbolUserAttrInterface": {
+    "class_name": "SymbolUserAttrInterface",
+    "methods": [
+      "verifySymbolUses"
+    ]
+  },
+  "SymbolUserOpInterface": {
+    "class_name": "SymbolUserOpInterface",
+    "methods": [
+      "verifySymbolUses"
+    ]
+  },
+  "TargetDeviceSpecInterface": {
+    "class_name": "TargetDeviceSpecInterface",
+    "methods": [
+      "getEntries",
+      "getSpecForIdentifier",
+      "verifyEntry",
+      "query"
+    ]
+  },
+  "TargetSystemSpecInterface": {
+    "class_name": "TargetSystemSpecInterface",
+    "methods": [
+      "getEntries",
+      "getDeviceSpecForDeviceID",
+      "verifySpec",
+      "query"
+    ]
+  },
+  "TilingInterface": {
+    "class_name": "TilingInterface",
+    "methods": [
+      "getLoopIteratorTypes",
+      "getIterationDomain",
+      "getTiledImplementation",
+      "getResultTilePosition",
+      "generateResultTileValue",
+      "getTiledImplementationFromOperandTiles",
+      "getIterationDomainTileFromOperandTiles",
+      "getIterationDomainTileFromResultTile",
+      "generateScalarImplementation",
+      "isOpFusableWithConsumerSlice",
+      "isOpFusableWithProducerSlices"
+    ]
+  },
+  "TosaOpInterface": {
+    "class_name": "TosaOp",
+    "methods": []
+  },
+  "TransformHandleTypeInterface": {
+    "class_name": "TransformHandleTypeInterface",
+    "methods": [
+      "checkPayload"
+    ]
+  },
+  "TransformOpInterface": {
+    "class_name": "TransformOpInterface",
+    "methods": [
+      "apply",
+      "allowsRepeatedHandleOperands"
+    ]
+  },
+  "TransformParamTypeInterface": {
+    "class_name": "TransformParamTypeInterface",
+    "methods": [
+      "checkPayload"
+    ]
+  },
+  "TransformValueHandleTypeInterface": {
+    "class_name": "TransformValueHandleTypeInterface",
+    "methods": [
+      "checkPayload"
+    ]
+  },
+  "TypeConverterBuilderOpInterface": {
+    "class_name": "TypeConverterBuilderOpInterface",
+    "methods": [
+      "getTypeConverter",
+      "getTypeConverterType",
+      "populateTypeMaterializations"
+    ]
+  },
+  "TypedAttrInterface": {
+    "class_name": "TypedAttr",
+    "methods": [
+      "getType"
+    ]
+  },
+  "ValueBoundsOpInterface": {
+    "class_name": "ValueBoundsOpInterface",
+    "methods": [
+      "populateBoundsForIndexValue",
+      "populateBoundsForShapedValueDim"
+    ]
+  },
+  "VectorElementTypeInterface": {
+    "class_name": "VectorElementTypeInterface",
+    "methods": []
+  },
+  "VectorTransferOpInterface": {
+    "class_name": "VectorTransferOpInterface",
+    "methods": [
+      "getInBoundsAttrName",
+      "getPermutationMapAttrName",
+      "getInBounds",
+      "getBase",
+      "getVector",
+      "getVectorType",
+      "getIndices",
+      "getPermutationMap",
+      "getMask"
+    ]
+  },
+  "VectorUnrollOpInterface": {
+    "class_name": "VectorUnrollOpInterface",
+    "methods": [
+      "getShapeForUnroll"
+    ]
+  },
+  "VerifyConstraintInterface": {
+    "class_name": "Constraint",
+    "methods": [
+      "getVerifier"
+    ]
+  },
+  "VerifyRegionInterface": {
+    "class_name": "Region",
+    "methods": [
+      "getVerifier"
+    ]
+  },
+  "ViewLikeOpInterface": {
+    "class_name": "ViewLikeOpInterface",
+    "methods": [
+      "getViewSource",
+      "getViewDest"
+    ]
+  },
+  "WeightedBranchOpInterface": {
+    "class_name": "WeightedBranchOpInterface",
+    "methods": [
+      "getWeights",
+      "setWeights"
+    ]
+  },
+  "WeightedRegionBranchOpInterface": {
+    "class_name": "WeightedRegionBranchOpInterface",
+    "methods": [
+      "getWeights",
+      "setWeights"
+    ]
+  },
+  "X86IntrinsicOpInterface": {
+    "class_name": "X86IntrinsicOp",
+    "methods": [
+      "getIntrinsicName",
+      "getIntrinsicOperands"
+    ]
+  }
+}

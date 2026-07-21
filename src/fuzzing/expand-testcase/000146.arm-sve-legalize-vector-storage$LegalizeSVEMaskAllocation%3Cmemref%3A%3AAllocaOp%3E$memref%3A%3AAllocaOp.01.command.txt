@@ -1,0 +1,4 @@
+--arm-sve-legalize-vector-storage
+-arm-sve-legalize-vector-storage
+-allow-unregistered-dialect -arm-sve-legalize-vector-storage
+-convert-linalg-to-std

@@ -1,0 +1,5 @@
+Reading tracefile LOBE/lasttime.info
+Summary coverage rate:
+  lines......: 8.3% (79349 of 952317 lines)
+  functions..: 15.4% (62908 of 409795 functions)
+  branches...: 8.8% (64826 of 733803 branches)

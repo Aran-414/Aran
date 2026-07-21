@@ -1,0 +1,3 @@
+--memref-emulate-wide-int
+-memref-emulate-wide-int
+--memref-emulate-wide-int=widest-int-supported=32

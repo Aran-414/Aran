@@ -1,0 +1,5 @@
+--transform-interpreter -test-transform-dialect-erase-schedule --test-lower-to-llvm
+-transform-interpreter -test-transform-dialect-erase-schedule
+--transform-interpreter --test-transform-dialect-erase-schedule --math-uplift-to-fma --convert-bufferization-to-memref --test-lower-to-llvm
+-transform-interpreter -test-transform-dialect-erase-schedule -convert-nvgpu-to-nvvm -gpu-kernel-outlining -convert-scf-to-cf -convert-nvvm-to-llvm -convert-vector-to-llvm -convert-math-to-llvm -expand-strided-metadata -lower-affine -convert-index-to-llvm=index-bitwidth=32 -convert-arith-to-llvm -finalize-memref-to-llvm -convert-func-to-llvm -canonicalize -expand-strided-metadata "--nvvm-attach-target=module=main_kernel features=+ptx80 chip=sm_90 O=3"
+-transform-infer-effects

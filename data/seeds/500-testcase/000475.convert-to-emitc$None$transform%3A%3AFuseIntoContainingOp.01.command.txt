@@ -1,0 +1,4 @@
+--convert-to-emitc
+-convert-to-emitc
+-convert-to-emitc=filter-dialects=arith
+-convert-to-emitc=filter-dialects=func

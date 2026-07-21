@@ -1,0 +1,6 @@
+"--pass-pipeline=builtin.module(func.func(convert-arith-to-amdgpu{chipset=gfx950 saturate-fp8-truncf=true}))"
+"--pass-pipeline=builtin.module(func.func(convert-arith-to-amdgpu{chipset=gfx1200 saturate-fp8-truncf=true}))"
+"--pass-pipeline=builtin.module(func.func(convert-arith-to-amdgpu{chipset=gfx942 saturate-fp8-truncf=true}))"
+-convert-arith-to-amdgpu=chipset=gfx950
+-convert-arith-to-amdgpu=chipset=gfx1200
+-convert-arith-to-amdgpu=chipset=gfx942

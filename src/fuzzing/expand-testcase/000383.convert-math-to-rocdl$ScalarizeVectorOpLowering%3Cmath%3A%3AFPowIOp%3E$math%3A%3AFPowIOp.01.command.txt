@@ -1,0 +1,4 @@
+--convert-math-to-rocdl
+-convert-math-to-rocdl
+-allow-unregistered-dialect -pass-pipeline=builtin.module(convert-math-to-rocdl{chipset=gfx803})
+-allow-unregistered-dialect -pass-pipeline=builtin.module(convert-math-to-rocdl{chipset=gfx942})

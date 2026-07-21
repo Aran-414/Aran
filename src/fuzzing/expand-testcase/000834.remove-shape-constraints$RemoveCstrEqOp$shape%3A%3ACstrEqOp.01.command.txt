@@ -1,0 +1,4 @@
+--remove-shape-constraints
+-remove-shape-constraints
+-allow-unregistered-dialect -remove-shape-constraints -canonicalize
+-allow-unregistered-dialect -remove-shape-constraints

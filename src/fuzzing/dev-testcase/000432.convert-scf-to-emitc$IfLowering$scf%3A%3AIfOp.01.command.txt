@@ -1,0 +1,3 @@
+--convert-scf-to-emitc
+-convert-scf-to-emitc
+-allow-unregistered-dialect -convert-scf-to-emitc

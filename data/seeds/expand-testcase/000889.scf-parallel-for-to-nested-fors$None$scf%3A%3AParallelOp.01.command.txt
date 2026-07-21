@@ -1,0 +1,3 @@
+--scf-parallel-for-to-nested-fors
+-scf-parallel-for-to-nested-fors
+-pass-pipeline=builtin.module(func.func(scf-parallel-for-to-nested-fors))

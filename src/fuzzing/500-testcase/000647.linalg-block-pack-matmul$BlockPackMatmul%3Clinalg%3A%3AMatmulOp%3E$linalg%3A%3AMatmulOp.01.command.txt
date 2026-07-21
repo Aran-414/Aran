@@ -1,0 +1,7 @@
+"-linalg-block-pack-matmul=block-factors=32,16,64 lhs-transpose-outer-blocks=false lhs-transpose-inner-blocks=false rhs-transpose-outer-blocks=true rhs-transpose-inner-blocks=true" -canonicalize
+"-linalg-block-pack-matmul=block-factors=32,16,64 lhs-transpose-outer-blocks=false lhs-transpose-inner-blocks=false rhs-transpose-outer-blocks=false rhs-transpose-inner-blocks=false" -canonicalize
+"-linalg-block-pack-matmul=block-factors=32,16,64 lhs-transpose-outer-blocks=true lhs-transpose-inner-blocks=true rhs-transpose-outer-blocks=false rhs-transpose-inner-blocks=false" -canonicalize
+"-linalg-block-pack-matmul=block-factors=32,16,64 allow-padding=1" -canonicalize
+"-linalg-block-pack-matmul=block-factors=32,16,64 allow-padding=0" -canonicalize
+"-linalg-block-pack-matmul=block-factors=32,16,64 allow-padding=1 mnk-padded-multiples=256,512,384" -canonicalize
+-linalg-block-pack-matmul=block-factors=32,16,64 -canonicalize

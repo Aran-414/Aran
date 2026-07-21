@@ -1,0 +1,6 @@
+-affine-super-vectorize=virtual-vector-size=128
+"-affine-super-vectorize=virtual-vector-size=128 test-fastest-varying=0"
+-affine-super-vectorize=virtual-vector-size=4,8
+"-affine-super-vectorize=virtual-vector-size=32,256 test-fastest-varying=1,0"
+"-affine-super-vectorize=virtual-vector-size=8 test-fastest-varying=0"
+"-affine-super-vectorize=virtual-vector-size=128 test-fastest-varying=0 vectorize-reductions=true"

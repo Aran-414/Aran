@@ -1,0 +1,3 @@
+--convert-math-to-libm
+-convert-math-to-libm
+-convert-math-to-libm -canonicalize

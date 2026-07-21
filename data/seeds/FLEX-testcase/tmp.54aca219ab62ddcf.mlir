@@ -1,0 +1,1 @@
+func.func private @bar() -> memref<10xf32>

@@ -1,0 +1,6 @@
+--convert-complex-to-standard
+-convert-complex-to-standard
+-convert-complex-to-standard=complex-range=improved
+-convert-complex-to-standard=complex-range=basic
+-convert-complex-to-standard=complex-range=none
+-pass-pipeline=builtin.module(func.func(convert-complex-to-standard),convert-complex-to-llvm,func.func(convert-math-to-llvm,convert-arith-to-llvm),convert-func-to-llvm,reconcile-unrealized-casts)

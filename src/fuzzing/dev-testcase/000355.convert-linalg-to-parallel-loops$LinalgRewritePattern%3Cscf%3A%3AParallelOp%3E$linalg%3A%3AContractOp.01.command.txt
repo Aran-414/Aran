@@ -1,0 +1,3 @@
+--convert-linalg-to-parallel-loops
+-convert-linalg-to-parallel-loops
+-convert-linalg-to-std

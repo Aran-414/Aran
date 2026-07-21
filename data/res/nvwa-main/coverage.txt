@@ -1,0 +1,5 @@
+Reading tracefile nvwa-main/lasttime.info
+Summary coverage rate:
+  lines......: 14.6% (139056 of 952317 lines)
+  functions..: 25.2% (103460 of 409795 functions)
+  branches...: 14.0% (102622 of 733803 branches)

@@ -1,0 +1,1 @@
+func.func private @f2() -> memref<?x?xf32, strided<[42, 1], offset: 10>>

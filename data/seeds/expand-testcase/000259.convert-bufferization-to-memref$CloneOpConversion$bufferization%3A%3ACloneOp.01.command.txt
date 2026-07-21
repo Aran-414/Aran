@@ -1,0 +1,3 @@
+--convert-bufferization-to-memref
+-convert-bufferization-to-memref
+-pass-pipeline=builtin.module(buffer-deallocation-pipeline,convert-bufferization-to-memref,func.func(convert-vector-to-scf,lower-affine,convert-linalg-to-loops))

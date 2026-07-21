@@ -1,0 +1,3 @@
+--mlprogram-pipeline-globals
+-mlprogram-pipeline-globals
+-pass-pipeline=builtin.module(mlprogram-pipeline-globals) --allow-unregistered-dialect

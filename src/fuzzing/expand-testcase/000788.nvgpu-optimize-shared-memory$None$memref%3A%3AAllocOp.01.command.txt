@@ -1,0 +1,2 @@
+--nvgpu-optimize-shared-memory
+-nvgpu-optimize-shared-memory

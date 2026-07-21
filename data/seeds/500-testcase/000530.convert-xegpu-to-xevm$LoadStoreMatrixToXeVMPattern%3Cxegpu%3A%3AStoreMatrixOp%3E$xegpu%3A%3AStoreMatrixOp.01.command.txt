@@ -1,0 +1,3 @@
+--convert-xegpu-to-xevm
+-convert-xegpu-to-xevm
+-convert-xegpu-to-xevm -canonicalize

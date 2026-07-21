@@ -1,0 +1,3 @@
+--pass-pipeline=builtin.module(func.func(convert-arm-sme-to-llvm,cse,canonicalize))
+--pass-pipeline=builtin.module(func.func(convert-arm-sme-to-llvm))
+--pass-pipeline=builtin.module(func.func(convert-arm-sme-to-llvm,canonicalize))

@@ -1,0 +1,4 @@
+--nvvm-attach-target
+-nvvm-attach-target
+--nvvm-attach-target=
+--nvvm-attach-target=ptxas-cmd-options=--register-usage-level=8

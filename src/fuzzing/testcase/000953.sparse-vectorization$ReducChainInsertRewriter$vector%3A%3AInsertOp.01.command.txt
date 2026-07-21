@@ -1,0 +1,5 @@
+--sparse-reinterpret-map --sparse-reinterpret-map -sparsification -cse -sparse-vectorization=vl=16 -cse
+--sparse-reinterpret-map -sparsification -cse "-sparse-vectorization=vl=16 enable-simd-index32=true" -cse
+--sparse-reinterpret-map -sparsification -cse "-sparse-vectorization=vl=4 enable-vla-vectorization=true" -cse
+--sparse-reinterpret-map -sparsification -cse -sparse-vectorization=vl=8 -cse
+--sparse-reinterpret-map --sparsification -cse -sparse-vectorization=vl=16 -scf-for-loop-peeling -canonicalize -cse

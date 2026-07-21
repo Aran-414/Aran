@@ -1,0 +1,2 @@
+--split-input-file
+-tosa-convert-integer-type-to-signless

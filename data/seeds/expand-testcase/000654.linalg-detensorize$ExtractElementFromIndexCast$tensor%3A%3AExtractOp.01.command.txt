@@ -1,0 +1,4 @@
+-allow-unregistered-dialect -pass-pipeline=builtin.module(func.func(linalg-detensorize{aggressive-mode}))
+-allow-unregistered-dialect -pass-pipeline=builtin.module(func.func(linalg-detensorize))
+-pass-pipeline=builtin.module(func.func(linalg-detensorize{aggressive-mode}))
+-pass-pipeline=builtin.module(func.func(linalg-detensorize))

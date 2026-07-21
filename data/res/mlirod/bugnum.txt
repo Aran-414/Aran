@@ -1,0 +1,155 @@
+None
+mlir::tosa::TargetEnvAttr::get
+mlir::tosa::lookupTargetEnvOrDefault
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::emitc::LValueTypemlir::detail::StorageUserBase
+mlir::emitc::LValueType::get
+mlir::OpConversionPattern
+mlir::ConversionPattern::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::VectorType::get
+mlir::TypeConverter::convertTypeImpl
+mlir::TypeConverter::convertType
+mlir::TypeConverter::isLegal
+mlir::TypeConverter::isLegal => 
+
+/llvm/include/llvm/ADT/SmallVector.h:295
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite
+mlir::applyPatternsGreedily
+mlir::detail::OpToOpPassAdaptor::run => 
+
+None
+mlir::detail::OperandStorage::OperandStorage
+mlir::Operation::create
+mlir::Operation::create
+mlir::Operation::create
+mlir::Operation::create => 
+
+None
+mlir::Attribute::getContext
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run => 
+
+/llvm/include/llvm/Support/Casting.h:572
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run
+mlir::splitAndProcessBuffer => 
+
+/llvm/include/llvm/Support/Casting.h:560
+mlir::detail::CallableOpInterfaceInterfaceTraits::Model
+mlir::function_interface_impl::setFunctionType
+mlir::WalkResultllvm::function_ref
+mlir::WalkResultmlir::detail::walk
+mlir::detail::OpToOpPassAdaptor::run => 
+
+None
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run
+mlir::splitAndProcessBuffer => 
+
+None
+mlir::xegpu::uArch::getUArch
+mlir::dataflow::SparseBackwardDataFlowAnalysis
+mlir::dataflow::AbstractSparseBackwardDataFlowAnalysis::visitOperation
+mlir::dataflow::AbstractSparseBackwardDataFlowAnalysis::initializeRecursively
+mlir::dataflow::AbstractSparseBackwardDataFlowAnalysis::initializeRecursively => 
+
+/mlir/lib/Dialect/Bufferization/Transforms/OneShotModuleBufferize.cpp:139
+mlir::bufferization::analyzeModuleOp
+mlir::bufferization::insertTensorCopies
+mlir::sparse_tensor::SparsificationAndBufferizationPass::runOnOperation
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 
+
+/mlir/lib/Dialect/Bufferization/Transforms/OneShotModuleBufferize.cpp:139
+mlir::bufferization::analyzeModuleOp
+mlir::bufferization::eliminateEmptyTensors
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+None => 
+
+None
+mlir::detail::OperandStorage::eraseOperands
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run => 
+
+/llvm/include/llvm/ADT/APInt.h:120
+mlir::math::IPowIOp::fold
+mlir::Attributemlir::constFoldBinaryOpConditional
+mlir::math::IPowIOp::fold
+mlir::RegisteredOperationName::Model
+mlir::Operation::fold => 
+
+None
+mlir::Operation::erase
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run => 
+
+None
+None => 
+
+/llvm/include/llvm/ADT/ArrayRef.h:248
+mlir::affine::resolveIndicesIntoOpWithOffsetsAndStrides
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite
+mlir::applyPatternsGreedily => 
+
+/llvm/include/llvm/Support/Casting.h:560
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite
+mlir::applyPatternsGreedily
+mlir::detail::OpToOpPassAdaptor::run => 
+
+None
+mlir::dataflow::IntegerRangeAnalysis::visitNonControlFlowArguments
+mlir::dataflow::SparseForwardDataFlowAnalysis
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visitRegionSuccessors
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visitBlock
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visit => 
+
+None
+mlir::affine::AffineForOp::fold
+mlir::RegisteredOperationName::Model
+mlir::Operation::fold
+mlir::Operation::fold
+mlir::OpBuilder::tryFold => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::VectorType::get
+mlir::TypeConverter::convertTypeImpl
+mlir::TypeConverter::convertType
+mlir::TypeConverter::isLegal
+mlir::ConversionTarget::isLegal => 
+
+/llvm/include/llvm/ADT/ArrayRef.h:388
+None => 
+
+/mlir/lib/IR/PatternMatch.cpp:180
+mlir::RewriterBase::eraseOp
+mlir::RewriterBase::eraseOp
+mlir::RewriterBase::eraseOp
+mlir::applyPatternsGreedily
+mlir::detail::OpToOpPassAdaptor::run => 

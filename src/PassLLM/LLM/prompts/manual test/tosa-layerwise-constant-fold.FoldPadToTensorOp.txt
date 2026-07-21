@@ -1,0 +1,770 @@
+python rag.py search_by_name "%tosa%::%canonicaliz%"
+python rag.py find-pass "tosa-layerwise-constant-fold"
+
+// tosa-layerwise-constant-fold ---- FoldPadToTensorOp<tosa::DepthwiseConv2DOp, ConvPadFoldAdaptor<tosa::DepthwiseConv2DOp>>
+TosaLayerwiseConstantFoldPass-FoldPadToTensorOp<tosa::DepthwiseConv2DOp, ConvPadFoldAdaptor<tosa::DepthwiseConv2DOp>>
+
+// -------------------------------- Step1: Extract Pattern --------------------------------
+// ================================ User ================================
+
+# Input
+This is the Tablegen record of `tosa-layerwise-constant-fold` pass:
+```
+def TosaLayerwiseConstantFoldPass : Pass<"tosa-layerwise-constant-fold", "func::FuncOp"> {
+  let summary = "Fold layerwise operations on constant tensors";
+  let description = [{
+    Pass that enables folding of full-layer operations on constant tensors.
+  }];
+
+  let options = [
+      Option<"aggressiveReduceConstant", "aggressive-reduce-constant", "bool",
+             /*default=*/"false",
+             "Always perform the reduce constant optimization"
+             "May add more tosa.const but would reduce runtime calculations">,
+   ];
+}
+```
+
+This is the `runOnOperation` C++ code of `tosa-layerwise-constant-fold` pass:
+```
+void runOnOperation() override {
+    auto *ctx = &getContext();
+    RewritePatternSet patterns(ctx);
+    auto func = getOperation();
+
+    mlir::tosa::populateTosaFoldConstantReciprocalPatterns(ctx, patterns);
+    mlir::tosa::populateTosaFoldConstantTransposePatterns(ctx, patterns);
+    mlir::tosa::populateTosaConstantReduction(ctx, patterns,
+                                              aggressiveReduceConstant);
+    populateTosaOpsCanonicalizationPatterns(ctx, patterns);
+
+    if (applyPatternsGreedily(func, std::move(patterns)).failed())
+      signalPassFailure();
+  }
+```
+
+# Special Rule
+When encountering code like the following:
+```
+void populateTosaOpsCanonicalizationPatterns(MLIRContext *ctx,
+                                             RewritePatternSet &patterns) {
+  addOpsCanonicalizations<
+#define GET_OP_LIST
+#include "mlir/Dialect/Tosa/IR/TosaOps.cpp.inc"
+      >(ctx, patterns);
+}
+```
+if understanding the condition requires common dialect-level logic rather than logic specific to a single operation, you may request all canonicalization-related logic of that dialect.
+
+For example, use:
+<look>tosa::canonicalization</look>
+
+# Question
+- What patterns are used in `tosa-layerwise-constant-fold` pass? 
+
+# Output Policy
+Output only the rewrite pattern names used by the `tosa-layerwise-constant-fold` pass. Do not return `populate*Patterns` functions as pattern names. If the pass does not use any patterns, output `None`.
+
+Example:
+CeilDivSIOpConverter
+CeilDivUIOpConverter
+FloorDivSIOpConverter
+
+**Bad** Example:
+Patterns that defined in `arith::populateCeilFloorDivExpandOpsPatterns` and `arith::populateArithToLLVMConversionPatterns`
+TosaOpCanonicalization patterns for all Tosa dialect operations defined in mlir/Dialect/Tosa/IR/TosaOps.cpp.inc
+
+If additional information is needed, use `<look></look>` with the identifier of a function, class, or TableGen record to request its source code. 
+When explaining a condition that involves a function call, first determine the semantics of that call. If you are not certain what the function call means, use `<look></look>` to inspect the function body rather than directly outputting the condition.
+
+Example:
+<look>MathSincosFusionPass</look>
+
+// ================================ Assistant ================================
+
+<look>tosa::populateTosaFoldConstantReciprocalPatterns</look>
+
+// ================================ User ================================
+
+The code of `populateTosaFoldConstantReciprocalPatterns` is:
+```
+void mlir::tosa::populateTosaFoldConstantReciprocalPatterns(
+    MLIRContext *ctx, RewritePatternSet &patterns) {
+  patterns.add<TosaFoldConstantReciprocal>(ctx);
+}
+```
+
+// ================================ Assistant ================================
+
+<look>tosa::populateTosaFoldConstantTransposePatterns</look>
+
+// ================================ User ================================
+
+The code of `populateTosaFoldConstantTransposePatterns` is:
+```
+void mlir::tosa::populateTosaFoldConstantTransposePatterns(
+    MLIRContext *ctx, RewritePatternSet &patterns) {
+  patterns.add<TosaFoldConstantTranspose>(ctx);
+}
+```
+
+// ================================ Assistant ================================
+
+<look>tosa::populateTosaConstantReduction</look>
+
+// ================================ User ================================
+
+The code of `populateTosaConstantReduction` is:
+```
+void mlir::tosa::populateTosaConstantReduction(MLIRContext *ctx,
+                                               RewritePatternSet &patterns,
+                                               bool aggressiveReduceConstant) {
+  patterns.add<ReduceConstantOptimization<ReduceAllOp>>(
+      ctx, aggressiveReduceConstant);
+  patterns.add<ReduceConstantOptimization<ReduceAnyOp>>(
+      ctx, aggressiveReduceConstant);
+  patterns.add<ReduceConstantOptimization<ReduceMaxOp>>(
+      ctx, aggressiveReduceConstant);
+  patterns.add<ReduceConstantOptimization<ReduceMinOp>>(
+      ctx, aggressiveReduceConstant);
+  patterns.add<ReduceConstantOptimization<ReduceProductOp>>(
+      ctx, aggressiveReduceConstant);
+  patterns.add<ReduceConstantOptimization<ReduceSumOp>>(
+      ctx, aggressiveReduceConstant);
+}
+```
+
+// ================================ Assistant ================================
+
+<look>tosa::populateTosaOpsCanonicalizationPatterns</look>
+
+// ================================ User ================================
+
+The code of `populateTosaOpsCanonicalizationPatterns` is:
+```
+void populateTosaOpsCanonicalizationPatterns(MLIRContext *ctx,
+                                             RewritePatternSet &patterns) {
+  addOpsCanonicalizations<
+#define GET_OP_LIST
+#include "mlir/Dialect/Tosa/IR/TosaOps.cpp.inc"
+      >(ctx, patterns);
+}
+```
+
+// ================================ Assistant ================================
+
+<look>tosa::canonicalization</look>
+
+// ================================ User ================================
+
+The code of `tosa::canonicalization` is:
+```
+file: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp
+start_line: 227
+end_line: 232
+src_ty: cpp
+record_ty: function
+name: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp::Conv2DOp::getCanonicalizationPatterns
+model: sentence-transformers/all-MiniLM-L6-v2
+embedding_dim: 384
+content:
+void Conv2DOp::getCanonicalizationPatterns(RewritePatternSet &results,
+                                           MLIRContext *context) {
+  results.add<
+      FoldPadToTensorOp<tosa::Conv2DOp, ConvPadFoldAdaptor<tosa::Conv2DOp>>>(
+      context);
+}
+----- RECORD 2/13 -----
+file: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp
+start_line: 271
+end_line: 277
+src_ty: cpp
+record_ty: function
+name: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp::MaxPool2dOp::getCanonicalizationPatterns
+model: sentence-transformers/all-MiniLM-L6-v2
+embedding_dim: 384
+content:
+void MaxPool2dOp::getCanonicalizationPatterns(RewritePatternSet &results,
+                                              MLIRContext *context) {
+  results.add<MaxPool2dIsNoOp,
+              FoldPadToTensorOp<tosa::MaxPool2dOp,
+                                PoolPadFoldAdaptor<tosa::MaxPool2dOp>>>(
+      context);
+}
+----- RECORD 3/13 -----
+file: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp
+start_line: 303
+end_line: 306
+src_ty: cpp
+record_ty: function
+name: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp::ConcatOp::getCanonicalizationPatterns
+model: sentence-transformers/all-MiniLM-L6-v2
+embedding_dim: 384
+content:
+void ConcatOp::getCanonicalizationPatterns(RewritePatternSet &results,
+                                           MLIRContext *context) {
+  results.add<ConcatOptimization>(context);
+}
+----- RECORD 4/13 -----
+file: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp
+start_line: 308
+end_line: 317
+src_ty: cpp
+record_ty: function
+name: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp::SelectOp::canonicalize
+model: sentence-transformers/all-MiniLM-L6-v2
+embedding_dim: 384
+content:
+LogicalResult SelectOp::canonicalize(SelectOp op, PatternRewriter &rewriter) {
+  auto notOp = op.getInput1().getDefiningOp<tosa::LogicalNotOp>();
+  if (!notOp)
+    return failure();
+  rewriter.modifyOpInPlace(op, [&]() {
+    op.getOperation()->setOperands(
+        {notOp.getInput1(), op.getOnFalse(), op.getOnTrue()});
+  });
+  return success();
+}
+----- RECORD 5/13 -----
+file: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp
+start_line: 414
+end_line: 417
+src_ty: cpp
+record_ty: function
+name: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp::TransposeOp::getCanonicalizationPatterns
+model: sentence-transformers/all-MiniLM-L6-v2
+embedding_dim: 384
+content:
+void TransposeOp::getCanonicalizationPatterns(RewritePatternSet &results,
+                                              MLIRContext *context) {
+  results.add<ConsolidateTransposeOptimization, TransposeIsReshape>(context);
+}
+----- RECORD 6/13 -----
+file: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp
+start_line: 627
+end_line: 631
+src_ty: cpp
+record_ty: function
+name: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp::ClampOp::getCanonicalizationPatterns
+model: sentence-transformers/all-MiniLM-L6-v2
+embedding_dim: 384
+content:
+void ClampOp::getCanonicalizationPatterns(RewritePatternSet &results,
+                                          MLIRContext *context) {
+  results.add<ClampIsNoOp>(context);
+  results.add<ClampClampOptimization>(context);
+}
+----- RECORD 7/13 -----
+file: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp
+start_line: 836
+end_line: 880
+src_ty: cpp
+record_ty: struct
+name: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp::SliceDynamicSizeCanonicalization
+model: sentence-transformers/all-MiniLM-L6-v2
+embedding_dim: 384
+content:
+// Update size operand of tosa.slice if size has dynamic dims but corresponding
+// output dim is static
+struct SliceDynamicSizeCanonicalization
+    : public OpRewritePattern<tosa::SliceOp> {
+  using OpRewritePattern<tosa::SliceOp>::OpRewritePattern;
+
+  LogicalResult matchAndRewrite(tosa::SliceOp sliceOp,
+                                PatternRewriter &rewriter) const override {
+    ShapedType resultType = cast<ShapedType>(sliceOp.getType());
+
+    ElementsAttr sizeElems;
+    if (!matchPattern(sliceOp.getSize(), m_Constant(&sizeElems))) {
+      return rewriter.notifyMatchFailure(
+          sliceOp, "size of slice must be a static ranked shape");
+    }
+
+    llvm::SmallVector<int64_t> sliceSizes =
+        llvm::to_vector(sizeElems.getValues<int64_t>());
+
+    bool replaceSliceSize{false};
+    // if size op has -1 indicating dynamic shape but corresponding dim on the
+    // output is statically known, update size to match with known output dim
+    // shape
+    for (const auto &[index, size] : llvm::enumerate(sliceSizes)) {
+      if (size == -1 && !resultType.isDynamicDim(index)) {
+        sliceSizes[index] = resultType.getDimSize(index);
+        replaceSliceSize = true;
+      }
+    }
+
+    if (!replaceSliceSize) {
+      return rewriter.notifyMatchFailure(
+          sliceOp, "no dimension of size of slice is dynamic that resolves "
+                   "to static output shape");
+    }
+
+    auto size_op = getTosaConstShape(rewriter, sliceOp.getLoc(), sliceSizes);
+    auto newSliceOp =
+        tosa::SliceOp::create(rewriter, sliceOp.getLoc(), sliceOp.getType(),
+                              sliceOp.getInput1(), sliceOp.getStart(), size_op);
+
+    rewriter.replaceOp(sliceOp, newSliceOp.getResult());
+    return success();
+  }
+}
+----- RECORD 8/13 -----
+file: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp
+start_line: 842
+end_line: 879
+src_ty: cpp
+record_ty: function
+name: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp::SliceDynamicSizeCanonicalization::matchAndRewrite
+model: sentence-transformers/all-MiniLM-L6-v2
+embedding_dim: 384
+content:
+LogicalResult matchAndRewrite(tosa::SliceOp sliceOp,
+                                PatternRewriter &rewriter) const override {
+    ShapedType resultType = cast<ShapedType>(sliceOp.getType());
+
+    ElementsAttr sizeElems;
+    if (!matchPattern(sliceOp.getSize(), m_Constant(&sizeElems))) {
+      return rewriter.notifyMatchFailure(
+          sliceOp, "size of slice must be a static ranked shape");
+    }
+
+    llvm::SmallVector<int64_t> sliceSizes =
+        llvm::to_vector(sizeElems.getValues<int64_t>());
+
+    bool replaceSliceSize{false};
+    // if size op has -1 indicating dynamic shape but corresponding dim on the
+    // output is statically known, update size to match with known output dim
+    // shape
+    for (const auto &[index, size] : llvm::enumerate(sliceSizes)) {
+      if (size == -1 && !resultType.isDynamicDim(index)) {
+        sliceSizes[index] = resultType.getDimSize(index);
+        replaceSliceSize = true;
+      }
+    }
+
+    if (!replaceSliceSize) {
+      return rewriter.notifyMatchFailure(
+          sliceOp, "no dimension of size of slice is dynamic that resolves "
+                   "to static output shape");
+    }
+
+    auto size_op = getTosaConstShape(rewriter, sliceOp.getLoc(), sliceSizes);
+    auto newSliceOp =
+        tosa::SliceOp::create(rewriter, sliceOp.getLoc(), sliceOp.getType(),
+                              sliceOp.getInput1(), sliceOp.getStart(), size_op);
+
+    rewriter.replaceOp(sliceOp, newSliceOp.getResult());
+    return success();
+  }
+----- RECORD 9/13 -----
+file: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp
+start_line: 882
+end_line: 886
+src_ty: cpp
+record_ty: function
+name: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp::SliceOp::getCanonicalizationPatterns
+model: sentence-transformers/all-MiniLM-L6-v2
+embedding_dim: 384
+content:
+void SliceOp::getCanonicalizationPatterns(RewritePatternSet &results,
+                                          MLIRContext *context) {
+  results.add<ConcatSliceOptimization, PadSliceOptimization,
+              SliceDynamicSizeCanonicalization>(context);
+}
+----- RECORD 10/13 -----
+file: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/Transforms/TosaLayerwiseConstantFoldPass.cpp
+start_line: 30
+end_line: 33
+src_ty: cpp
+record_ty: function
+name: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/Transforms/TosaLayerwiseConstantFoldPass.cpp::addOpsCanonicalizations
+model: sentence-transformers/all-MiniLM-L6-v2
+embedding_dim: 384
+content:
+template <typename... Args>
+void addOpsCanonicalizations(MLIRContext *ctx, RewritePatternSet &patterns) {
+  (Args::getCanonicalizationPatterns(patterns, ctx), ...);
+}
+----- RECORD 11/13 -----
+file: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/Transforms/TosaLayerwiseConstantFoldPass.cpp
+start_line: 35
+end_line: 41
+src_ty: cpp
+record_ty: function
+name: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/Transforms/TosaLayerwiseConstantFoldPass.cpp::populateTosaOpsCanonicalizationPatterns
+model: sentence-transformers/all-MiniLM-L6-v2
+embedding_dim: 384
+content:
+void populateTosaOpsCanonicalizationPatterns(MLIRContext *ctx,
+                                             RewritePatternSet &patterns) {
+  addOpsCanonicalizations<
+#define GET_OP_LIST
+#include "mlir/Dialect/Tosa/IR/TosaOps.cpp.inc"
+      >(ctx, patterns);
+}
+----- RECORD 12/13 -----
+file: /data2/dependency/llvm-project/build/tools/mlir/include/mlir/Dialect/Tosa/IR/TosaOps.cpp.inc
+start_line: 22481
+end_line: 22483
+src_ty: cpp.inc
+record_ty: function
+name: /data2/dependency/llvm-project/build/tools/mlir/include/mlir/Dialect/Tosa/IR/TosaOps.cpp.inc::SelectOp::getCanonicalizationPatterns
+model: sentence-transformers/all-MiniLM-L6-v2
+embedding_dim: 384
+content:
+void SelectOp::getCanonicalizationPatterns(::mlir::RewritePatternSet &results, ::mlir::MLIRContext *context) {
+  results.add(canonicalize);
+}
+----- RECORD 13/13 -----
+file: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp
+start_line: 234
+end_line: 239
+src_ty: cpp
+record_ty: function
+name: /data2/dependency/llvm-project/mlir/lib/Dialect/Tosa/IR/TosaCanonicalizations.cpp::DepthwiseConv2DOp::getCanonicalizationPatterns
+model: sentence-transformers/all-MiniLM-L6-v2
+embedding_dim: 384
+content:
+void DepthwiseConv2DOp::getCanonicalizationPatterns(RewritePatternSet &results,
+                                                    MLIRContext *context) {
+  results.add<FoldPadToTensorOp<tosa::DepthwiseConv2DOp,
+                                ConvPadFoldAdaptor<tosa::DepthwiseConv2DOp>>>(
+      context);
+}
+```
+
+// ================================ Assistant ================================
+
+TosaFoldConstantReciprocal
+TosaFoldConstantTranspose
+ReduceConstantOptimization<ReduceAllOp>
+ReduceConstantOptimization<ReduceAnyOp>
+ReduceConstantOptimization<ReduceMaxOp>
+ReduceConstantOptimization<ReduceMinOp>
+ReduceConstantOptimization<ReduceProductOp>
+ReduceConstantOptimization<ReduceSumOp>
+FoldPadToTensorOp<tosa::Conv2DOp, ConvPadFoldAdaptor<tosa::Conv2DOp>>
+MaxPool2dIsNoOp
+FoldPadToTensorOp<tosa::MaxPool2dOp, PoolPadFoldAdaptor<tosa::MaxPool2dOp>>
+ConcatOptimization
+ConsolidateTransposeOptimization
+TransposeIsReshape
+ClampIsNoOp
+ClampClampOptimization
+ConcatSliceOptimization
+PadSliceOptimization
+SliceDynamicSizeCanonicalization
+FoldPadToTensorOp<tosa::DepthwiseConv2DOp, ConvPadFoldAdaptor<tosa::DepthwiseConv2DOp>>
+
+// -------------------------------- Step2: Pass Condition Extraction --------------------------------
+
+// ================================ User ================================
+
+# Input
+This is the `runOnOperation` C++ code of `tosa-layerwise-constant-fold` pass:
+```
+void runOnOperation() override {
+    auto *ctx = &getContext();
+    RewritePatternSet patterns(ctx);
+    auto func = getOperation();
+
+    mlir::tosa::populateTosaFoldConstantReciprocalPatterns(ctx, patterns);
+    mlir::tosa::populateTosaFoldConstantTransposePatterns(ctx, patterns);
+    mlir::tosa::populateTosaConstantReduction(ctx, patterns,
+                                              aggressiveReduceConstant);
+    populateTosaOpsCanonicalizationPatterns(ctx, patterns);
+
+    if (applyPatternsGreedily(func, std::move(patterns)).failed())
+      signalPassFailure();
+  }
+```
+
+# Question
+Ignore any rewrite-pattern implementation detail. Analyze only the conditions required for an operation to trigger this optimization directly in the `runOnOperation` function. First identify the meaning of each condition check in the provided source code, then summarize the final conditions.
+
+# Output Policy
+- Output only conditions in the format `[Condition Type][Condition Effect] Condition`.
+
+- Each condition should be expressed as a constraint on the operation.
+
+- Prefer identifiers or code snippets over literal values whenever possible.
+
+- Avoid using type parameters; prefer concrete types whenever possible.
+
+- Do not include any explanation or additional text.
+
+- If no such condition exists, output `None`.
+
+Example:
+[Operation-intrinsic condition][Optimization Skip] The operation must be `arith.addi`.
+
+If additional information is needed, use `<look></look>` with the identifier of a function, class, or TableGen record to request its source code. 
+When explaining a condition that involves a function call, first determine the semantics of that call. If you are not certain what the function call means, use `<look></look>` to inspect the function body rather than directly outputting the condition.
+
+Example:
+<look>MathSincosFusionPass</look>
+
+// ================================ Assistant ================================
+
+[Pass-associated invocation][Pass Failure] The application of all registered patterns to the function must succeed.
+
+// -------------------------------- Step3: Pattern Condition Extraction --------------------------------
+
+// ================================ User ================================
+
+# Input
+This is the definition of `FoldPadToTensorOp<tosa::DepthwiseConv2DOp, ConvPadFoldAdaptor<tosa::DepthwiseConv2DOp>>` pattern:
+```
+// Pattern attempts to fold a `tosa.pad` operator to a following tensor
+// operation like `tosa.conv2d` by merging the padding associated with the
+// pad operator directly to the implicit padding of the tensor operation.
+// This helps eliminate the explicit padding operator if unused.
+template <typename OpTy, typename AdaptorTy>
+struct FoldPadToTensorOp : public OpRewritePattern<OpTy> {
+  using OpRewritePattern<OpTy>::OpRewritePattern;
+
+  LogicalResult matchAndRewrite(OpTy tensorOp,
+                                PatternRewriter &rewriter) const override {
+    // Check producer is a tosa::PadOp
+    auto padOp = tensorOp.getInput().template getDefiningOp<tosa::PadOp>();
+    if (!padOp)
+      return rewriter.notifyMatchFailure(tensorOp,
+                                         "Producer must be a tosa::PadOp.");
+
+    // Validate that tensor operation has sane padding
+    const std::vector<int64_t> &tensorOpPad = tensorOp.getPad().vec();
+    if (tensorOpPad.size() != 4) // pad_top, pad_bottom, pad_left, pad_right
+      return rewriter.notifyMatchFailure(
+          tensorOp, "Tensor operation padding shall have 4 elements.");
+
+    // Validate tosa::PadOp padding
+    DenseIntElementsAttr padOpPadding;
+    if (!matchPattern(padOp.getPadding(), m_Constant(&padOpPadding))) {
+      return rewriter.notifyMatchFailure(
+          tensorOp,
+          "The `padding` input specified on the tosa::PadOp must be constant.");
+    }
+    // N_before, N_after, H_before, H_after, W_before, W_after, C_before,
+    // C_after
+    if (padOpPadding.size() != 8)
+      return rewriter.notifyMatchFailure(tensorOp,
+                                         "Pad padding should have 8 elements.");
+    int64_t padNBefore = (*(padOpPadding.begin() + 0)).getLimitedValue();
+    int64_t padNAfter = (*(padOpPadding.begin() + 1)).getLimitedValue();
+    int64_t padHBefore = (*(padOpPadding.begin() + 2)).getLimitedValue();
+    int64_t padHAfter = (*(padOpPadding.begin() + 3)).getLimitedValue();
+    int64_t padWBefore = (*(padOpPadding.begin() + 4)).getLimitedValue();
+    int64_t padWAfter = (*(padOpPadding.begin() + 5)).getLimitedValue();
+    int64_t padCBefore = (*(padOpPadding.begin() + 6)).getLimitedValue();
+    int64_t padCAfter = (*(padOpPadding.begin() + 7)).getLimitedValue();
+
+    if (padNBefore != 0 || padNAfter != 0 || padCBefore != 0 || padCAfter != 0)
+      return rewriter.notifyMatchFailure(
+          tensorOp, "Folding padding in N or C dimensions is not supported.");
+
+    // Fold padding from Pad into the tensor operation
+    // 4 elements - pad_top, pad_bottom, pad_left, pad_right
+    SmallVector<int64_t> foldedPad(tensorOpPad.size());
+    foldedPad[0] = padHBefore + tensorOpPad[0];
+    foldedPad[1] = padHAfter + tensorOpPad[1];
+    foldedPad[2] = padWBefore + tensorOpPad[2];
+    foldedPad[3] = padWAfter + tensorOpPad[3];
+
+    // Check kernel related restrictions
+    if (!AdaptorTy::checkKernelCompliance(tensorOp, foldedPad)) {
+      return rewriter.notifyMatchFailure(
+          tensorOp, "Padding size not aligned with kernel restrictions.");
+    }
+
+    // Check padding constant restrictions
+    if (!AdaptorTy::checkPadConstCompliance(tensorOp, padOp.getPadConst())) {
+      return rewriter.notifyMatchFailure(
+          tensorOp,
+          "Padding constant is not aligned with operator zero-point.");
+    }
+
+    // Check that padding doesn't grow more than 8K level (8192) for now
+    if (llvm::any_of(foldedPad, [](int64_t padVal) { return padVal > 8192; })) {
+      return rewriter.notifyMatchFailure(
+          tensorOp, "Padding size more than the 8K level limit.");
+    }
+
+    // Create operator
+    AdaptorTy::replaceOpWithNewPad(rewriter, tensorOp, padOp.getInput1(),
+                                   foldedPad);
+
+    return success();
+  }
+}
+```
+
+# Question
+Analyze only the conditions required for an operation to trigger the rewrite logic in this rewrite pattern. 
+First identify the meaning of each condition check in the provided source code, then summarize the final conditions.
+
+# Output Policy
+- Output only conditions in the format `[Condition Type][Condition Effect] Condition`.
+
+- Each condition should be expressed as a constraint on the operation.
+
+- Prefer identifiers or code snippets over literal values whenever possible.
+
+- Avoid using type parameters; prefer concrete types whenever possible.
+
+- Do not include any explanation or additional text.
+
+- If no such condition exists, output `None`.
+
+Example:
+[Operation-intrinsic condition][Optimization Skip] The operation must be `arith.addi`.
+
+If additional information is needed, use `<look></look>` with the identifier of a function, class, or TableGen record to request its source code. 
+When explaining a condition that involves a function call, first determine the semantics of that call. If you are not certain what the function call means, use `<look></look>` to inspect the function body rather than directly outputting the condition.
+
+Example:
+<look>MathSincosFusionPass</look>
+
+// ================================ Assistant ================================
+
+<look>ConvPadFoldAdaptor<tosa::DepthwiseConv2DOp>::checkKernelCompliance</look>
+<look>ConvPadFoldAdaptor<tosa::DepthwiseConv2DOp>::checkPadConstCompliance</look>
+
+// ================================ User ================================
+
+The code of `ConvPadFoldAdaptor<tosa::DepthwiseConv2DOp>::checkKernelCompliance` is:
+```
+template <>
+struct PoolPadFoldAdaptor<tosa::MaxPool2dOp> {
+  using OpTy = tosa::MaxPool2dOp;
+static bool checkKernelCompliance(OpTy op, const ArrayRef<int64_t> newPad) {
+    const llvm::ArrayRef<int64_t> kernel = op.getKernel();
+    if (newPad[2] >= kernel[1] || newPad[3] >= kernel[1] ||
+        newPad[0] >= kernel[0] || newPad[1] >= kernel[0])
+      return false;
+    return true;
+  }
+
+template <typename OpTy>
+struct ConvPadFoldAdaptor {
+static bool checkKernelCompliance(OpTy, const ArrayRef<int64_t>) {
+    return true;
+  }
+```
+
+The code of `ConvPadFoldAdaptor<tosa::DepthwiseConv2DOp>::checkPadConstCompliance` is:
+```
+struct PoolPadFoldAdaptor<tosa::MaxPool2dOp> {
+  using OpTy = tosa::MaxPool2dOp;
+  static bool checkKernelCompliance(OpTy op, const ArrayRef<int64_t> newPad) {
+    const llvm::ArrayRef<int64_t> kernel = op.getKernel();
+    if (newPad[2] >= kernel[1] || newPad[3] >= kernel[1] ||
+        newPad[0] >= kernel[0] || newPad[1] >= kernel[0])
+      return false;
+    return true;
+  }
+static bool checkPadConstCompliance(OpTy, Value padConst) {
+    // Check that padConst is a constant value and a scalar tensor
+    DenseElementsAttr padConstAttr;
+    if (!matchPattern(padConst, m_Constant(&padConstAttr)) ||
+        padConstAttr.size() != 1) {
+      return false;
+    }
+
+    // Pad needs to be in the minimum value to be able to merge
+    if (auto padConstFpAttr =
+            mlir::dyn_cast<DenseFPElementsAttr>(padConstAttr)) {
+      const APFloat padConstVal = *padConstFpAttr.begin();
+      const APFloat lowestVal =
+          APFloat::getLargest(padConstVal.getSemantics(), true);
+      return padConstVal == lowestVal;
+    }
+    if (auto padConstIntAttr =
+            mlir::dyn_cast<DenseIntElementsAttr>(padConstAttr)) {
+      const APInt padConstVal = *padConstIntAttr.begin();
+      const unsigned int bitWidth = padConstVal.getBitWidth();
+      const APInt lowestVal =
+          padConstIntAttr.getElementType().isUnsignedInteger()
+              ? APInt::getZero(bitWidth)
+              : APInt::getSignedMinValue(bitWidth);
+      return padConstVal == lowestVal;
+    }
+
+    // Bail-out on unsupported type
+    return false;
+  }
+
+template <typename OpTy>
+struct ConvPadFoldAdaptor {
+  static bool checkKernelCompliance(OpTy, const ArrayRef<int64_t>) {
+    return true;
+  }
+static bool checkPadConstCompliance(OpTy op, Value padConst) {
+    return checkMatchingPadConstAndZp(padConst, op.getInputZp());
+  }
+```
+
+// ================================ Assistant ================================
+
+[Operation-contextual condition][Pattern Match Failure] The input operand must be defined by a tosa::PadOp.
+[Operation-intrinsic condition][Pattern Match Failure] The operation's padattribute vector must have exactly 4 elements.
+[Operation-contextual condition][Pattern Match Failure] The tosa::PadOp's paddinginput must be a constant attribute.
+[Operation-contextual condition][Pattern Match Failure] The constant paddingattribute of the tosa::PadOpmust have exactly 8 elements.
+[Operation-contextual condition][Pattern Match Failure] The first, second, sixth, and seventh elements of the tosa::PadOp's constant paddingattribute must be zero.
+[Operation-contextual condition][Pattern Match Failure] The folded padding sizes must satisfy the kernel restrictions of a tosa::DepthwiseConv2DOp.
+[Operation-contextual condition][Pattern Match Failure] The constant value in the tosa::PadOp's pad_constinput must match the zero-point of the operation.
+[Operation-contextual condition][Pattern Match Failure] Each element of the folded padding vector must be <= 8192.
+
+// -------------------------------- Step4: Pass-Pattern Condition Combination --------------------------------
+
+# Input
+This is the condition of `tosa-layerwise-constant-fold`:
+```
+[Pass-associated invocation][Pass Failure] The application of all registered patterns to the function must succeed.
+```
+
+This is the condition of `FoldPadToTensorOp<tosa::DepthwiseConv2DOp, ConvPadFoldAdaptor<tosa::DepthwiseConv2DOp>>`:
+```
+[Operation-intrinsic condition][Pattern Match Failure] The operation must be tosa::DepthwiseConv2DOp.
+[Operation-contextual condition][Pattern Match Failure] The input operand of the operation must be defined by a tosa::PadOp.
+[Operation-intrinsic condition][Pattern Match Failure] The operation's pad attribute must have exactly 4 elements.
+[Operation-intrinsic condition][Pattern Match Failure] The tosa::PadOp's padding operand must be a constant DenseIntElementsAttr.
+[Operation-intrinsic condition][Pattern Match Failure] The tosa::PadOp's padding attribute must have exactly 8 elements.
+[Operation-intrinsic condition][Pattern Match Failure] The tosa::PadOp must have zero padding in the N and C dimensions.
+[Operation-intrinsic condition][Pattern Match Failure] The adapted operation must satisfy AdaptorTy::checkKernelCompliance.
+[Operation-intrinsic condition][Pattern Match Failure] The tosa::PadOp's padConst must satisfy AdaptorTy::checkPadConstCompliance.
+[Operation-intrinsic condition][Pattern Match Failure] All folded padding values must be ≤ 8192.
+```
+
+# Question
+FoldPadToTensorOp<tosa::DepthwiseConv2DOp, ConvPadFoldAdaptor<tosa::DepthwiseConv2DOp>> is a pattern employed by tosa-layerwise-constant-fold; please integrate it with the conditions identified above. Notice that all `Pattern Match Failure` condition effects should be converted to either `Optimization Skip` or `Pass Failure`.
+
+# Rule
+When a pass condition indicates that pattern application must succeed, such as "the patterns applied greedily to the function must succeed," classify all `Pattern Match Failure` effects as `Pass Failure`; otherwise, classify them as `Optimization Skip`. After that, remove the condition requiring pattern application to succeed.
+
+# Output Policy
+- Output only conditions in the format `[Condition Type][Condition Effect] Condition`.
+
+- Each condition should be expressed as a constraint on the operation.
+
+- Prefer identifiers or code snippets over literal values whenever possible.
+
+- Avoid using type parameters; prefer concrete types whenever possible.
+
+- Do not include any explanation or additional text.
+
+- If no such condition exists, output `None`.
+
+Example:
+[Operation-intrinsic condition][Optimization Skip] The operation must be `arith.addi`.
+
+
+
+[Operation-contextual condition][Pass Failure] The input operand of tosa::DepthwiseConv2DOp must be defined by a tosa::PadOp.
+[Operation-intrinsic condition][Pass Failure] tosa::DepthwiseConv2DOp's pad attribute must have exactly 4 elements.
+[Operation-intrinsic condition][Pass Failure] tosa::PadOp's padding operand must be a constant DenseIntElementsAttr.
+[Operation-intrinsic condition][Pass Failure] tosa::PadOp's padding attribute must have exactly 8 elements.
+[Operation-intrinsic condition][Pass Failure] tosa::PadOp must have zero padding in the N and C dimensions.
+[Operation-intrinsic condition][Pass Failure] tosa::DepthwiseConv2DOp must satisfy ConvPadFoldAdaptor<tosa::DepthwiseConv2DOp>::checkKernelCompliance.
+[Operation-intrinsic condition][Pass Failure] tosa::PadOp's padConst must satisfy ConvPadFoldAdaptor<tosa::DepthwiseConv2DOp>::checkPadConstCompliance.
+[Operation-intrinsic condition][Pass Failure] All folded padding values must be ≤ 8192.

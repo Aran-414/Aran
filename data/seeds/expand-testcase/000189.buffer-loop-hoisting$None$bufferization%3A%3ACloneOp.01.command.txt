@@ -1,0 +1,1 @@
+-one-shot-bufferize=bufferize-function-boundaries -canonicalize -buffer-loop-hoisting -drop-equivalent-buffer-results

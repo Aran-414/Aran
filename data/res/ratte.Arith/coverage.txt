@@ -1,0 +1,5 @@
+Reading tracefile ratte.Arith/lasttime.info
+Summary coverage rate:
+  lines......: 3.1% (29965 of 957460 lines)
+  functions..: 6.0% (24741 of 414028 functions)
+  branches...: 3.7% (28030 of 753146 branches)

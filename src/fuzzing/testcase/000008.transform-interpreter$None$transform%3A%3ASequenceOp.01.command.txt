@@ -1,0 +1,24 @@
+-transform-interpreter -canonicalize
+--transform-interpreter -canonicalize -cse
+--transform-interpreter -test-transform-dialect-erase-schedule --test-lower-to-llvm
+--transform-interpreter --canonicalize
+-transform-interpreter -cse
+-transform-interpreter -canonicalize --allow-unregistered-dialect
+--transform-interpreter --scf-for-loop-canonicalization --canonicalize
+--transform-interpreter -cse -canonicalize
+-transform-interpreter -canonicalize -allow-unregistered-dialect
+--transform-interpreter -canonicalize
+--transform-interpreter -resolve-shaped-type-result-dims -canonicalize
+-transform-interpreter -canonicalize -cse
+--transform-interpreter --mlir-print-local-scope --cse
+-allow-unregistered-dialect -transform-interpreter -canonicalize
+-transform-interpreter -test-transform-dialect-erase-schedule
+-transform-interpreter --cse --canonicalize
+-transform-interpreter -allow-unregistered-dialect --cse --mlir-print-local-scope
+-transform-interpreter -cse --mlir-print-local-scope
+--transform-interpreter --test-transform-dialect-erase-schedule --math-uplift-to-fma --convert-bufferization-to-memref --test-lower-to-llvm
+-transform-interpreter -test-transform-dialect-erase-schedule -convert-nvgpu-to-nvvm -gpu-kernel-outlining -convert-scf-to-cf -convert-nvvm-to-llvm -convert-vector-to-llvm -convert-math-to-llvm -expand-strided-metadata -lower-affine -convert-index-to-llvm=index-bitwidth=32 -convert-arith-to-llvm -finalize-memref-to-llvm -convert-func-to-llvm -canonicalize -expand-strided-metadata "--nvvm-attach-target=module=main_kernel features=+ptx80 chip=sm_90 O=3"
+--transform-interpreter --cse
+--transform-interpreter --cse --mlir-print-local-scope
+-transform-interpreter -cse -mlir-print-local-scope
+-transform-interpreter --cse

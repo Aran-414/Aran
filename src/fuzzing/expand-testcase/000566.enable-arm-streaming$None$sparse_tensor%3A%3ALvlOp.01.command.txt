@@ -1,0 +1,9 @@
+--enable-arm-streaming
+-enable-arm-streaming
+-enable-arm-streaming=streaming-mode=streaming-locally
+-enable-arm-streaming=streaming-mode=streaming-compatible
+-enable-arm-streaming=za-mode=new-za
+-enable-arm-streaming=za-mode=in-za
+-enable-arm-streaming=za-mode=out-za
+-enable-arm-streaming=za-mode=inout-za
+-enable-arm-streaming=za-mode=preserves-za

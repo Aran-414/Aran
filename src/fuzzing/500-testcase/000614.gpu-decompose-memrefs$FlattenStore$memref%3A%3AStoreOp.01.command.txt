@@ -1,0 +1,3 @@
+--gpu-decompose-memrefs
+-gpu-decompose-memrefs
+-gpu-decompose-memrefs -allow-unregistered-dialect

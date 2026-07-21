@@ -1,0 +1,3 @@
+--resolve-shaped-type-result-dims
+-resolve-shaped-type-result-dims
+--pass-pipeline=builtin.module(func.func(resolve-shaped-type-result-dims{error-on-pattern-iteration-limit=false}))

@@ -1,0 +1,3 @@
+--convert-scf-to-openmp
+-convert-scf-to-openmp
+-convert-scf-to-openmp=num-threads=4

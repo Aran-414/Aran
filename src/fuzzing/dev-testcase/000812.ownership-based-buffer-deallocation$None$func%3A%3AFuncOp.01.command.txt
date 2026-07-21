@@ -1,0 +1,14 @@
+--ownership-based-buffer-deallocation
+-ownership-based-buffer-deallocation
+-ownership-based-buffer-deallocation -buffer-deallocation-simplification
+-ownership-based-buffer-deallocation=private-function-dynamic-ownership=true
+-ownership-based-buffer-deallocation=private-function-dynamic-ownership=false -buffer-deallocation-simplification
+-ownership-based-buffer-deallocation=private-function-dynamic-ownership=true --buffer-deallocation-simplification
+-expand-realloc=emit-deallocs=false -ownership-based-buffer-deallocation --buffer-deallocation-simplification
+--allow-unregistered-dialect -ownership-based-buffer-deallocation=private-function-dynamic-ownership=false --buffer-deallocation-simplification
+--allow-unregistered-dialect -ownership-based-buffer-deallocation=private-function-dynamic-ownership=true --buffer-deallocation-simplification
+-expand-realloc=emit-deallocs=false -ownership-based-buffer-deallocation=private-function-dynamic-ownership=true -canonicalize -buffer-deallocation-simplification
+-ownership-based-buffer-deallocation --buffer-deallocation-simplification
+-ownership-based-buffer-deallocation --buffer-deallocation-simplification -canonicalize
+-allow-unregistered-dialect -ownership-based-buffer-deallocation --buffer-deallocation-simplification
+-allow-unregistered-dialect -ownership-based-buffer-deallocation=private-function-dynamic-ownership=true

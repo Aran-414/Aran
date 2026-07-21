@@ -1,0 +1,3 @@
+--expand-realloc
+-expand-realloc
+--expand-realloc=emit-deallocs=false

@@ -1,0 +1,15 @@
+-canonicalize
+-inline
+-symbol-privatize
+-llvm-request-c-wrappers
+-tosa-attach-target
+-affine-data-copy-generate
+-sparsification-and-bufferization
+-enable-arm-streaming
+-linalg-fuse-elementwise-ops
+-linalg-fold-unit-extent-dims
+-one-shot-bufferize
+-convert-async-to-llvm
+-convert-pdl-to-pdl-interp
+-lower-host-to-llvm
+-set-llvm-module-datalayout

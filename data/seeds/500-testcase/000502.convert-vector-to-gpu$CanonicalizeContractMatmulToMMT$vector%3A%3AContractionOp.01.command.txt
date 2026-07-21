@@ -1,0 +1,5 @@
+--convert-vector-to-gpu
+-convert-vector-to-gpu
+-pass-pipeline=builtin.module(func.func(test-fold-arith-extf-into-vector-contract-patterns,convert-vector-to-gpu{use-nvgpu=true},cse))
+-pass-pipeline=builtin.module(func.func(convert-vector-to-gpu{use-nvgpu=true}))
+-pass-pipeline=builtin.module(func.func(convert-vector-to-gpu),canonicalize)

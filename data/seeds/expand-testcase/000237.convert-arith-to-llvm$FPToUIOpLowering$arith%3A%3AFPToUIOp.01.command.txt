@@ -1,0 +1,16 @@
+--convert-arith-to-llvm
+-convert-arith-to-llvm
+-pass-pipeline=builtin.module(func.func(convert-arith-to-llvm))
+-pass-pipeline=builtin.module(func.func(convert-complex-to-standard),convert-complex-to-llvm,func.func(convert-math-to-llvm,convert-arith-to-llvm),convert-func-to-llvm,reconcile-unrealized-casts)
+-pass-pipeline=builtin.module(func.func(convert-arith-to-llvm),convert-func-to-llvm,convert-cf-to-llvm,reconcile-unrealized-casts)
+-pass-pipeline=builtin.module(func.func(convert-arith-to-llvm),convert-func-to-llvm{use-bare-ptr-memref-call-conv=1},convert-cf-to-llvm,reconcile-unrealized-casts)
+-pass-pipeline=builtin.module(func.func(convert-arith-to-llvm{index-bitwidth=32}),convert-func-to-llvm{index-bitwidth=32},convert-cf-to-llvm{index-bitwidth=32},reconcile-unrealized-casts)
+-pass-pipeline=builtin.module(func.func(convert-math-to-llvm,convert-arith-to-llvm),convert-func-to-llvm,convert-cf-to-llvm,reconcile-unrealized-casts)
+-pass-pipeline=builtin.module(func.func(convert-math-to-llvm,convert-arith-to-llvm{index-bitwidth=32}),convert-func-to-llvm{index-bitwidth=32},convert-cf-to-llvm{index-bitwidth=32},reconcile-unrealized-casts)
+-pass-pipeline=builtin.module(func.func(convert-math-to-llvm,convert-arith-to-llvm),convert-func-to-llvm,reconcile-unrealized-casts)
+-expand-strided-metadata -finalize-memref-to-llvm -lower-affine -convert-arith-to-llvm -cse
+-expand-strided-metadata -finalize-memref-to-llvm=index-bitwidth=32 -lower-affine -convert-arith-to-llvm=index-bitwidth=32 -cse
+--convert-nvvm-to-llvm --convert-arith-to-llvm
+-convert-vector-to-llvm=enable-arm-sve -convert-func-to-llvm -convert-arith-to-llvm -cse -reconcile-unrealized-casts
+-pass-pipeline=builtin.module(func.func(canonicalize,convert-scf-to-cf),convert-vector-to-llvm,expand-strided-metadata,lower-affine,convert-arith-to-llvm,finalize-memref-to-llvm,convert-func-to-llvm,convert-cf-to-llvm,reconcile-unrealized-casts)
+-pass-pipeline=builtin.module(async-to-async-runtime,func.func(async-runtime-ref-counting,async-runtime-ref-counting-opt),convert-async-to-llvm,func.func(convert-linalg-to-loops,convert-scf-to-cf),finalize-memref-to-llvm,func.func(convert-arith-to-llvm),convert-func-to-llvm,reconcile-unrealized-casts)

@@ -1,0 +1,5 @@
+Reading tracefile mlirsmith/lasttime.info
+Summary coverage rate:
+  lines......: 9.8% (93418 of 952317 lines)
+  functions..: 18.0% (73840 of 409795 functions)
+  branches...: 10.0% (73161 of 733803 branches)

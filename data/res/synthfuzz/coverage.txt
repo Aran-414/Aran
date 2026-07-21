@@ -1,0 +1,5 @@
+Reading tracefile synthfuzz/lasttime.info
+Summary coverage rate:
+  lines......: 14.5% (143581 of 987385 lines)
+  functions..: 27.4% (119169 of 434472 functions)
+  branches...: 14.5% (122273 of 845605 branches)

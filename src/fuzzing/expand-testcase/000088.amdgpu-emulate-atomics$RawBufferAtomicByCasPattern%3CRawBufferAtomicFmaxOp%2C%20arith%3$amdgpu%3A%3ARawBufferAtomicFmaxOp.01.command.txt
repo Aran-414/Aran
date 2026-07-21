@@ -1,0 +1,3 @@
+-amdgpu-emulate-atomics=chipset=gfx90a
+-amdgpu-emulate-atomics=chipset=gfx942
+-amdgpu-emulate-atomics=chipset=gfx950

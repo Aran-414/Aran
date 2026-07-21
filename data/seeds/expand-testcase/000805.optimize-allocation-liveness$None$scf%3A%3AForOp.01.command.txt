@@ -1,0 +1,2 @@
+--optimize-allocation-liveness
+-optimize-allocation-liveness

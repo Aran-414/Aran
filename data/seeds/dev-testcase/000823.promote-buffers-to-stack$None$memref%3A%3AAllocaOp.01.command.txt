@@ -1,0 +1,4 @@
+--promote-buffers-to-stack
+-promote-buffers-to-stack
+-promote-buffers-to-stack=max-alloc-size-in-bytes=64
+-promote-buffers-to-stack=max-rank-of-allocated-memref=2

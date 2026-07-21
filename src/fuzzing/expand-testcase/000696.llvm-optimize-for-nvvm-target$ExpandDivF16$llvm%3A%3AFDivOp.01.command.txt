@@ -1,0 +1,2 @@
+--llvm-optimize-for-nvvm-target
+-llvm-optimize-for-nvvm-target

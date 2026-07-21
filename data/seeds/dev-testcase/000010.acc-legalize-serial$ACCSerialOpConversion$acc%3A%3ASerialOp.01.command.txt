@@ -1,0 +1,3 @@
+--acc-legalize-serial
+-acc-legalize-serial
+-acc-implicit-data

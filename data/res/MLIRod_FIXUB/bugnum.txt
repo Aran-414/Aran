@@ -1,0 +1,44 @@
+/mlir/lib/IR/BuiltinAttributes.cpp:1030
+mlir::DenseElementsAttr::get
+mlir::dataflow::maybeReplaceWithConstant
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite
+mlir::applyPatternsGreedily => 
+
+/mlir/lib/IR/BuiltinAttributes.cpp:1353
+mlir::DenseIntOrFPElementsAttr::getRaw
+mlir::DenseElementsAttr::get
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite => 
+
+/mlir/lib/IR/BuiltinAttributes.cpp:1319
+mlir::DenseIntOrFPElementsAttr::getRaw
+mlir::DenseElementsAttr::get
+mlir::dataflow::maybeReplaceWithConstant
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::IntegerAttrmlir::detail::StorageUserBase
+mlir::IntegerAttr::get
+mlir::Builder::getIntegerAttr
+mlir::dataflow::maybeReplaceWithConstant
+mlir::PatternApplicator::matchAndRewrite => 
+
+None
+mlir::dataflow::IntegerRangeAnalysis::visitNonControlFlowArguments
+mlir::dataflow::SparseForwardDataFlowAnalysis
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visitRegionSuccessors
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visitBlock
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visit => 
+
+/mlir/lib/IR/BuiltinAttributes.cpp:1353
+mlir::DenseIntOrFPElementsAttr::getRaw
+mlir::DenseIntOrFPElementsAttr::getRaw
+mlir::DenseElementsAttr::get
+mlir::dataflow::maybeReplaceWithConstant
+mlir::PatternApplicator::matchAndRewrite => 
+
+DjuWfttObj:0:1 => memref.cast#memref<31xi16>@--bufferization-lower-deallocations$--ownership-based-buffer-deallocation
+Qq1BVhia4b:0:1 => memref.cast#memref<81xi32>@--linalg-generalize-named-ops$--convert-linalg-to-parallel-loops

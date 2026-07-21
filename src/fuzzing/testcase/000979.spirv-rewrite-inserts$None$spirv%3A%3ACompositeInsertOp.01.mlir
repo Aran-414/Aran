@@ -1,0 +1,16 @@
+module {
+  spirv.module Logical GLSL450 {
+    spirv.func @test_insert_chain() -> () "None" {
+      %undef = spirv.Undef : !spirv.array<4xf32>
+      %c0 = spirv.Constant 0.0 : f32
+      %c1 = spirv.Constant 1.0 : f32
+      %c2 = spirv.Constant 2.0 : f32
+      %c3 = spirv.Constant 3.0 : f32
+      %insert0 = spirv.CompositeInsert %c0, %undef[0 : i32] : f32 into !spirv.array<4xf32>
+      %insert1 = spirv.CompositeInsert %c1, %insert0[1 : i32] : f32 into !spirv.array<4xf32>
+      %insert2 = spirv.CompositeInsert %c2, %insert1[2 : i32] : f32 into !spirv.array<4xf32>
+      %insert3 = spirv.CompositeInsert %c3, %insert2[3 : i32] : f32 into !spirv.array<4xf32>
+      spirv.Return
+    }
+  }
+}

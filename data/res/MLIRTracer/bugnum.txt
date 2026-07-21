@@ -1,0 +1,314 @@
+None
+mlir::dataflow::IntegerRangeAnalysis::visitNonControlFlowArguments
+mlir::dataflow::SparseForwardDataFlowAnalysis
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visitRegionSuccessors
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visitBlock
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visit => 
+
+None
+mlir::tosa::TargetEnvAttr::get
+mlir::tosa::lookupTargetEnvOrDefault
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/mlir/lib/IR/PatternMatch.cpp:156
+mlir::RewriterBase::eraseOp
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite
+mlir::applyPatternsGreedily => 
+
+None
+mlir::Operation*const*std::__find_if
+mlir::Operation*const*std::__find_if
+mlir::affine::MemRefDependenceGraph::init
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 
+
+/llvm/include/llvm/Support/Casting.h:560
+mlir::detail::CallableOpInterfaceInterfaceTraits::Model
+mlir::function_interface_impl::setFunctionType
+mlir::WalkResultllvm::function_ref
+mlir::WalkResultmlir::detail::walk
+mlir::detail::OpToOpPassAdaptor::run => 
+
+None
+mlir::linalg::isDimSequencePreserved
+mlir::AffineMapconst*std::__find_if
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite => 
+
+/mlir/lib/Dialect/Bufferization/Transforms/OneShotModuleBufferize.cpp:139
+mlir::bufferization::analyzeModuleOp
+mlir::bufferization::insertTensorCopies
+mlir::bufferization::runOneShotModuleBufferize
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 
+
+None
+mlir::Operation::~Operation
+mlir::Operation::destroy
+mlir::Block::~Block
+mlir::Block::erase
+mlir::detail::OpToOpPassAdaptor::run => 
+
+/mlir/lib/Dialect/Vector/Utils/VectorUtils.cpp:243
+mlir::matcher::operatesOnSuperVectorsOf
+mlir::affine::NestedPattern::matchOne
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl => 
+
+/llvm/include/llvm/Support/Casting.h:560
+mlir::detail::CallableOpInterfaceInterfaceTraits::Model
+mlir::function_interface_impl::setFunctionType
+mlir::WalkResultllvm::function_ref
+mlir::WalkResultmlir::detail::walk
+mlir::WalkResultmlir::detail::walk => 
+
+/llvm/include/llvm/ADT/ArrayRef.h:388
+mlir::detail::verifyLoopLikeOpInterface
+mlir::Op
+mlir::RegisteredOperationName::Model
+mlir::verify
+mlir::detail::OpToOpPassAdaptor::run => 
+
+/llvm/include/llvm/ADT/ArrayRef.h:80
+mlir::gpu::LaunchOp::getPrivateAttributions
+mlir::gpu::LaunchOp::verifyRegions
+mlir::Op
+mlir::RegisteredOperationName::Model
+mlir::verify => 
+
+None
+mlir::tosa::TargetEnvAttr::get
+mlir::tosa::lookupTargetEnvOrDefault
+mlir::tracing::ExecutionContext::operator
+mlir::MLIRContext::executeActionInternal
+mlir::detail::OpToOpPassAdaptor::run => 
+
+None
+mlir::WalkResultllvm::function_ref
+mlir::WalkResultmlir::detail::walk
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/mlir/lib/Dialect/Bufferization/Transforms/OneShotModuleBufferize.cpp:139
+mlir::bufferization::analyzeModuleOp
+mlir::bufferization::insertTensorCopies
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/llvm/lib/Support/raw_ostream.cpp:102
+None => 
+
+None
+mlir::xegpu::uArch::getUArch
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite
+mlir::applyPatternsGreedily => 
+
+None
+mlir::detail::CallableOpInterfaceInterfaceTraits::Model
+mlir::function_interface_impl::setFunctionType
+mlir::WalkResultllvm::function_ref
+mlir::WalkResultmlir::detail::walk
+mlir::detail::OpToOpPassAdaptor::run => 
+
+/mlir/lib/Dialect/Linalg/Transforms/ElementwiseOpFusion.cpp:1310
+mlir::linalg::isDimSequencePreserved
+mlir::AffineMapconst*std::__find_if
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite => 
+
+None
+mlir::tosa::TargetEnvAttr::get
+mlir::tosa::lookupTargetEnvOrDefault
+mlir::tracing::DebugCounter::operator
+mlir::MLIRContext::executeActionInternal
+mlir::detail::OpToOpPassAdaptor::run => 
+
+/mlir/include/mlir/IR/UseDefLists.h:198
+mlir::Block::~Block
+mlir::Region::~Region
+mlir::Operation::~Operation
+mlir::Operation::destroy
+mlir::Block::~Block => 
+
+/mlir/include/mlir/IR/UseDefLists.h:198
+mlir::Region::~Region
+mlir::transformCFGToSCF
+mlir::WalkResultmlir::detail::walk
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 
+
+None
+mlir::detail::OperandStorage::OperandStorage
+mlir::Operation::create
+mlir::Operation::create
+mlir::Operation::create
+mlir::Operation::create => 
+
+/mlir/lib/Dialect/Bufferization/Transforms/OneShotModuleBufferize.cpp:139
+mlir::bufferization::analyzeModuleOp
+mlir::bufferization::insertTensorCopies
+mlir::sparse_tensor::SparsificationAndBufferizationPass::runOnOperation
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 
+
+/llvm/lib/Support/raw_ostream.cpp:102
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl => 
+
+/llvm/include/llvm/ADT/ArrayRef.h:388
+None => 
+
+/llvm/include/llvm/ADT/ilist_iterator.h:168
+None => 
+
+/mlir/lib/Dialect/Bufferization/Transforms/OneShotModuleBufferize.cpp:139
+mlir::bufferization::analyzeModuleOp
+mlir::bufferization::eliminateEmptyTensors
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/mlir/include/mlir/IR/UseDefLists.h:198
+mlir::Block::~Block
+mlir::Region::~Region
+mlir::Operation::~Operation
+mlir::Operation::destroy
+mlir::Operation::erase => 
+
+None
+mlir::Operation*const*std::__find_if
+mlir::affine::MemRefDependenceGraph::init
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl => 
+
+/mlir/include/mlir/IR/UseDefLists.h:198
+mlir::Region::~Region
+mlir::transformCFGToSCF
+mlir::WalkResultllvm::function_ref
+mlir::WalkResultmlir::detail::walk
+mlir::WalkResultmlir::detail::walk => 
+
+None
+mlir::Operation::~Operation
+mlir::Operation::destroy
+mlir::Block::~Block
+mlir::Block::erase
+mlir::WalkResultllvm::function_ref => 
+
+/mlir/lib/Analysis/Presburger/Utils.cpp:291
+mlir::presburger::IntegerRelation::mergeLocalVars
+mlir::affine::MemRefAccess::getAccessRelation
+mlir::affine::checkMemrefAccessDependence
+mlir::affine::MemRefDependenceGraph::init
+mlir::detail::OpToOpPassAdaptor::run => 
+
+/llvm/lib/Support/raw_ostream.cpp:278
+None => 
+
+Unknown command line argument '--test-legalize-mode=analysis'.  Try: 'mlir-opt --help'
+mlir::tosa::TargetEnvAttr::get
+mlir::tosa::lookupTargetEnvOrDefault
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/mlir/lib/Rewrite/ByteCode.cpp:508
+mlir::detail::PDLByteCode::PDLByteCode
+mlir::FrozenRewritePatternSet::FrozenRewritePatternSet
+mlir::OpPassManager::initialize
+mlir::PassManager::run
+mlir::splitAndProcessBuffer => 
+
+/llvm/include/llvm/ADT/DenseMap.h:448
+None => 
+
+None
+mlir::Operation*const*std::__find_if
+mlir::affine::MemRefDependenceGraph::init
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::MemRefType::get
+mlir::memref::populateMemRefNarrowTypeEmulationConversions
+mlir::TypeConverter::convertTypeImpl
+mlir::TypeConverter::convertType
+mlir::TypeConverter::isLegal => 
+
+/mlir/lib/Dialect/Bufferization/Transforms/OneShotModuleBufferize.cpp:139
+mlir::bufferization::analyzeModuleOp
+mlir::bufferization::insertTensorCopies
+mlir::bufferization::runOneShotModuleBufferize
+mlir::tracing::ExecutionContext::operator
+mlir::MLIRContext::executeActionInternal => 
+
+None
+mlir::Operation::~Operation
+mlir::Operation::destroy
+mlir::Block::~Block
+mlir::Region::~Region
+mlir::Operation::~Operation => 
+
+None
+mlir::loopUnrollByFactor
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run => 
+
+/llvm/include/llvm/ADT/ArrayRef.h:443
+mlir::matchReduction
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl => 
+
+/mlir/lib/IR/SymbolTable.cpp:694
+mlir::SymbolUserMap::replaceAllUsesWith
+mlir::
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/llvm/lib/Support/raw_ostream.cpp:278
+mlir::OpState::printOpName
+mlir::RegisteredOperationName::Model
+mlir::scf::ForOp::print
+mlir::RegisteredOperationName::Model
+mlir::scf::ForOp::print => 
+
+/mlir/lib/Dialect/Vector/Utils/VectorUtils.cpp:243
+mlir::matcher::operatesOnSuperVectorsOf
+mlir::affine::NestedPattern::matchOne
+mlir::tracing::DebugCounter::operator
+mlir::MLIRContext::executeActionInternal
+mlir::detail::OpToOpPassAdaptor::run => 
+
+/llvm/lib/Support/raw_ostream.cpp:278
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl => 
+
+/mlir/lib/Dialect/Linalg/Transforms/DecomposeLinalgOps.cpp:375
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite
+mlir::applyPatternsGreedily
+mlir::detail::OpToOpPassAdaptor::run => 
+
+/llvm/lib/Support/raw_ostream.cpp:208
+None => 

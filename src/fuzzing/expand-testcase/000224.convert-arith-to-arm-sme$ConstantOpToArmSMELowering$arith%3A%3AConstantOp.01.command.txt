@@ -1,0 +1,3 @@
+--convert-arith-to-arm-sme
+-convert-arith-to-arm-sme
+-convert-arith-to-arm-sme -allow-unregistered-dialect

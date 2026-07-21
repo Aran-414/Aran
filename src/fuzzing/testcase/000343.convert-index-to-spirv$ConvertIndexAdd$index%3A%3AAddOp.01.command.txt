@@ -1,0 +1,4 @@
+--convert-index-to-spirv
+-convert-index-to-spirv
+-convert-index-to-spirv=use-64bit-index=false
+-convert-index-to-spirv=use-64bit-index=true

@@ -1,0 +1,15 @@
+-symbol-privatize
+-llvm-request-c-wrappers
+-tosa-attach-target
+-affine-data-copy-generate
+-sparsification-and-bufferization
+-enable-arm-streaming
+-convert-async-to-llvm
+-convert-func-to-emitc
+-convert-func-to-spirv
+-convert-pdl-to-pdl-interp
+-convert-tensor-to-spirv
+-convert-to-emitc
+-lower-host-to-llvm
+-convert-scf-to-spirv
+-set-llvm-module-datalayout

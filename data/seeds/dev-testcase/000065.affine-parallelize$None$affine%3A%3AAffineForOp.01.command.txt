@@ -1,0 +1,5 @@
+--affine-parallelize
+-affine-parallelize
+-allow-unregistered-dialect -affine-parallelize
+-allow-unregistered-dialect -affine-parallelize=max-nested=1
+-allow-unregistered-dialect -affine-parallelize=parallel-reductions=1

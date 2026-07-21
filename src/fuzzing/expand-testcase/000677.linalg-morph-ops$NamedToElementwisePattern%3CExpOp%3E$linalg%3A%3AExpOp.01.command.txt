@@ -1,0 +1,3 @@
+-linalg-morph-ops=named-to-category
+-linalg-morph-ops=category-to-generic
+-linalg-morph-ops=named-to-generic

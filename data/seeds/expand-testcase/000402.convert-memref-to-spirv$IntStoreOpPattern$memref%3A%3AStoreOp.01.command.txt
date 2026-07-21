@@ -1,0 +1,1 @@
+-convert-memref-to-spirv -canonicalize

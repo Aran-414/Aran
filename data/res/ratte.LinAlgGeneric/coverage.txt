@@ -1,0 +1,5 @@
+Reading tracefile ratte.LinAlgGeneric/lasttime.info
+Summary coverage rate:
+  lines......: 3.4% (32957 of 957460 lines)
+  functions..: 6.3% (26111 of 414028 functions)
+  branches...: 3.9% (29206 of 753146 branches)

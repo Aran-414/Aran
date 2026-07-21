@@ -1,0 +1,284 @@
+/mlir/test/lib/IR/TestBytecodeRoundtrip.cpp:169
+mlir::pdl_interp::FuncOp::readProperties
+mlir::detail::BytecodeOpInterfaceInterfaceTraits::Model
+mlir::BytecodeReader::Impl::parseRegions
+mlir::BytecodeReader::Impl::parseIRSection
+mlir::BytecodeReader::Impl::read => 
+
+None
+mlir::tosa::TargetEnvAttr::get
+mlir::tosa::lookupTargetEnvOrDefault
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/mlir/test/lib/IR/TestBytecodeRoundtrip.cpp:169
+mlir::func::FuncOp::readProperties
+mlir::detail::BytecodeOpInterfaceInterfaceTraits::Model
+mlir::BytecodeReader::Impl::parseRegions
+mlir::BytecodeReader::Impl::parseIRSection
+mlir::BytecodeReader::Impl::read => 
+
+/llvm/lib/Support/raw_ostream.cpp:102
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl => 
+
+/llvm/include/llvm/ADT/ArrayRef.h:443
+mlir::matchReduction
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl => 
+
+/llvm/lib/Support/raw_ostream.cpp:102
+None => 
+
+/mlir/lib/Dialect/Bufferization/Transforms/OneShotModuleBufferize.cpp:139
+mlir::bufferization::analyzeModuleOp
+mlir::bufferization::insertTensorCopies
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/mlir/test/lib/IR/TestBytecodeRoundtrip.cpp:169
+mlir::Attribute
+mlir::BytecodeReader::Impl::parseRegions
+mlir::BytecodeReader::Impl::parseIRSection
+mlir::BytecodeReader::Impl::read
+mlir::readBytecodeFile => 
+
+/mlir/lib/Rewrite/ByteCode.cpp:508
+mlir::detail::PDLByteCode::PDLByteCode
+mlir::FrozenRewritePatternSet::FrozenRewritePatternSet
+mlir::OpPassManager::initialize
+mlir::PassManager::run
+mlir::splitAndProcessBuffer => 
+
+/llvm/lib/Support/raw_ostream.cpp:102
+mlir::OpBuilder::insert
+mlir::OpBuilder::clone
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::IntegerAttrmlir::detail::StorageUserBase
+mlir::IntegerAttr::get
+mlir::Builder::getIntegerAttr
+mlir::OpConversionPattern
+mlir::ConversionPattern::matchAndRewrite => 
+
+/mlir/lib/Dialect/Vector/Utils/VectorUtils.cpp:243
+mlir::matcher::operatesOnSuperVectorsOf
+mlir::affine::NestedPattern::matchOne
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl => 
+
+/mlir/lib/Dialect/Bufferization/Transforms/OneShotModuleBufferize.cpp:139
+mlir::bufferization::analyzeModuleOp
+mlir::bufferization::insertTensorCopies
+mlir::sparse_tensor::SparsificationAndBufferizationPass::runOnOperation
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 
+
+/llvm/include/llvm/ADT/ArrayRef.h:443
+None => 
+
+None
+mlir::dataflow::IntegerRangeAnalysis::visitNonControlFlowArguments
+mlir::dataflow::SparseForwardDataFlowAnalysis
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visitRegionSuccessors
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visitBlock
+mlir::dataflow::AbstractSparseForwardDataFlowAnalysis::visit => 
+
+/mlir/lib/Dialect/Bufferization/Transforms/OneShotModuleBufferize.cpp:139
+mlir::bufferization::analyzeModuleOp
+mlir::bufferization::eliminateEmptyTensors
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/mlir/include/mlir/IR/UseDefLists.h:198
+mlir::Block::~Block
+mlir::Block::erase
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses => 
+
+/mlir/test/lib/IR/TestBytecodeRoundtrip.cpp:169
+mlir::detail::BytecodeOpInterfaceInterfaceTraits::Model
+mlir::BytecodeReader::Impl::parseRegions
+mlir::BytecodeReader::Impl::parseIRSection
+mlir::BytecodeReader::Impl::read
+mlir::readBytecodeFile => 
+
+/llvm/include/llvm/Support/Casting.h:572
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run
+mlir::splitAndProcessBuffer => 
+
+/mlir/lib/Dialect/Bufferization/Transforms/OneShotModuleBufferize.cpp:139
+mlir::bufferization::analyzeModuleOp
+mlir::bufferization::insertTensorCopies
+mlir::bufferization::runOneShotModuleBufferize
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 
+
+None
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl => 
+
+None
+mlir::Operation::~Operation
+mlir::Operation::destroy
+mlir::Operation::erase
+mlir::collapseParallelLoops
+mlir::detail::OpToOpPassAdaptor::run => 
+
+/mlir/lib/Dialect/Affine/Transforms/SuperVectorize.cpp:1364
+mlir::WalkResultllvm::function_ref
+mlir::WalkResultmlir::detail::walk
+mlir::affine::vectorizeAffineLoopNest
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 
+
+/llvm/include/llvm/Support/GenericDomTree.h:535
+mlir::detail::DominanceInfoBase
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl => 
+
+/mlir/test/lib/Analysis/DataFlow/TestDenseForwardDataFlowAnalysis.cpp:259
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run
+mlir::splitAndProcessBuffer => 
+
+/llvm/include/llvm/ADT/ArrayRef.h:443
+mlir::matchReduction
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl
+mlir::detail::OpToOpPassAdaptor::runOnOperationAsyncImpl => 
+
+/mlir/test/lib/Analysis/DataFlow/TestSparseBackwardDataFlowAnalysis.cpp:197
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run
+mlir::splitAndProcessBuffer => 
+
+/mlir/test/lib/IR/TestBytecodeRoundtrip.cpp:169
+mlir::transform::NamedSequenceOp::readProperties
+mlir::detail::BytecodeOpInterfaceInterfaceTraits::Model
+mlir::BytecodeReader::Impl::parseRegions
+mlir::BytecodeReader::Impl::parseIRSection
+mlir::BytecodeReader::Impl::read => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::MemRefType::get
+mlir::bufferization::getMemRefTypeWithStaticIdentityLayout
+mlir::bufferization::func_ext::getBufferizedFunctionArgType
+mlir::bufferization::func_ext::FuncOpInterface::bufferize
+mlir::bufferization::detail::BufferizableOpInterfaceInterfaceTraits::FallbackModel => 
+
+None
+mlir::Operation::Operation
+mlir::Operation::create
+mlir::Operation::create
+mlir::Operation::create
+mlir::Operation::create => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::MemRefType::get
+mlir::bufferization::getMemRefTypeWithFullyDynamicLayout
+mlir::bufferization::func_ext::FuncOpInterface::bufferize
+mlir::bufferization::detail::BufferizableOpInterfaceInterfaceTraits::FallbackModel
+mlir::bufferization::BufferizableOpInterface::bufferize => 
+
+None
+mlir::VectorType::getElementType
+mlir::
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::MemRefType::get
+mlir::bufferization::getMemRefTypeWithFullyDynamicLayout
+mlir::bufferization::func_ext::getBufferizedFunctionArgType
+mlir::bufferization::func_ext::FuncOpInterface::bufferize
+mlir::bufferization::detail::BufferizableOpInterfaceInterfaceTraits::FallbackModel => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::MemRefType::get
+mlir::bufferization::getMemRefTypeWithStaticIdentityLayout
+mlir::bufferization::func_ext::FuncOpInterface::bufferize
+mlir::bufferization::detail::BufferizableOpInterfaceInterfaceTraits::FallbackModel
+mlir::bufferization::BufferizableOpInterface::bufferize => 
+
+/mlir/test/lib/IR/TestBytecodeRoundtrip.cpp:169
+mlir::ml_program::GlobalOp::readProperties
+mlir::detail::BytecodeOpInterfaceInterfaceTraits::Model
+mlir::BytecodeReader::Impl::parseRegions
+mlir::BytecodeReader::Impl::parseIRSection
+mlir::BytecodeReader::Impl::read => 
+
+None
+mlir::Operation::~Operation
+mlir::Operation::destroy
+mlir::Operation::erase
+mlir::WalkResultllvm::function_ref
+mlir::WalkResultmlir::detail::walk => 
+
+/mlir/include/mlir/IR/Iterators.h:56
+mlir::ForwardDominanceIterator
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline
+mlir::PassManager::runPasses
+mlir::PassManager::run => 
+
+/mlir/include/mlir/IR/UseDefLists.h:198
+mlir::Region::~Region
+mlir::transformCFGToSCF
+mlir::WalkResultmlir::detail::walk
+mlir::detail::OpToOpPassAdaptor::run
+mlir::detail::OpToOpPassAdaptor::runPipeline => 
+
+/llvm/include/llvm/ADT/ArrayRef.h:80
+mlir::gpu::LaunchOp::getPrivateAttributions
+mlir::gpu::LaunchOp::verifyRegions
+mlir::Op
+mlir::RegisteredOperationName::Model
+mlir::verify => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::UnrankedMemRefType::get
+mlir::bufferization::getMemRefTypeWithFullyDynamicLayout
+mlir::bufferization::func_ext::FuncOpInterface::bufferize
+mlir::bufferization::detail::BufferizableOpInterfaceInterfaceTraits::FallbackModel
+mlir::bufferization::BufferizableOpInterface::bufferize => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::VectorType::get
+mlir::VectorType::cloneWith
+mlir::detail::OpOrInterfaceRewritePatternBase
+mlir::PatternApplicator::matchAndRewrite
+mlir::PatternApplicator::matchAndRewrite => 
+
+/mlir/include/mlir/IR/StorageUniquerSupport.h:179
+mlir::UnrankedMemRefType::get
+mlir::bufferization::getMemRefTypeWithStaticIdentityLayout
+mlir::bufferization::func_ext::FuncOpInterface::bufferize
+mlir::bufferization::detail::BufferizableOpInterfaceInterfaceTraits::FallbackModel
+mlir::bufferization::BufferizableOpInterface::bufferize => 
+
+/llvm/include/llvm/ADT/ArrayRef.h:388
+mlir::detail::verifyLoopLikeOpInterface
+mlir::Op
+mlir::RegisteredOperationName::Model => 

@@ -1,0 +1,14 @@
+--inline
+-inline
+-allow-unregistered-dialect -inline=default-pipeline=''
+-async-parallel-for=async-dispatch=true -canonicalize -inline -symbol-dce
+-async-parallel-for=async-dispatch=false -canonicalize -inline -symbol-dce
+-inline -mlir-print-debuginfo
+--sparse-assembler --inline
+-allow-unregistered-dialect -inline
+-pass-pipeline=builtin.module(inline) -dump-pass-pipeline
+-inline=default-pipeline=
+--mlir-disable-threading -inline=default-pipeline=
+"-inline=default-pipeline= inlining-threshold=100"
+-inline=default-pipeline= -mlir-print-debuginfo -mlir-print-local-scope
+-inline=op-pipelines=func.func(canonicalize,cse)
